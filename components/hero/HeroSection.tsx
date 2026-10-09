@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sun, Phone, ArrowRight, Zap, Award } from 'lucide-react';
+import { Sun, Phone, ArrowRight, Zap, Award, ChevronLeft, ChevronRight, ShieldCheck, CheckCircle2, FileText } from 'lucide-react';
 import Hero3DCanvas from './Hero3DCanvas';
 import { COMPANY_INFO } from '@/data/company';
 
@@ -12,99 +12,188 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      badge: 'PM SURYA GHAR : NATIONAL SOLAR PORTAL',
+      titleLine1: 'ENABLING CO₂ EMISSION REDUCTION',
+      titleLine2: '& 300 UNITS FREE POWER',
+      highlight: 'FREE POWER',
+      description:
+        'Transform your rooftop into a private power station. Slash up to 90% off your monthly TANGEDCO electricity bill with Tier-1 TOPCon Bifacial solar modules and direct government subsidy up to ₹78,000.',
+      primaryBtn: { text: 'EXPLORE SOLAR MODULES', href: '/solar' },
+      secondaryBtn: { text: 'CALCULATE SUBSIDY', href: '/solar#calculator' },
+      metrics: [
+        { label: 'DBT CENTRAL SUBSIDY', value: 'Up to ₹78,000' },
+        { label: 'CELL EFFICIENCY', value: '22.8% TOPCon' },
+        { label: 'LINEAR WARRANTY', value: '25-Year Guarantee' },
+      ],
+    },
+    {
+      badge: 'COMMERCIAL, INDUSTRIAL & COASTAL MICROGRIDS',
+      titleLine1: 'SWITCH TO SOLAR. CUT DIESEL',
+      titleLine2: '& HIGH TARIFF COSTS',
+      highlight: 'CUT DIESEL COSTS',
+      description:
+        'Engineered for Ramanathapuram’s extreme coastal salt-mist conditions. Heavy-duty anodized aluminum framing, IP68 junction boxes, and pure sine wave hybrid inverters built to endure cyclones and high heat.',
+      primaryBtn: { text: 'REQUEST SITE SURVEY', href: '/quote' },
+      secondaryBtn: { text: 'VIEW INVERTERS & UPS', href: '/inverters' },
+      metrics: [
+        { label: 'COASTAL RESILIENCE', value: 'IEC 61701 Grade' },
+        { label: 'ESTIMATED ROI', value: '3 to 4 Years' },
+        { label: 'PEAK CAPACITY', value: '1.4+ MW Installed' },
+      ],
+    },
+    {
+      badge: '15+ YEARS OF FAMILY TRUST IN RAMANATHAPURAM',
+      titleLine1: 'POWERING HOMES, MOBILITY',
+      titleLine2: '& THE NEXT GENERATION',
+      highlight: 'NEXT GENERATION',
+      description:
+        'Ramanathapuram’s authorized hub for genuine Amaron, Exide, Luminous, Microtek, LiFePO4 lithium batteries, and Gulf Oil lubricants. Built on generational family honor and personal customer accountability.',
+      primaryBtn: { text: 'MEET FOUNDERS & STORY', href: '/about' },
+      secondaryBtn: { text: 'BROWSE CATALOGUE', href: '/products' },
+      metrics: [
+        { label: 'HAPPY CLIENTS', value: '12,500+' },
+        { label: 'FACTORY DIRECT', value: '100% Genuine' },
+        { label: 'COUNTER REPLACEMENT', value: 'Instant Testing' },
+      ],
+    },
+  ];
+
+  // Auto slide timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const slide = slides[currentSlide];
+
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#050a07] pt-8 pb-16 lg:py-20">
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#060c12] pt-6 pb-16 lg:py-16">
       {/* 3D Solar Experience Canvas Background */}
-      <div className="absolute inset-0 z-0 opacity-85 pointer-events-auto">
+      <div className="absolute inset-0 z-0 opacity-80 pointer-events-auto">
         <Hero3DCanvas />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      {/* Dark Gradient Vignette Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#060c12]/95 via-[#060c12]/80 to-[#060c12]/60 z-0 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Headline, Trust & Action CTAs */}
+          {/* Left Column: Vikram Solar Corporate Typography & Slider Content */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0a180f]/90 border border-white/10 text-xs font-semibold text-emerald-300 backdrop-blur-md shadow-lg shadow-black/40">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-emerald-400">Ramanathapuram’s Energy Landmark</span>
-              <span className="text-emerald-700">•</span>
-              <span className="text-amber-300 flex items-center gap-1 font-medium">
-                <Sun className="w-3.5 h-3.5" /> PM Surya Ghar Partner
-              </span>
+            {/* Top Pill / Ribbon Badge (Vikram Solar Style) */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-sm bg-[#0a1622] border-l-4 border-[#cd2028] border-y border-r border-white/10 text-xs font-bold text-white uppercase tracking-wider backdrop-blur-md shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-[#cd2028] animate-ping" />
+              <span>{slide.badge}</span>
             </div>
 
-            {/* Main Headline */}
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.1]">
-                ENERGY FOR <span className="bg-gradient-to-r from-emerald-400 via-emerald-300 to-amber-300 bg-clip-text text-transparent">PEOPLE.</span>
+            {/* High-Impact Uppercase Headline */}
+            <div className="space-y-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white font-display leading-[1.08]">
+                <span>{slide.titleLine1}</span>
+                <br />
+                <span className="text-[#cd2028]">{slide.titleLine2}</span>
               </h1>
-              <p className="text-lg sm:text-xl text-emerald-200/90 font-medium">
-                Powering homes, businesses, and the next generation.
-              </p>
             </div>
 
             {/* Description Paragraph */}
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-              Built on decades of family trust in Ramanathapuram. We deliver complete clean energy solutions — from turnkey 
-              <span className="text-emerald-300 font-medium"> rooftop solar installations</span> and 
-              <span className="text-emerald-300 font-medium"> LiFePO4 lithium storage</span> to 
-              <span className="text-emerald-300 font-medium"> high-cranking automotive batteries</span>, pure sine wave inverters, and Gulf Oil industrial lubricants.
+              {slide.description}
             </p>
 
-            {/* Action CTA Buttons */}
+            {/* Action CTA Buttons (Vikram Red Buttons) */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <Link
-                href="/solar"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm text-emerald-950 bg-gradient-to-r from-emerald-400 via-emerald-300 to-amber-300 hover:from-emerald-300 hover:to-amber-200 shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-[1.02] transition-all duration-300 font-display"
+                href={slide.primaryBtn.href}
+                className="vikram-btn flex items-center justify-center gap-2.5 text-xs font-bold tracking-wider"
               >
-                <Sun className="w-4 h-4 text-emerald-950" />
-                <span>Explore Solar Solutions</span>
-                <ArrowRight className="w-4 h-4 text-emerald-950" />
+                <span>{slide.primaryBtn.text}</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
-                href="/quote"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-[#0b1c11]/80 border border-white/10 hover:bg-[#0f2818] hover:border-emerald-400 transition-all duration-200 backdrop-blur-md"
+                href={slide.secondaryBtn.href}
+                className="vikram-btn-outline flex items-center justify-center gap-2 text-xs font-bold tracking-wider"
               >
-                <Zap className="w-4 h-4 text-amber-400" />
-                <span>Get Free Solar Assessment</span>
+                <span>{slide.secondaryBtn.text}</span>
               </Link>
 
               <a
                 href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-semibold text-xs text-emerald-300 hover:text-white bg-black/40 border border-white/10 hover:bg-emerald-950/60 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded bg-white/5 border border-white/15 text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-xs font-bold uppercase tracking-wider"
               >
-                <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Call Store</span>
+                <Phone className="w-3.5 h-3.5 text-[#cd2028]" />
+                <span>88701 20911</span>
               </a>
             </div>
 
-            {/* Trust Metrics Bar */}
-            <div className="pt-4 grid grid-cols-3 gap-3 border-t border-white/10 max-w-lg">
-              <div className="space-y-0.5">
-                <p className="text-xl sm:text-2xl font-bold text-white font-display">15+ Yrs</p>
-                <p className="text-[11px] text-emerald-400 font-medium">Family Heritage</p>
+            {/* Vikram Solar Technical Specs Strip */}
+            <div className="pt-4 grid grid-cols-3 gap-3 border-t border-white/10 max-w-xl">
+              {slide.metrics.map((m, idx) => (
+                <div key={idx} className="space-y-0.5">
+                  <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold">{m.label}</p>
+                  <p className="text-sm sm:text-base font-bold text-white font-mono">{m.value}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Slide Navigation Dots & Arrows */}
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))}
+                aria-label="Previous Slide"
+                className="w-8 h-8 rounded bg-white/5 hover:bg-[#cd2028] text-white flex items-center justify-center transition-colors border border-white/10"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              <div className="flex items-center gap-1.5">
+                {slides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`h-2 transition-all rounded-full ${
+                      currentSlide === idx ? 'w-8 bg-[#cd2028]' : 'w-2 bg-white/20 hover:bg-white/40'
+                    }`}
+                  />
+                ))}
               </div>
-              <div className="space-y-0.5">
-                <p className="text-xl sm:text-2xl font-bold text-amber-400 font-mono">12,500+</p>
-                <p className="text-[11px] text-slate-300 font-medium">Happy Installations</p>
-              </div>
-              <div className="space-y-0.5">
-                <p className="text-xl sm:text-2xl font-bold text-emerald-300 font-display">100%</p>
-                <p className="text-[11px] text-emerald-400 font-medium">Genuine OEM</p>
-              </div>
+
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+                aria-label="Next Slide"
+                className="w-8 h-8 rounded bg-white/5 hover:bg-[#cd2028] text-white flex items-center justify-center transition-colors border border-white/10"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
 
-          {/* Right Column: High-Res Family Leadership Portrait with Glassmorphism Framing */}
+          {/* Right Column: Founders Portrait in Formal Suits (Family Leadership Card) */}
           <div className="lg:col-span-5 relative flex justify-center">
             <div className="relative w-full max-w-md lg:max-w-none">
-              {/* Outer Glow Halo */}
-              <div className="absolute -inset-1.5 bg-gradient-to-tr from-emerald-500/20 via-amber-500/15 to-emerald-400/20 rounded-3xl blur-xl opacity-75 animate-pulse-glow" />
+              {/* Outer Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-tr from-[#cd2028]/20 via-amber-500/10 to-transparent rounded-2xl blur-lg opacity-80" />
 
               {/* Main Portrait Card */}
-              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#09170e]/90 to-[#040e07] border border-white/10 shadow-2xl shadow-black/80 backdrop-blur-md">
-                {/* Image */}
+              <div className="relative rounded-xl overflow-hidden bg-[#0c1824] border border-white/15 shadow-2xl backdrop-blur-md">
+                {/* Red Header Bar */}
+                <div className="bg-[#cd2028] px-4 py-2 flex items-center justify-between">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-white">
+                    Generational Leadership
+                  </span>
+                  <span className="text-[10px] uppercase font-mono font-bold text-white/90">
+                    Est. Ramanathapuram
+                  </span>
+                </div>
+
+                {/* Founders Photo */}
                 <div className="relative aspect-[4/3] sm:aspect-[1.35/1] w-full">
                   <Image
                     src="/images/hero-family.png"
@@ -114,46 +203,43 @@ export default function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     className="object-cover object-top hover:scale-[1.02] transition-transform duration-700"
                   />
-                  {/* Subtle Gradient Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#051108] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c1824] via-transparent to-transparent opacity-80" />
                 </div>
 
-                {/* Portrait Caption & Heritage Badge */}
-                <div className="p-4 sm:p-5 space-y-2 bg-[#06140b]/95 border-t border-white/10">
+                {/* Portrait Caption */}
+                <div className="p-4 sm:p-5 space-y-2.5 bg-[#09141f] border-t border-white/10">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-300">
-                        <Award className="w-4 h-4 text-emerald-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-bold text-sm sm:text-base leading-tight font-display">
-                          Founders & Leadership
-                        </h3>
-                        <p className="text-emerald-400 text-xs font-medium">
-                          Trust Built Across Generations
-                        </p>
-                      </div>
+                    <div>
+                      <h3 className="text-white font-bold text-base uppercase tracking-tight font-display">
+                        The Founders & Partners
+                      </h3>
+                      <p className="text-[#cd2028] text-xs font-semibold uppercase tracking-wider">
+                        Unwavering Trust Across Generations
+                      </p>
                     </div>
 
-                    <div className="text-right">
-                      <span className="inline-block px-2 py-0.5 rounded bg-emerald-950/60 border border-white/10 text-[10px] font-semibold text-emerald-300">
-                        Ramanathapuram
-                      </span>
+                    <div className="w-9 h-9 rounded bg-[#cd2028]/20 border border-[#cd2028]/40 flex items-center justify-center text-[#cd2028]">
+                      <Award className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-300 leading-relaxed pt-1">
-                    “Our word is our bond. When you install an NS solar system or buy a battery from our counter, you get authentic quality, genuine warranty, and our personal backing.”
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    “Every solar project commissioned and every battery sold from our counter carries our family’s word, authentic manufacturer warranty, and direct after-sales care.”
                   </p>
+
+                  <div className="pt-2 flex items-center justify-between border-t border-white/5 text-[11px] text-slate-400">
+                    <span>AKB Complex, GH Road</span>
+                    <span className="text-[#cd2028] font-bold uppercase">100% Genuine OEM</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Floating Technology Badge */}
-              <div className="absolute -bottom-3 -left-3 sm:-left-5 bg-[#03150b]/95 border border-white/10 rounded-xl px-3.5 py-2 shadow-xl shadow-black/60 backdrop-blur-md flex items-center gap-2.5">
-                <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
+              {/* Floating Technical Badge */}
+              <div className="absolute -bottom-3 -left-3 sm:-left-4 bg-[#0a1622] border-l-4 border-[#cd2028] border-y border-r border-white/15 rounded-sm px-3.5 py-2 shadow-2xl flex items-center gap-2.5">
+                <Sun className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '12s' }} />
                 <div>
-                  <p className="text-[11px] font-bold text-white leading-tight font-display">Zero-Flicker Solar Power</p>
-                  <p className="text-[10px] text-emerald-400">TANGEDCO Net Metering</p>
+                  <p className="text-[11px] font-bold uppercase text-white leading-tight">Zero-Bill Solar Power</p>
+                  <p className="text-[10px] text-slate-400 uppercase font-mono">TANGEDCO Net Metering</p>
                 </div>
               </div>
             </div>
@@ -163,3 +249,4 @@ export default function HeroSection({ onOpenQuoteModal }: HeroSectionProps) {
     </section>
   );
 }
+

@@ -15,18 +15,18 @@ export default function SolarCalculator() {
   }, [monthlyBill, connectionType]);
 
   return (
-    <div id="calculator" className="w-full rounded-2xl bg-gradient-to-b from-[#092b19] via-[#072113] to-[#04140b] border border-emerald-500/40 p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden">
+    <div id="calculator" className="w-full rounded-xl bg-[#0a1622] border border-white/10 p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden">
       {/* Decorative Glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#cd2028]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Title */}
       <div className="relative z-10 text-center max-w-3xl mx-auto mb-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-sm bg-[#07111a] border-l-4 border-[#cd2028] border-y border-r border-white/10 text-white text-xs font-bold uppercase tracking-wider">
           <Sun className="w-3.5 h-3.5 text-amber-400" />
-          <span>TANGEDCO SOLAR ROI & SUBSIDY ESTIMATOR</span>
+          <span>SOLAR CALCULATOR & PM SURYA GHAR SUBSIDY ESTIMATOR</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight font-display">
           Calculate Your Rooftop Solar Savings & Subsidies
         </h2>
         <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -36,20 +36,20 @@ export default function SolarCalculator() {
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Interactive Controls */}
-        <div className="lg:col-span-5 space-y-6 bg-[#04170d]/90 p-5 sm:p-6 rounded-2xl border border-emerald-500/30 backdrop-blur-md">
+        <div className="lg:col-span-5 space-y-6 bg-[#08121c] p-5 sm:p-6 rounded-xl border border-white/10 backdrop-blur-md">
           {/* Connection Type Switcher */}
           <div>
-            <label className="block text-xs font-bold text-emerald-300 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-white uppercase tracking-wider mb-2">
               Property / Connection Type
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => setConnectionType('residential')}
-                className={`py-2.5 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
+                className={`py-2.5 px-3 rounded text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
                   connectionType === 'residential'
-                    ? 'bg-emerald-500 text-emerald-950 font-bold shadow-md'
-                    : 'bg-emerald-950/60 text-slate-300 hover:text-white border border-emerald-800/40'
+                    ? 'bg-[#cd2028] text-white shadow-md'
+                    : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
                 }`}
               >
                 <Home className="w-3.5 h-3.5" />
@@ -58,10 +58,10 @@ export default function SolarCalculator() {
               <button
                 type="button"
                 onClick={() => setConnectionType('commercial')}
-                className={`py-2.5 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
+                className={`py-2.5 px-3 rounded text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
                   connectionType === 'commercial'
-                    ? 'bg-emerald-500 text-emerald-950 font-bold shadow-md'
-                    : 'bg-emerald-950/60 text-slate-300 hover:text-white border border-emerald-800/40'
+                    ? 'bg-[#cd2028] text-white shadow-md'
+                    : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
                 }`}
               >
                 <Building className="w-3.5 h-3.5" />
@@ -182,20 +182,20 @@ export default function SolarCalculator() {
           </div>
 
           {/* Financial Breakdown Card */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#04170d] border border-emerald-500/30 space-y-4">
+          <div className="p-5 sm:p-6 rounded-xl bg-[#08121c] border border-white/10 space-y-4">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center justify-between">
               <span>Estimated Cost & Subsidy Breakdown</span>
-              <span className="text-xs text-emerald-400 font-normal lowercase">(indicative estimates)</span>
+              <span className="text-xs text-slate-400 font-normal">(Indicative Estimates)</span>
             </h4>
 
             <div className="space-y-2.5 text-xs sm:text-sm">
-              <div className="flex justify-between items-center text-slate-300 pb-2 border-b border-emerald-950">
+              <div className="flex justify-between items-center text-slate-300 pb-2 border-b border-white/5">
                 <span>Indicative Turnkey System Cost ({result.recommendedKw} kW)</span>
                 <span className="font-semibold text-white font-mono">{formatCurrencyINR(result.estimatedSystemCost)}</span>
               </div>
 
               {connectionType === 'residential' && (
-                <div className="flex justify-between items-center text-amber-400 font-medium pb-2 border-b border-emerald-950">
+                <div className="flex justify-between items-center text-amber-400 font-medium pb-2 border-b border-white/5">
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     Central Govt Subsidy (PM Surya Ghar)
@@ -205,17 +205,17 @@ export default function SolarCalculator() {
               )}
 
               <div className="flex justify-between items-center text-white font-bold pt-1 text-sm sm:text-base">
-                <span className="text-emerald-400">Estimated Net Investment</span>
-                <span className="text-emerald-300 text-lg sm:text-xl font-mono">
+                <span className="text-slate-300">Estimated Net Investment</span>
+                <span className="text-[#cd2028] text-lg sm:text-xl font-mono">
                   {formatCurrencyINR(result.netInvestmentCost)}
                 </span>
               </div>
             </div>
 
             {/* Practical Technical Specs */}
-            <div className="pt-3 border-t border-emerald-900/60 grid grid-cols-2 gap-3 text-xs text-slate-300">
+            <div className="pt-3 border-t border-white/10 grid grid-cols-2 gap-3 text-xs text-slate-300">
               <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Zap className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Roof Required: <strong className="text-white">~{result.roofAreaSqFt} sq. ft</strong></span>
               </div>
               <div className="flex items-center gap-2">
@@ -229,7 +229,7 @@ export default function SolarCalculator() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <Link
               href={`/quote?kw=${result.recommendedKw}&bill=${monthlyBill}&type=${connectionType}`}
-              className="flex-1 py-3.5 px-6 rounded-xl font-bold text-sm text-center text-emerald-950 bg-gradient-to-r from-emerald-400 via-emerald-300 to-amber-300 hover:from-emerald-300 hover:to-amber-200 shadow-xl shadow-emerald-500/20 hover:scale-[1.01] transition-all flex items-center justify-center gap-2"
+              className="vikram-btn flex-1 py-3.5 px-6 rounded text-xs font-bold uppercase tracking-wider text-center text-white flex items-center justify-center gap-2"
             >
               <span>Book Free Site Assessment for {result.recommendedKw} kW</span>
               <ArrowRight className="w-4 h-4" />
@@ -241,7 +241,7 @@ export default function SolarCalculator() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-3.5 px-5 rounded-xl font-semibold text-xs text-emerald-300 bg-emerald-950 border border-emerald-500/30 hover:bg-emerald-900 hover:text-white transition-all text-center flex items-center justify-center gap-1.5"
+              className="py-3.5 px-5 rounded text-xs font-bold uppercase tracking-wider text-[#25D366] bg-[#0c1a27] border border-white/10 hover:bg-[#25D366] hover:text-white transition-all text-center flex items-center justify-center gap-1.5"
             >
               <span>Instant WhatsApp Quote</span>
             </a>

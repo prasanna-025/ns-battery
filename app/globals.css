@@ -4,9 +4,11 @@
 
 @layer base {
   :root {
-    --color-obsidian: #050a07;
-    --color-surface: #0a130d;
-    --color-panel: #0e1c13;
+    --color-obsidian: #060b10;
+    --color-surface: #0a141e;
+    --color-panel: #0e1c2a;
+    --color-vikram-red: #cd2028;
+    --color-vikram-darkred: #b0171e;
     --color-emerald-glow: #00e676;
     --color-solar: #f59e0b;
     --border-hairline: rgba(255, 255, 255, 0.08);
@@ -24,29 +26,108 @@
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid #00e676;
+    outline: 2px solid #cd2028;
     outline-offset: 2px;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #050a07;
+  background: #060b10;
 }
 ::-webkit-scrollbar-thumb {
-  background: #12281b;
+  background: #1a2a38;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00e676;
+  background: #cd2028;
+}
+
+/* Vikram Corporate Button */
+.vikram-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cd2028;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(205, 32, 40, 0.35);
+}
+
+.vikram-btn:hover {
+  background-color: #b0171e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(205, 32, 40, 0.5);
+}
+
+.vikram-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 6px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+}
+
+.vikram-btn-outline:hover {
+  border-color: #cd2028;
+  color: #ffffff;
+  background: rgba(205, 32, 40, 0.12);
+}
+
+/* Vikram Action Tabs Dock (Right Sidebar) */
+.action-tabs-wrap {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.action-tab-item {
+  display: flex;
+  align-items: center;
+  background: #0e1a24;
+  color: #ffffff;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-left: 3px solid #cd2028;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+  box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+
+.action-tab-item:hover {
+  background: #cd2028;
+  color: #ffffff;
+  transform: translateX(-6px);
+  border-left-color: #ffffff;
 }
 
 /* Studio Glass Panels */
 .studio-card {
-  background: rgba(10, 20, 13, 0.75);
+  background: rgba(12, 24, 34, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -54,21 +135,21 @@
 }
 
 .studio-card:hover {
-  border-color: rgba(0, 230, 118, 0.3);
+  border-color: rgba(205, 32, 40, 0.35);
 }
 
 .studio-card-glow {
-  background: rgba(12, 26, 17, 0.85);
+  background: rgba(14, 28, 40, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 230, 118, 0.25);
-  box-shadow: 0 0 35px -5px rgba(0, 230, 118, 0.12);
+  border: 1px solid rgba(205, 32, 40, 0.3);
+  box-shadow: 0 0 35px -5px rgba(205, 32, 40, 0.15);
 }
 
 /* Custom Range Slider Ergonomics */
 input[type="range"] {
   -webkit-appearance: none;
-  background: #0a1f12;
+  background: #0e1e2c;
   border-radius: 8px;
   outline: none;
 }
@@ -76,28 +157,28 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #00e676;
+  background: #cd2028;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 230, 118, 0.7);
+  box-shadow: 0 0 12px rgba(205, 32, 40, 0.8);
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.2);
-  background: #4ade80;
+  background: #e53935;
 }
 
 input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #00e676;
+  background: #cd2028;
   cursor: pointer;
   border: none;
-  box-shadow: 0 0 10px rgba(0, 230, 118, 0.7);
+  box-shadow: 0 0 12px rgba(205, 32, 40, 0.8);
   transition: transform 0.15s ease;
 }
 
@@ -107,5 +188,5 @@ input[type="range"]::-moz-range-thumb:hover {
 
 /* Subtle background radial ambient lights */
 .ambient-glow-top {
-  background: radial-gradient(circle at 50% 0%, rgba(0, 230, 118, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(205, 32, 40, 0.08) 0%, transparent 60%);
 }

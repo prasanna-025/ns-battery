@@ -9,6 +9,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        vikram: {
+          red: '#cd2028',
+          darkRed: '#b0171e',
+          lightRed: '#e53935',
+          navy: '#070f17',
+          surface: '#0c1824',
+          panel: '#102030',
+          border: 'rgba(255, 255, 255, 0.1)',
+          borderRed: 'rgba(205, 32, 40, 0.4)',
+        },
         brand: {
           50: '#f0fdf4',
           100: '#dcfce7',
@@ -21,11 +31,11 @@ module.exports = {
           800: '#166534',
           900: '#0b351e',
           950: '#052011',
-          obsidian: '#050a07',
-          surface: '#09120c',
-          panel: '#0d1810',
+          obsidian: '#050a0e',
+          surface: '#09131a',
+          panel: '#0e1c26',
           border: 'rgba(255, 255, 255, 0.08)',
-          borderHover: 'rgba(0, 230, 118, 0.35)',
+          borderHover: 'rgba(205, 32, 40, 0.5)',
           neon: '#00e676',
           solar: '#f59e0b',
           solarGlow: '#fbbf24',

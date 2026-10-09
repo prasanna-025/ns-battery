@@ -21,11 +21,11 @@ export default function InteractiveEnergyStudio() {
       {/* Studio Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            <span>NS INTERACTIVE ENERGY WORKBENCH</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-sm bg-[#0a1622] border-l-4 border-[#cd2028] border-y border-r border-white/10 text-xs font-bold text-white uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-[#cd2028]" />
+            <span>INTERACTIVE ENERGY WORKBENCH</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-display tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight font-display">
             Explore Power Systems Through Interactive Software
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
@@ -34,12 +34,12 @@ export default function InteractiveEnergyStudio() {
         </div>
 
         {/* Master Studio Navigation Tabs */}
-        <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#09140c] border border-white/10 shrink-0 overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1.5 rounded-lg bg-[#0a1622] border border-white/10 shrink-0 overflow-x-auto">
           <button
             onClick={() => setActiveTab('solar')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+            className={`px-3.5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 whitespace-nowrap ${
               activeTab === 'solar'
-                ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
+                ? 'bg-[#cd2028] text-white shadow-md'
                 : 'text-slate-300 hover:text-white hover:bg-white/5'
             }`}
           >
@@ -49,9 +49,9 @@ export default function InteractiveEnergyStudio() {
 
           <button
             onClick={() => setActiveTab('inverter')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+            className={`px-3.5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 whitespace-nowrap ${
               activeTab === 'inverter'
-                ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
+                ? 'bg-[#cd2028] text-white shadow-md'
                 : 'text-slate-300 hover:text-white hover:bg-white/5'
             }`}
           >
@@ -61,9 +61,9 @@ export default function InteractiveEnergyStudio() {
 
           <button
             onClick={() => setActiveTab('battery')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+            className={`px-3.5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 whitespace-nowrap ${
               activeTab === 'battery'
-                ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
+                ? 'bg-[#cd2028] text-white shadow-md'
                 : 'text-slate-300 hover:text-white hover:bg-white/5'
             }`}
           >
@@ -73,9 +73,9 @@ export default function InteractiveEnergyStudio() {
 
           <button
             onClick={() => setActiveTab('coastal')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+            className={`px-3.5 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 whitespace-nowrap ${
               activeTab === 'coastal'
-                ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
+                ? 'bg-[#cd2028] text-white shadow-md'
                 : 'text-slate-300 hover:text-white hover:bg-white/5'
             }`}
           >
@@ -89,24 +89,24 @@ export default function InteractiveEnergyStudio() {
       {activeTab === 'solar' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between text-xs pb-1">
-            <span className="text-slate-400">Solar Engineering Views:</span>
+            <span className="text-slate-400 uppercase font-semibold">Solar Engineering Views:</span>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setSolarSubView('3d-roof')}
-                className={`px-3 py-1 rounded-lg font-semibold transition-all ${
+                className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider transition-all ${
                   solarSubView === '3d-roof'
-                    ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/40'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#cd2028] text-white'
+                    : 'text-slate-400 hover:text-white bg-white/5'
                 }`}
               >
                 3D Rooftop Configurator
               </button>
               <button
                 onClick={() => setSolarSubView('24h-cycle')}
-                className={`px-3 py-1 rounded-lg font-semibold transition-all ${
+                className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider transition-all ${
                   solarSubView === '24h-cycle'
-                    ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/40'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#cd2028] text-white'
+                    : 'text-slate-400 hover:text-white bg-white/5'
                 }`}
               >
                 24-Hour Energy Lifecycle
@@ -129,24 +129,24 @@ export default function InteractiveEnergyStudio() {
       {activeTab === 'battery' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between text-xs pb-1">
-            <span className="text-slate-400">Battery Diagnostic Modes:</span>
+            <span className="text-slate-400 uppercase font-semibold">Battery Diagnostic Modes:</span>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setBatterySubView('doctor')}
-                className={`px-3 py-1 rounded-lg font-semibold transition-all ${
+                className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider transition-all ${
                   batterySubView === 'doctor'
-                    ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/40'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#cd2028] text-white'
+                    : 'text-slate-400 hover:text-white bg-white/5'
                 }`}
               >
                 Virtual Battery Doctor
               </button>
               <button
                 onClick={() => setBatterySubView('teardown')}
-                className={`px-3 py-1 rounded-lg font-semibold transition-all ${
+                className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider transition-all ${
                   batterySubView === 'teardown'
-                    ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/40'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#cd2028] text-white'
+                    : 'text-slate-400 hover:text-white bg-white/5'
                 }`}
               >
                 Internal Cell Anatomy
