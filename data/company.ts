@@ -42,9 +42,96 @@ export const COMPANY_INFO = {
     },
   ],
   stats: [
-    { value: "15+", label: "Years of Trust in Ramanathapuram" },
-    { value: "12,500+", label: "Batteries & Systems Installed" },
-    { value: "100%", label: "Genuine OEM Guaranteed" },
-    { value: "24/7", label: "Priority Emergency Assistance" },
+    { value: "1989", label: "Established", sub: "Our founding year" },
+    { value: "37+", label: "Years of Legacy", sub: "As of 2026" },
+    { value: "No. 1", label: "Power Zone Distributor", sub: "South Tamil Nadu · FY 2023–24" },
+    { value: "6+", label: "Product Categories", sub: "Automotive and energy solutions" },
+  ],
+
+  // Company Journey — sourced from uploaded PDF and verified family history
+  journey: [
+    {
+      year: "1989",
+      title: "The Beginning of Our Legacy",
+      desc: "Founded by Hussain, NS began with automobile electrical services, building its reputation through technical expertise, hard work, and customer trust.",
+      image: "/images/ecosystem/workshop-1989.jpg",
+    },
+    {
+      year: "1991",
+      title: "Expansion into Auto Electrical Retail",
+      desc: "Expanded from automobile electrical services into an auto electrical spare parts shop, creating a stronger foundation for future growth.",
+      image: "/images/ecosystem/workshop-1989.jpg",
+    },
+    {
+      year: "1994",
+      title: "Rameswaram Business Milestone",
+      desc: "Co-founder Hyder Ali joined, expanding operations in Rameswaram and strengthening the company's presence across the coastal region.",
+      image: "/images/ecosystem/rameswaram-history.jpg",
+    },
+    {
+      year: "1996",
+      title: "Ramanathapuram Branch & Battery Business",
+      desc: "Established the Ramanathapuram branch. Expanded into battery sales and battery-related services — growing into a trusted local destination.",
+      image: "/images/storefront.jpg",
+    },
+    {
+      year: "2012",
+      title: "Second-Generation Leadership",
+      desc: "H. Mohamed Alshaban joined the family business and launched Power Zone battery distribution — marking a new chapter in wholesale and distribution growth.",
+      image: "/images/ecosystem/powerzone-battery.jpg",
+    },
+    {
+      year: "2019",
+      title: "Solar Energy Sector Entry",
+      desc: "Expanded into Luminous inverters, inverter batteries, solar panels, and solar energy solutions for homes and businesses across Southern Tamil Nadu.",
+      image: "/images/ecosystem/solar-dealership.jpg",
+    },
+    {
+      year: "2021",
+      title: "SKF Bearings Distribution",
+      desc: "Diversified into SKF precision bearings and grease, serving automotive, industrial, and mechanical markets.",
+      image: "/images/ecosystem/workshop-1989.jpg",
+    },
+    {
+      year: "2023–24",
+      title: "No. 1 Power Zone Distributor",
+      desc: "Recognized as the No. 1 Amara Raja Power Zone Battery distributor in South Tamil Nadu for FY 2023–24.",
+      image: "/images/ecosystem/powerzone-battery.jpg",
+    },
+    {
+      year: "2025",
+      title: "Gulf Oil Business Expansion",
+      desc: "Expanded the product portfolio into Gulf Oil lubricants, strengthening automotive and industrial product offerings.",
+      image: "/images/ecosystem/gulf-oil.webp",
+    },
+    {
+      year: "2026",
+      title: "Next-Generation Energy Solutions",
+      desc: "Added UTL Solar and Intu lithium battery solutions — advancing the journey toward modern energy storage and premium solar technology.",
+      image: "/images/ecosystem/solar-10kwp.jpeg",
+    },
+  ],
+
+  // Founders
+  founders: [
+    {
+      name: "Hussain",
+      role: "Founder & Auto Electrician",
+      era: "1989 — The Foundation",
+      bio: "Started as an automobile electrician, building the family business through technical expertise and community trust. His dedication laid the groundwork for everything NS Batteries stands for.",
+    },
+    {
+      name: "Hyder Ali",
+      role: "Co-Founder",
+      era: "1994 — Rameswaram Expansion",
+      bio: "Joined as co-founder and expanded operations into Rameswaram, strengthening the company's regional footprint along coastal Tamil Nadu.",
+    },
+    {
+      name: "H. Mohamed Alshaban",
+      role: "Managing Director (Second Generation)",
+      era: "2012 — Present",
+      bio: "Continuing the family legacy, Mohamed Alshaban expanded the business into wholesale distribution, solar energy, SKF bearings, Gulf Oil lubricants, and next-generation lithium battery technologies.",
+    },
   ],
 };
+
