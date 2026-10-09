@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-dark: #05130a;
+    --brand-deep: #072615;
+    --brand-primary: #00e676;
+    --brand-accent: #10b981;
+    --brand-solar: #f59e0b;
+  }
+
+  body {
+    background-color: #05120a;
+    color: #f1f5f9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: #00e676;
+    selection-color: #05120a;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05120a;
+}
+::-webkit-scrollbar-thumb {
+  background: #154528;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e676;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(10, 32, 19, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 230, 118, 0.15);
+}
+
+.glass-panel-glow {
+  background: rgba(11, 37, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 230, 118, 0.3);
+  box-shadow: 0 0 25px -5px rgba(0, 230, 118, 0.15);
+}
+
+.glass-panel-solar {
+  background: rgba(28, 22, 11, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.15);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
+}
+
+.text-glow-solar {
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+/* Gradient mesh background */
+.mesh-bg {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 230, 118, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(7, 38, 21, 0.6) 0px, transparent 100%);
+}

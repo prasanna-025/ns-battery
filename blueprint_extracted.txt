@@ -1,0 +1,229 @@
+NS BATTERIES
+MASTER WEBSITE IMPLEMENTATION BLUEPRINT
+Next.js + Three.js + Vercel  •  No Supabase
+Client-provided storefront reference.
+Project visionCreate a world-class digital presence for NS Batteries that combines family legacy, premium visual design, solar technology, battery expertise and practical lead generation. The website should feel like a modern energy company—not a generic solar template.
+1. Complete Analysis of the Information Provided
+This blueprint consolidates the information supplied so far: the NS Batteries storefront photograph, the product/service text, the requirement to feature the client's father and uncle in the hero, the supplied family photographs, the approved direction for both men to sit in suits, the generated visual reference, and the technical constraint that deployment should use Vercel without Supabase.
+Brand: NS Batteries.
+Tagline visible in the supplied storefront: “Energy for People”.
+The business is broader than solar: automotive batteries, inverter batteries, inverters, solar systems, lithium batteries, lubricants and accessories.
+Store address supplied: 21/20, AKB Complex, Ground Floor, Lathams Bangalow GH Road, Ramanathapuram – 623501, Tamil Nadu.
+Phone numbers supplied: 88701 20911 and 95145 20911.
+The hero must include the client's father and uncle.
+The preferred latest visual: both men seated side-by-side, dark suits and white shirts, cap removed from the first man, slightly fuller hair on the first man, original facial identity preserved, solar/modern-energy background.
+Three.js is explicitly requested and should be used for meaningful interactive energy visuals.
+Hosting/deployment: Vercel only; no Supabase.
+2. Client Product & Service Catalogue — Consolidated
+Category
+Information supplied by client
+Implementation idea
+Automobile Batteries
+Two-wheeler batteries; four-wheeler batteries; automobile batteries
+Vehicle-based product navigation and enquiry CTA.
+Inverter Batteries
+Inverter batteries; Luminous; Powerzone
+Backup-power product family.
+Inverters
+Inverters; Luminous inverters; UTL solar inverters
+Brand + application showcase.
+Solar
+Off-grid; on-grid; hybrid system
+Major site section with interactive energy explanation.
+Solar Batteries
+Solar batteries; lithium battery options
+Storage section connected to solar systems.
+Lithium Batteries
+60Ah; 100Ah; 24V 100Ah; built-in lithium battery / Home 1100
+Technical product cards after exact specs are confirmed.
+UTL Solar
+Inverters; inverter batteries; solar; off-grid; on-grid; hybrid; lithium battery
+Dedicated brand/product family if confirmed.
+Gulf Oil
+Two-wheeler oil; car oil; commercial vehicle oil; ship oil
+Lubricants division with application categories.
+SKF / Accessories
+SKF bearings & grease; accessories
+Secondary catalogue section.
+Items to verify before publishing“LITHIYAM” should be confirmed as Lithium; “Add blue” may mean AdBlue; “Home 1100” needs the exact official product name/specification; and UTL/Powerzone product ranges should be confirmed. Never invent warranty, certification, capacity, pricing, installation counts or business-history claims.
+3. Brand Strategy
+Positioning
+NS Batteries should be presented as a complete energy partner: generation + conversion + storage + backup + mobility power.
+Primary emotional theme: family trust and continuity.
+Primary technology theme: clean energy, solar generation and intelligent storage.
+Primary commercial theme: one place for solar, batteries, inverters and related power products.
+Visual tone: premium, confident, cinematic and modern, but still approachable.
+Avoid cluttered marketplace aesthetics and generic solar stock imagery.
+4. Hero Section — Approved Creative Direction
+People first, technology second
+The hero should make the two family members the recognizable human identity of the company. Three.js should create the technology environment around them without hiding their faces.
+Both men seated side-by-side.
+Both wearing tailored dark suits with white shirts.
+First man's cap removed; retain a natural short hairstyle with slightly more hair than the previous generated version.
+Preserve both men's recognizable facial features and natural expressions.
+Background: premium rooftop / modern energy environment with solar panels, greenery, warm architectural lighting and energy equipment.
+Suggested headline: “ENERGY FOR PEOPLE.”
+Suggested supporting line: “Powering homes, businesses and the next generation.”
+Primary CTA: Explore Solar Solutions.
+Secondary CTA: Talk to an Expert / Get a Quote.
+Mobile: keep both people and CTA dominant; simplify or disable heavy 3D.
+Latest approved visual direction supplied/generated during the design discussion.
+Production noteUse the best original client photographs available for final identity accuracy. The generated image is a composition/reference asset. Do not rely on generated facial details for factual identity or official brand photography without client approval.
+5. Three.js Experience Architecture
+Signature hero scene
+Load a lightweight rooftop/solar scene with a realistic but performance-conscious visual style.
+Place the family portrait layer in front of the 3D background so the people remain crisp.
+Animate a sun/light source subtly to create depth and time-of-day feeling.
+Use energy particles/lines to travel from solar panels to inverter, then battery and load.
+Bind camera movement and object transitions to scroll progress.
+Transition the hero scene into the Solar Solutions section.
+Second 3D scene — Energy Flow
+A simple interactive diagram can become a 3D explainer:
+☀ SUN  →  SOLAR PANELS  →  INVERTER  →  BATTERY  →  HOME / BUSINESS
+Performance safeguards
+Lazy-load Three.js and heavy assets.
+Use compressed textures and optimized GLB models.
+Use lower-quality effects on mobile/low-power devices.
+Provide a static/2D fallback if WebGL is unavailable.
+Keep 3D isolated from ordinary content components.
+6. Full Technical Architecture
+Layer
+Technology
+Responsibility
+Frontend
+Next.js + TypeScript
+Pages, routing, SEO, UI and server/client rendering.
+UI
+Tailwind CSS
+Responsive layout, design tokens and component styling.
+3D
+Three.js + React Three Fiber + Drei
+Solar scene, energy flow, optional product viewer.
+Motion
+GSAP + Framer Motion
+Scroll choreography, transitions and micro-interactions.
+Hosting
+Vercel
+Deployment, CDN, HTTPS, previews and serverless execution.
+Backend
+Next.js API routes / Vercel Functions
+Form validation and enquiry delivery; no database required.
+Email
+Approved email API
+Send enquiries to the client's business email.
+Messaging
+WhatsApp integration
+Lead/contact handoff to the client's business number.
+Maps
+Google Maps
+Store location and directions.
+Analytics
+Vercel Analytics or approved analytics
+Traffic and conversion measurement.
+Why no Supabase?The current requirements do not need a persistent application database. Static product data can be version-controlled, the calculator can run in the browser, and enquiries can be sent through Vercel serverless functions to email/WhatsApp. Add a database only if a future business requirement genuinely needs it.
+7. Website Sitemap
+HOME — family hero, brand story, energy ecosystem, solar, batteries, trust and CTA.
+SOLAR — On-grid, Off-grid, Hybrid, Solar Inverters, Solar Batteries, Lithium Storage.
+BATTERIES — Two-wheeler, Four-wheeler, Inverter, Solar, Lithium.
+INVERTERS — Luminous, UTL and other verified products.
+LUBRICANTS — Gulf Oil by application.
+PRODUCTS — searchable/filterable product catalogue.
+ABOUT — family/business story and verified company information.
+PROJECTS / SOLUTIONS — real installations and case studies when supplied.
+CONTACT — address, phone, WhatsApp, map and enquiry form.
+GET A QUOTE — solar consultation / site assessment lead flow.
+8. Homepage Experience
+Hero: father + uncle + cinematic 3D energy environment.
+Trust/contact strip: NS Batteries, Energy for People, phone and location.
+Energy ecosystem: Solar + Inverter + Battery + Mobility.
+Solar solutions: On-grid / Off-grid / Hybrid.
+Interactive 3D energy flow.
+Solar savings calculator.
+Battery and lithium showcase.
+Brands/products: Luminous, UTL, Powerzone, Gulf Oil, SKF and other verified brands.
+Why NS Batteries: quality products, expert service, trusted partner.
+Real storefront + location.
+Family/company story.
+Final conversion block: Get Quote / WhatsApp / Call.
+9. Solar Calculator — Lead Engine
+Input: monthly bill or energy consumption.
+Optional input: location and installation context.
+Estimate: system size (kW), approximate panel count, annual generation, indicative savings and payback.
+Result CTA: Get Site Assessment / Talk to an Expert.
+Store assumptions in a TypeScript configuration file, not a database.
+Label results clearly as estimates; final sizing should come from professional site assessment.
+10. Enquiry / Lead Flow
+Recommended flow:
+USER → FORM → /api/leads → VALIDATE → EMAIL + WHATSAPP → SUCCESS
+Client-side form validation for fast feedback.
+Server-side validation in the Vercel function.
+Rate limiting / spam protection.
+No sensitive information stored in the browser beyond the submission.
+Success state with call/WhatsApp fallback.
+Environment variables for API credentials; never expose secrets in frontend code.
+11. Proposed Source-Code Structure
+ns-batteries/├── app/│   ├── page.tsx│   ├── solar/│   ├── batteries/│   ├── inverters/│   ├── lubricants/│   ├── products/│   ├── about/│   ├── contact/│   └── api/│       └── leads/├── components/│   ├── hero/│   │   ├── Hero.tsx│   │   └── EnergyScene.tsx│   ├── solar/│   │   ├── SolarCalculator.tsx│   │   └── EnergyFlow.tsx│   ├── products/│   ├── navigation/│   └── ui/├── data/│   ├── products.ts│   ├── brands.ts│   └── calculator.ts├── lib/│   ├── validations.ts│   ├── calculator.ts│   └── utils.ts├── public/│   ├── images/│   ├── models/│   └── textures/└── styles/    └── globals.css
+12. UX / Conversion Strategy
+Mobile sticky actions: Call, WhatsApp, Get Quote.
+Keep the hero message short and powerful.
+Make Solar, Batteries and Inverters immediately discoverable.
+Every solar section should have a clear consultation CTA.
+Use real products and project photos to build trust.
+Do not overload pages with animations that delay the user from reaching information.
+Use enquiry forms that are short enough to complete on mobile.
+13. SEO, Performance & Accessibility
+Unique metadata for every page.
+Open Graph images for social sharing.
+Product/LocalBusiness structured data only for verified information.
+Sitemap.xml and robots.txt.
+Responsive images using modern formats.
+Lazy-load noncritical media and 3D.
+Core Web Vitals testing before launch.
+Accessible contrast, keyboard navigation, focus states and descriptive alt text.
+Location-aware content around Ramanathapuram and the actual service area.
+14. Security & Reliability
+Keep email/WhatsApp API keys in Vercel environment variables.
+Never place private API keys in client-side JavaScript.
+Validate and sanitize form submissions on the server.
+Add rate limiting / anti-spam controls.
+Return generic success/error messages; do not leak server details.
+Use HTTPS through Vercel.
+Maintain preview deployments for client approval before production.
+15. Implementation Roadmap
+Phase
+Deliverable
+1 — Discovery
+Confirm exact brand assets, product names, specifications, brands, service area, emails and WhatsApp number.
+2 — Design System
+Typography, colors, layout, navigation, buttons, cards, responsive breakpoints.
+3 — Hero Prototype
+Family portrait composition + Three.js solar environment + scroll choreography.
+4 — Core Build
+Home, Solar, Batteries, Inverters, Lubricants, Products, About, Contact.
+5 — Calculator
+Estimate logic, validation and consultation CTA.
+6 — Lead System
+Vercel API + email/WhatsApp + spam protection.
+7 — SEO & Performance
+Metadata, structured data, image/3D optimization, accessibility and Core Web Vitals.
+8 — QA & Launch
+Device/browser testing, content approval, form testing, final polish and Vercel production deployment.
+16. Final Client Clarifications Needed
+Exact official company/trading name and legal name, if different.
+Official NS Batteries logo in SVG/transparent PNG.
+Approved brand colors, if any.
+Exact product catalogue and current availability.
+Exact capacities/specifications for all lithium products.
+Exact meaning of “Add blue” and whether AdBlue is sold.
+Exact official name/specification of Home 1100.
+Which brands are authorized/currently stocked.
+Whether NS Batteries installs and services solar systems or only sells equipment.
+Service area / districts covered.
+Real solar installation photos and project details.
+Customer testimonials, if available.
+Official email for website enquiries.
+Preferred WhatsApp destination.
+Whether product prices should be displayed or enquiry-only.
+17. Final Product Vision
+The finished website should communicate three things immediately1) Real people and family trust behind NS Batteries.  2) Modern energy capability across solar, batteries and inverters.  3) A simple path to speak with the business or request a solar solution.
+NS BATTERIES  •  ENERGY FOR PEOPLE
