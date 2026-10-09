@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Zap, ShieldCheck, Check, Phone, ArrowRight, Laptop, Tv, Wind, Refrigerator, Clock } from 'lucide-react';
+import ApplianceLoadBuilder from '@/components/interactive/ApplianceLoadBuilder';
 import ProductGrid from '@/components/products/ProductGrid';
 import { COMPANY_INFO } from '@/data/company';
 
@@ -73,7 +74,12 @@ export default function InvertersPage() {
         </div>
       </section>
 
-      {/* 2. Sine Wave vs Square Wave Quality Guide */}
+      {/* 2. Interactive Appliance Load Builder */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <ApplianceLoadBuilder />
+      </section>
+
+      {/* 3. Sine Wave vs Square Wave Quality Guide */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 sm:p-8 rounded-2xl bg-[#061e11] border border-emerald-500/40 space-y-4 shadow-xl">
@@ -104,43 +110,6 @@ export default function InvertersPage() {
               <li className="flex items-center gap-2 text-red-400">✗ Causes excessive heat in AC motor windings</li>
               <li className="flex items-center gap-2 text-red-400">✗ Not recommended for modern electronic appliances</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Load Calculator Guide */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl bg-[#061d10] border border-emerald-500/30 p-6 sm:p-8 space-y-6 shadow-xl">
-          <div className="space-y-1">
-            <h2 className="text-2xl font-bold text-white">
-              Typical Appliance Power Consumption
-            </h2>
-            <p className="text-xs text-slate-400">
-              Calculate your total required wattage to choose between a 900VA (12V) or 2000VA (24V) inverter.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-            {loadEstimates.map((item, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-[#04150b] border border-emerald-950 space-y-2 text-center">
-                <item.icon className="w-5 h-5 text-emerald-400 mx-auto" />
-                <p className="text-xs font-bold text-white">{item.appliance}</p>
-                <p className="text-xs font-mono text-amber-300 font-semibold">{item.power}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-            <span className="text-slate-300">
-              Unsure about your exact requirement? Call our Ramanathapuram store team for a custom load calculation.
-            </span>
-            <a
-              href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-              className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold shrink-0 flex items-center gap-1.5 transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>Talk to Inverter Specialist: {COMPANY_INFO.phones[0].display}</span>
-            </a>
           </div>
         </div>
       </section>

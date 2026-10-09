@@ -18,6 +18,9 @@ import {
 } from 'lucide-react';
 import SolarCalculator from '@/components/solar/SolarCalculator';
 import EnergyFlowSimulator from '@/components/solar/EnergyFlowSimulator';
+import RoofSolarVisualizer3D from '@/components/interactive/RoofSolarVisualizer3D';
+import DayNightEnergyCycle from '@/components/interactive/DayNightEnergyCycle';
+import CoastalResilienceEngine from '@/components/interactive/CoastalResilienceEngine';
 import LeadForm from '@/components/common/LeadForm';
 import { COMPANY_INFO } from '@/data/company';
 
@@ -139,12 +142,22 @@ export default function SolarPage() {
         </div>
       </section>
 
-      {/* 2. Interactive Energy Flow Architecture */}
+      {/* 2. Interactive 3D Rooftop Solar Configurator */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <RoofSolarVisualizer3D />
+      </section>
+
+      {/* 3. Interactive 24-Hour Energy Lifecycle */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <DayNightEnergyCycle />
+      </section>
+
+      {/* 4. Interactive Energy Flow Architecture */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <EnergyFlowSimulator />
       </section>
 
-      {/* 3. Three Solar Architectures Comparison */}
+      {/* 5. Three Solar Architectures Comparison */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -214,7 +227,12 @@ export default function SolarPage() {
         </div>
       </section>
 
-      {/* 4. PM Surya Ghar Subsidy Breakdown */}
+      {/* 6. Coastal & Climate Resilience Shield */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <CoastalResilienceEngine />
+      </section>
+
+      {/* 7. PM Surya Ghar Subsidy Breakdown */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="rounded-2xl bg-[#061d10] border border-emerald-500/30 p-6 sm:p-10 shadow-xl space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -269,12 +287,12 @@ export default function SolarPage() {
         </div>
       </section>
 
-      {/* 5. Interactive Solar Savings Calculator */}
+      {/* 8. Interactive Solar Savings Calculator */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <SolarCalculator />
       </section>
 
-      {/* 6. Consultation Booking Form */}
+      {/* 9. Consultation Booking Form */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="p-8 sm:p-10 rounded-2xl bg-[#061d10] border border-emerald-500/40 shadow-2xl space-y-6">
           <div className="text-center space-y-2">

@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Sun,
   Battery,
@@ -10,7 +9,6 @@ import {
   Phone,
   ArrowRight,
   CheckCircle2,
-  MapPin,
   Clock,
   Sparkles,
   Wrench,
@@ -20,7 +18,13 @@ import {
 } from 'lucide-react';
 import HeroSection from '@/components/hero/HeroSection';
 import EnergyFlowSimulator from '@/components/solar/EnergyFlowSimulator';
+import DayNightEnergyCycle from '@/components/interactive/DayNightEnergyCycle';
+import RoofSolarVisualizer3D from '@/components/interactive/RoofSolarVisualizer3D';
 import SolarCalculator from '@/components/solar/SolarCalculator';
+import ApplianceLoadBuilder from '@/components/interactive/ApplianceLoadBuilder';
+import BatteryTeardown3D from '@/components/interactive/BatteryTeardown3D';
+import BatteryDiagnosticDoctor from '@/components/interactive/BatteryDiagnosticDoctor';
+import CoastalResilienceEngine from '@/components/interactive/CoastalResilienceEngine';
 import BatteryFinder from '@/components/batteries/BatteryFinder';
 import StorefrontShowcase from '@/components/store/StorefrontShowcase';
 import FoundersTrustStory from '@/components/home/FoundersTrustStory';
@@ -211,22 +215,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. INTERACTIVE 3D ENERGY FLOW SIMULATOR */}
+      {/* 4. INTERACTIVE 3D ROOFTOP SOLAR CONFIGURATOR */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <RoofSolarVisualizer3D />
+      </section>
+
+      {/* 5. INTERACTIVE 24-HOUR ENERGY LIFECYCLE SIMULATOR */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <DayNightEnergyCycle />
+      </section>
+
+      {/* 6. INTERACTIVE 3D ENERGY FLOW SIMULATOR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <EnergyFlowSimulator />
       </section>
 
-      {/* 5. SOLAR SAVINGS & TANGEDCO SUBSIDY CALCULATOR */}
+      {/* 7. SOLAR SAVINGS & TANGEDCO SUBSIDY CALCULATOR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <SolarCalculator />
       </section>
 
-      {/* 6. INTELLIGENT BATTERY FINDER */}
+      {/* 8. INTERACTIVE APPLIANCE LOAD MATRIX & INVERTER BUILDER */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <ApplianceLoadBuilder />
+      </section>
+
+      {/* 9. INTERACTIVE BATTERY ANATOMY & TEARDOWN */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <BatteryTeardown3D />
+      </section>
+
+      {/* 10. INTELLIGENT BATTERY FINDER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <BatteryFinder />
       </section>
 
-      {/* 7. FEATURED PRODUCTS CATALOGUE SPOTLIGHT */}
+      {/* 11. VIRTUAL BATTERY DIAGNOSTIC DOCTOR */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <BatteryDiagnosticDoctor />
+      </section>
+
+      {/* 12. RAMANATHAPURAM CLIMATE & COASTAL RESILIENCE ENGINE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <CoastalResilienceEngine />
+      </section>
+
+      {/* 13. FEATURED PRODUCTS CATALOGUE SPOTLIGHT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
@@ -250,15 +284,15 @@ export default function HomePage() {
         <ProductGrid featuredOnly limit={6} />
       </section>
 
-      {/* 8. REAL STOREFRONT SHOWCASE & VIRTUAL TOUR */}
+      {/* 14. REAL STOREFRONT SHOWCASE & VIRTUAL TOUR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <StorefrontShowcase />
       </section>
 
-      {/* 9. FOUNDERS' TRUST & FAMILY LEGACY STORY */}
+      {/* 15. FOUNDERS' TRUST & FAMILY LEGACY STORY */}
       <FoundersTrustStory />
 
-      {/* 10. FINAL CONVERSION & LEAD CAPTURE SECTION */}
+      {/* 16. FINAL CONVERSION & LEAD CAPTURE SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="rounded-2xl bg-gradient-to-b from-[#082a17] to-[#04140b] border border-emerald-500/40 p-6 sm:p-10 lg:p-12 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">

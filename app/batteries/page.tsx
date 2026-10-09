@@ -2,6 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Battery, Bike, Car, Truck, Zap, ShieldCheck, Phone, CheckCircle2, RefreshCw } from 'lucide-react';
 import BatteryFinder from '@/components/batteries/BatteryFinder';
+import BatteryTeardown3D from '@/components/interactive/BatteryTeardown3D';
+import BatteryDiagnosticDoctor from '@/components/interactive/BatteryDiagnosticDoctor';
 import ProductGrid from '@/components/products/ProductGrid';
 import { COMPANY_INFO } from '@/data/company';
 
@@ -59,7 +61,17 @@ export default function BatteriesPage() {
         <BatteryFinder />
       </section>
 
-      {/* 3. Old Battery Exchange / Rebate Explainer */}
+      {/* 3. Interactive Battery Anatomy & Teardown */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <BatteryTeardown3D />
+      </section>
+
+      {/* 4. Virtual Battery Diagnostic Doctor */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <BatteryDiagnosticDoctor />
+      </section>
+
+      {/* 5. Old Battery Exchange / Rebate Explainer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="p-6 sm:p-8 rounded-2xl bg-[#061d10] border border-emerald-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-2">
@@ -85,7 +97,7 @@ export default function BatteriesPage() {
         </div>
       </section>
 
-      {/* 4. Complete Battery Products Catalog */}
+      {/* 6. Complete Battery Products Catalog */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
         <div className="space-y-1">
           <h2 className="text-2xl font-bold text-white">
