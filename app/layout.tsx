@@ -1,13 +1,35 @@
 import type { Metadata } from 'next';
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navigation/Navbar';
 import Footer from '@/components/navigation/Footer';
 import FloatingActions from '@/components/navigation/FloatingActions';
 
+const displayFont = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['500', '600', '700', '800'],
+  display: 'swap',
+});
+
+const sansFont = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+const monoFont = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500', '700'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'NS Batteries | Energy for People — Solar Solutions, Batteries & Inverters Ramanathapuram',
+  title: 'NS Batteries | Energy for People — Solar, Batteries & Power Systems Ramanathapuram',
   description:
-    'Ramanathapuram’s premier family-backed energy partner. High-yield rooftop solar systems (PM Surya Ghar), Amaron automotive batteries, Luminous inverter batteries, pure sine wave inverters, lithium energy storage, and Gulf Oil lubricants.',
+    'Ramanathapuram’s premier clean energy partner. High-efficiency rooftop solar systems (PM Surya Ghar), Amaron automotive batteries, Luminous inverter batteries, pure sine wave inverters, lithium energy storage, and Gulf Oil lubricants.',
   keywords: [
     'NS Batteries',
     'Energy for People',
@@ -38,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#05120a] text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950">
+    <html lang="en" className={`scroll-smooth ${displayFont.variable} ${sansFont.variable} ${monoFont.variable}`}>
+      <body className="min-h-screen flex flex-col bg-[#050a07] text-slate-100 font-sans antialiased selection:bg-emerald-400 selection:text-slate-950">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

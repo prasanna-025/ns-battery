@@ -21,21 +21,24 @@ module.exports = {
           800: '#166534',
           900: '#0b351e',
           950: '#052011',
-          dark: '#07150c',
-          panel: '#0d2215',
-          border: '#1b432b',
+          obsidian: '#050a07',
+          surface: '#09120c',
+          panel: '#0d1810',
+          border: 'rgba(255, 255, 255, 0.08)',
+          borderHover: 'rgba(0, 230, 118, 0.35)',
           neon: '#00e676',
           solar: '#f59e0b',
           solarGlow: '#fbbf24',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Outfit', 'Inter', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'grid-pattern': "linear-gradient(to right, rgba(0, 230, 118, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 230, 118, 0.05) 1px, transparent 1px)",
+        'grid-pattern': "linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
       },
       animation: {
         'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -44,7 +47,7 @@ module.exports = {
       keyframes: {
         'pulse-glow': {
           '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.05)' },
+          '50%': { opacity: '1', transform: 'scale(1.03)' },
         },
         'flow-horizontal': {
           '0%': { transform: 'translateX(-100%)' },

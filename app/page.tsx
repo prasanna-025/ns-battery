@@ -9,7 +9,6 @@ import {
   Phone,
   ArrowRight,
   CheckCircle2,
-  Clock,
   Sparkles,
   Wrench,
   Award,
@@ -17,14 +16,8 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import HeroSection from '@/components/hero/HeroSection';
-import EnergyFlowSimulator from '@/components/solar/EnergyFlowSimulator';
-import DayNightEnergyCycle from '@/components/interactive/DayNightEnergyCycle';
-import RoofSolarVisualizer3D from '@/components/interactive/RoofSolarVisualizer3D';
+import InteractiveEnergyStudio from '@/components/home/InteractiveEnergyStudio';
 import SolarCalculator from '@/components/solar/SolarCalculator';
-import ApplianceLoadBuilder from '@/components/interactive/ApplianceLoadBuilder';
-import BatteryTeardown3D from '@/components/interactive/BatteryTeardown3D';
-import BatteryDiagnosticDoctor from '@/components/interactive/BatteryDiagnosticDoctor';
-import CoastalResilienceEngine from '@/components/interactive/CoastalResilienceEngine';
 import BatteryFinder from '@/components/batteries/BatteryFinder';
 import StorefrontShowcase from '@/components/store/StorefrontShowcase';
 import FoundersTrustStory from '@/components/home/FoundersTrustStory';
@@ -109,8 +102,8 @@ export default function HomePage() {
 
       {/* 2. TRUST & QUICK CONTACT STRIP */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl bg-gradient-to-r from-[#041a0e] via-[#072615] to-[#041a0e] border border-emerald-500/30 p-5 sm:p-6 shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-emerald-900/60">
+        <div className="rounded-2xl bg-gradient-to-r from-[#04140a] via-[#072413] to-[#04140a] border border-white/10 p-5 sm:p-6 shadow-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
             {/* Pillar 1 */}
             <div className="flex items-center gap-3.5 pt-3 md:pt-0">
               <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
@@ -160,7 +153,7 @@ export default function HomePage() {
             <Layers className="w-3.5 h-3.5 text-emerald-400" />
             <span>COMPLETE ENERGY & MOBILITY ECOSYSTEM</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-display tracking-tight">
             One Destination for Solar, Batteries & Power Backups
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -172,7 +165,7 @@ export default function HomePage() {
           {divisions.map((div, idx) => (
             <div
               key={idx}
-              className={`p-6 rounded-2xl bg-gradient-to-b from-[#061f12] to-[#04140b] border ${div.borderColor} hover:border-emerald-400 transition-all duration-300 shadow-xl flex flex-col justify-between group space-y-5`}
+              className={`p-6 rounded-2xl bg-[#09150e] border ${div.borderColor} hover:border-emerald-400 transition-all duration-300 shadow-xl flex flex-col justify-between group space-y-5`}
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -185,7 +178,7 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors font-display">
                     {div.title}
                   </h3>
                   <p className="text-xs text-slate-300 mt-2 leading-relaxed">
@@ -193,7 +186,7 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <div className="space-y-1.5 pt-2 border-t border-emerald-950">
+                <div className="space-y-1.5 pt-2 border-t border-white/5">
                   {div.highlights.map((hl, hIdx) => (
                     <div key={hIdx} className="flex items-center gap-2 text-xs text-slate-300">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -215,52 +208,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. INTERACTIVE 3D ROOFTOP SOLAR CONFIGURATOR */}
+      {/* 4. INTERACTIVE ENERGY STUDIO (UNIFIED WORKBENCH) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <RoofSolarVisualizer3D />
+        <InteractiveEnergyStudio />
       </section>
 
-      {/* 5. INTERACTIVE 24-HOUR ENERGY LIFECYCLE SIMULATOR */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <DayNightEnergyCycle />
-      </section>
-
-      {/* 6. INTERACTIVE 3D ENERGY FLOW SIMULATOR */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <EnergyFlowSimulator />
-      </section>
-
-      {/* 7. SOLAR SAVINGS & TANGEDCO SUBSIDY CALCULATOR */}
+      {/* 5. SOLAR SAVINGS & TANGEDCO SUBSIDY CALCULATOR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <SolarCalculator />
       </section>
 
-      {/* 8. INTERACTIVE APPLIANCE LOAD MATRIX & INVERTER BUILDER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <ApplianceLoadBuilder />
-      </section>
-
-      {/* 9. INTERACTIVE BATTERY ANATOMY & TEARDOWN */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <BatteryTeardown3D />
-      </section>
-
-      {/* 10. INTELLIGENT BATTERY FINDER */}
+      {/* 6. INTELLIGENT BATTERY FINDER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <BatteryFinder />
       </section>
 
-      {/* 11. VIRTUAL BATTERY DIAGNOSTIC DOCTOR */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <BatteryDiagnosticDoctor />
-      </section>
-
-      {/* 12. RAMANATHAPURAM CLIMATE & COASTAL RESILIENCE ENGINE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <CoastalResilienceEngine />
-      </section>
-
-      {/* 13. FEATURED PRODUCTS CATALOGUE SPOTLIGHT */}
+      {/* 7. FEATURED PRODUCTS CATALOGUE SPOTLIGHT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
@@ -268,13 +231,13 @@ export default function HomePage() {
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
               <span>POPULAR AT OUR RAMANATHAPURAM COUNTER</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-display tracking-tight">
               Featured Energy & Automotive Products
             </h2>
           </div>
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-white px-4 py-2.5 rounded-xl bg-emerald-950 border border-emerald-500/30 shrink-0 transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-white px-4 py-2.5 rounded-xl bg-[#09150e] border border-emerald-500/30 shrink-0 transition-colors"
           >
             <span>View Full Product Catalogue</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -284,17 +247,17 @@ export default function HomePage() {
         <ProductGrid featuredOnly limit={6} />
       </section>
 
-      {/* 14. REAL STOREFRONT SHOWCASE & VIRTUAL TOUR */}
+      {/* 8. REAL STOREFRONT SHOWCASE & VIRTUAL TOUR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <StorefrontShowcase />
       </section>
 
-      {/* 15. FOUNDERS' TRUST & FAMILY LEGACY STORY */}
+      {/* 9. FOUNDERS' TRUST & FAMILY LEGACY STORY */}
       <FoundersTrustStory />
 
-      {/* 16. FINAL CONVERSION & LEAD CAPTURE SECTION */}
+      {/* 10. FINAL CONVERSION & LEAD CAPTURE SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl bg-gradient-to-b from-[#082a17] to-[#04140b] border border-emerald-500/40 p-6 sm:p-10 lg:p-12 shadow-2xl">
+        <div className="rounded-2xl bg-gradient-to-b from-[#092214] to-[#041008] border border-white/10 p-6 sm:p-10 lg:p-12 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-5">
@@ -303,7 +266,7 @@ export default function HomePage() {
                 <span>FREE SITE SURVEY & ENERGY AUDIT</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-display leading-tight">
                 Ready to Slash Your Power Bills or Replace a Battery?
               </h2>
 
@@ -350,8 +313,8 @@ export default function HomePage() {
             </div>
 
             {/* Right Form Card */}
-            <div className="lg:col-span-6 bg-[#04170d] p-6 sm:p-8 rounded-2xl border border-emerald-500/30 shadow-xl">
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <div className="lg:col-span-6 bg-[#06120a] p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2 font-display">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                 <span>Request Free Site Assessment / Quote</span>
               </h3>
