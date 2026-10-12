@@ -59,7 +59,7 @@ export default function ProductGrid({
                   : 'bg-[#F5F7FA] text-[#647384] hover:text-[#0B1722] border border-[#E1E7ED]'
               }`}
             >
-              {cat.name}
+              {cat.label}
             </button>
           ))}
         </div>

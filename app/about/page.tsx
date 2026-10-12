@@ -1,8 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, ArrowRight, CheckCircle2, Phone, Trophy, Users, Building2 } from 'lucide-react';
+import { MapPin, ArrowRight, CheckCircle2, Phone, Trophy, Users } from 'lucide-react';
 import FoundersTrustStory from '@/components/home/FoundersTrustStory';
 import StorefrontShowcase from '@/components/store/StorefrontShowcase';
 import CompanyJourney from '@/components/about/CompanyJourney';
@@ -26,31 +25,27 @@ const brandDivisions = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#07090e] text-white">
-
+    <div className="min-h-screen bg-white text-[#17212B]">
       {/* ── 1. EDITORIAL HERO ─────────────────────────────── */}
-      <section className="relative pt-16 pb-20 border-b border-white/5 overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
-          <div className="space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-semibold text-red-400 uppercase tracking-widest">
-              <Trophy className="w-3.5 h-3.5 text-red-500" />
+      <section className="relative pt-12 sm:pt-16 pb-16 sm:pb-20 border-b border-[#E1E7ED] bg-[#F5F7FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+          <div className="space-y-4 max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-[#E1E7ED] text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
+              <Trophy className="w-3.5 h-3.5 text-[#D9232E]" />
               <span>NS Batteries — Energizing Your World Since 1989</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              From a Workshop in 1989 to<br className="hidden sm:block" />{' '}
-              <span className="text-red-500">South Tamil Nadu's No. 1</span> Energy Business.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0B1722] leading-[1.15]">
+              From an Auto Workshop in 1989 to<br className="hidden sm:block" />{' '}
+              <span className="text-[#D9232E]">South Tamil Nadu's No. 1</span> Energy Business.
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-400 font-normal leading-relaxed max-w-3xl">
-              Founded by Hussain as an auto electrician in Ramanathapuram, NS Batteries has grown across three decades into the region's most trusted multi-category battery, solar, and industrial products business — now led by the second generation, H. Mohamed Alshaban.
+            <p className="text-base sm:text-lg text-[#647384] leading-relaxed max-w-3xl">
+              Founded by Hussain as an auto electrician in Ramanathapuram, NS Batteries has grown across nearly four decades into the region's most trusted multi-category battery, solar, and industrial products distributor — now driven by second-generation leadership.
             </p>
 
-            <blockquote className="border-l-2 border-red-500 pl-5 italic text-slate-300 text-base sm:text-lg">
-              "Our legacy is built on trust. Our growth is powered by innovation. Our future is energized by you."
+            <blockquote className="border-l-3 border-[#D9232E] pl-4 italic text-[#0B1722] text-sm sm:text-base font-medium">
+              &ldquo;Our legacy is built on trust. Our growth is powered by innovation. Our future is energized by you.&rdquo;
             </blockquote>
           </div>
 
@@ -59,18 +54,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 2. COMPANY JOURNEY TIMELINE ───────────────────── */}
+      {/* ── 2. COMPANY JOURNEY TIMELINE (1989 to 2026) ──────── */}
       <CompanyJourney />
 
-      {/* ── 3. FOUNDERS & LEADERSHIP ──────────────────────── */}
-      <section className="py-16 sm:py-24 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
+      {/* ── 3. FOUNDERS & LEADERSHIP CARDS ─────────────────── */}
+      <section className="py-16 sm:py-24 border-b border-[#E1E7ED] bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="space-y-3 max-w-2xl">
-            <div className="text-xs font-bold text-red-500 uppercase tracking-widest">
-              FOUNDER & SECOND-GENERATION LEADERSHIP
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
+              <Users className="w-3.5 h-3.5 text-[#D9232E]" />
+              <span>GENERATIONAL HERITAGE</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              The People Behind NS Batteries
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
+              Founder & Second-Generation Leadership
             </h2>
           </div>
 
@@ -78,49 +74,47 @@ export default function AboutPage() {
             {COMPANY_INFO.founders.map((founder, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-[#0c1017] border border-white/10 hover:border-red-500/30 transition-all space-y-4 group"
+                className="p-6 sm:p-7 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] hover:border-[#CBD5E1] transition-all space-y-3"
               >
-                <div className="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-red-500" />
+                <div className="w-10 h-10 rounded-lg bg-white border border-[#E1E7ED] flex items-center justify-center">
+                  <Users className="w-5 h-5 text-[#D9232E]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">{founder.name}</h3>
-                  <p className="text-xs font-semibold text-red-400 mt-1 uppercase tracking-wider">{founder.role}</p>
-                  <p className="text-[11px] font-mono text-slate-500 mt-1">{founder.era}</p>
+                  <h3 className="text-lg font-bold text-[#0B1722]">{founder.name}</h3>
+                  <p className="text-xs font-semibold text-[#D9232E] mt-0.5">{founder.role}</p>
+                  <p className="text-[11px] font-mono text-[#647384] mt-0.5">{founder.era}</p>
                 </div>
-                <p className="text-sm text-slate-400 leading-relaxed">{founder.bio}</p>
+                <p className="text-xs sm:text-sm text-[#647384] leading-relaxed">{founder.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 4. INTERACTIVE TEAM & FOUNDERS STORY ─────────── */}
-      <section className="py-4 sm:py-8">
-        <FoundersTrustStory />
-      </section>
+      {/* ── 4. INTERACTIVE TEAM & FOUNDERS STORY ───────────── */}
+      <FoundersTrustStory />
 
       {/* ── 5. BRAND DIVISIONS ────────────────────────────── */}
-      <section className="py-16 sm:py-24 border-t border-white/5 bg-[#09101a]/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+      <section className="py-16 sm:py-24 border-b border-[#E1E7ED] bg-[#F5F7FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              <div className="text-xs font-bold text-red-500 uppercase tracking-widest">
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-[#E1E7ED] text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
                 BRANDS & BUSINESS DIVISIONS
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
                 Power Zone · Luminous · UTL Solar · Gulf Oil · SKF · Intu
               </h2>
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl">
-                Every brand we carry is authorized, OEM-direct, and backed by our no-counterfeit commitment to Ramanathapuram.
+              <p className="text-sm sm:text-base text-[#647384] leading-relaxed">
+                Every brand we carry is authorized, OEM-direct, and backed by our authentic product warranty commitment in Ramanathapuram.
               </p>
             </div>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-lg self-start md:self-auto shrink-0"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#0B1722] hover:bg-[#122333] text-white font-semibold text-xs uppercase tracking-wider transition-colors self-start md:self-auto shrink-0"
             >
               <span>Browse Products</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-[#D9232E]" />
             </Link>
           </div>
 
@@ -128,16 +122,14 @@ export default function AboutPage() {
             {brandDivisions.map((div, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-[#0c1017] border border-white/10 hover:border-red-500/30 transition-all group"
+                className="p-6 rounded-xl bg-white border border-[#E1E7ED] hover:border-[#CBD5E1] transition-all"
               >
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <h3 className="text-base font-bold text-white group-hover:text-red-400 transition-colors">
-                    {div.brand}
-                  </h3>
-                </div>
-                <p className="text-xs font-semibold text-slate-300 mb-2">{div.category}</p>
-                <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
-                  <CheckCircle2 className="w-3 h-3 shrink-0" />
+                <h3 className="text-base font-bold text-[#0B1722] mb-1">
+                  {div.brand}
+                </h3>
+                <p className="text-xs font-semibold text-[#647384] mb-2">{div.category}</p>
+                <div className="flex items-center gap-1.5 text-xs text-[#16835D] font-medium">
+                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
                   <span>{div.note}</span>
                 </div>
               </div>
@@ -147,44 +139,44 @@ export default function AboutPage() {
       </section>
 
       {/* ── 6. OPERATIONAL PILLARS ────────────────────────── */}
-      <section className="py-16 sm:py-24 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-14">
+      <section className="py-16 sm:py-24 border-b border-[#E1E7ED] bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="text-xs font-bold text-red-500 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
                 HOW WE OPERATE
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
                 Three Non-Negotiable Operational Pillars
               </h2>
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Written into our daily showroom protocols since day one. Every customer walks away with verified serial numbers, factory-sealed products, and round-the-clock technician access.
+              <p className="text-sm sm:text-base text-[#647384] leading-relaxed">
+                Written into our showroom protocols since day one. Every customer walks away with verified serial numbers, factory-sealed products, and continuous technician access.
               </p>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-lg self-start md:self-auto shrink-0"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-semibold text-xs uppercase tracking-wider transition-colors self-start md:self-auto shrink-0 shadow-sm"
             >
               <span>Visit Our Counter</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {COMPANY_INFO.pillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="relative p-8 rounded-3xl bg-[#0c1017] border border-white/10 hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between group"
+                className="p-7 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4"
               >
                 <div>
-                  <div className="text-5xl font-mono font-bold text-white/10 group-hover:text-red-500/20 transition-colors">
+                  <div className="text-4xl font-mono font-extrabold text-[#CBD5E1]">
                     0{idx + 1}
                   </div>
-                  <h3 className="text-xl font-bold text-white mt-4 mb-3 tracking-tight">{pillar.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{pillar.desc}</p>
+                  <h3 className="text-lg font-bold text-[#0B1722] mt-3 mb-2">{pillar.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#647384] leading-relaxed">{pillar.desc}</p>
                 </div>
-                <div className="pt-6 mt-6 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-red-400">
-                  <CheckCircle2 className="w-4 h-4 text-red-500" />
+                <div className="pt-4 border-t border-[#E1E7ED] flex items-center gap-2 text-xs font-semibold text-[#16835D]">
+                  <CheckCircle2 className="w-4 h-4" />
                   <span>Guaranteed at Storefront</span>
                 </div>
               </div>
@@ -194,31 +186,31 @@ export default function AboutPage() {
       </section>
 
       {/* ── 7. FLAGSHIP STOREFRONT SHOWCASE ───────────────── */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8 border-b border-[#E1E7ED]">
         <StorefrontShowcase />
       </section>
 
       {/* ── 8. GEOGRAPHIC SERVICE COVERAGE ────────────────── */}
-      <section className="py-16 sm:py-24 border-t border-white/5 bg-[#0a0e16]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
+      <section className="py-16 sm:py-24 bg-[#F5F7FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
-              <div className="text-xs font-bold text-red-500 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-[#E1E7ED] text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
                 ON-SITE RAPID DISPATCH
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B1722]">
                 Districts & Coastal Regions We Serve
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400">
-                Our equipped mobile field van delivers battery jump-starts, doorstep fitting, and solar rooftop site evaluations across:
+              <p className="text-xs sm:text-sm text-[#647384]">
+                Our equipped field team delivers doorstep battery fitting, battery testing, and rooftop solar site surveys across:
               </p>
             </div>
             <a
               href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-              className="px-5 py-3 rounded-xl bg-[#121722] hover:bg-[#182030] border border-white/10 text-white font-bold text-xs flex items-center gap-2 transition-colors self-start md:self-auto shrink-0"
+              className="px-5 py-3 rounded-lg bg-[#0B1722] hover:bg-[#122333] text-white font-semibold text-xs flex items-center gap-2 transition-colors self-start md:self-auto shrink-0"
             >
-              <Phone className="w-4 h-4 text-red-500" />
-              <span>Call On-Call Mobile Van</span>
+              <Phone className="w-4 h-4 text-[#D9232E]" />
+              <span>Call Mobile Field Service</span>
             </a>
           </div>
 
@@ -226,38 +218,12 @@ export default function AboutPage() {
             {COMPANY_INFO.serviceRegions.map((region, idx) => (
               <div
                 key={idx}
-                className="p-3.5 rounded-xl bg-[#0c1017] border border-white/10 hover:border-red-500/30 text-slate-300 flex flex-col items-center justify-center text-center gap-1.5 transition-colors group"
+                className="p-3.5 rounded-lg bg-white border border-[#E1E7ED] hover:border-[#CBD5E1] flex flex-col items-center justify-center text-center gap-1.5 transition-colors shadow-sm"
               >
-                <MapPin className="w-4 h-4 text-red-500 group-hover:scale-110 transition-transform" />
-                <span className="text-xs font-medium text-white">{region}</span>
+                <MapPin className="w-4 h-4 text-[#D9232E]" />
+                <span className="text-xs font-medium text-[#17212B]">{region}</span>
               </div>
             ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-[#111724] via-[#0c1017] to-[#111724] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div className="space-y-1">
-              <h4 className="text-lg font-bold text-white">
-                Have a Commercial or Residential Requirement?
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-400">
-                Speak directly with the NS Batteries team for honest pricing and accurate solar sizing.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/calculator"
-                className="px-5 py-2.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow"
-              >
-                Calculate Solar kW
-              </Link>
-              <Link
-                href="/contact"
-                className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider transition-colors"
-              >
-                Contact Store
-              </Link>
-            </div>
           </div>
         </div>
       </section>

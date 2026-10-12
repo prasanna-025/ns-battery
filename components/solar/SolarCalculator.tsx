@@ -132,14 +132,14 @@ export default function SolarCalculator() {
               <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1722] font-mono mt-1">
                 {result.recommendedKw} <span className="text-base text-[#D9232E]">kW</span>
               </div>
-              <span className="text-[11px] text-[#647384] mt-1 block">Rooftop Area: ~{result.requiredAreaSqFt} sq.ft</span>
+              <span className="text-[11px] text-[#647384] mt-1 block">Rooftop Area: ~{result.roofAreaSqFt} sq.ft</span>
             </div>
 
             {/* Central Subsidy */}
             <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-center sm:text-left">
               <span className="text-[11px] font-bold uppercase text-[#16835D] block">PM Surya Ghar Subsidy</span>
               <div className="text-2xl sm:text-3xl font-extrabold text-[#16835D] font-mono mt-1">
-                {formatCurrencyINR(result.subsidyAmount)}
+                {formatCurrencyINR(result.estimatedSubsidy)}
               </div>
               <span className="text-[11px] text-[#647384] mt-1 block">Direct DBT bank transfer</span>
             </div>
@@ -148,9 +148,9 @@ export default function SolarCalculator() {
             <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-center sm:text-left">
               <span className="text-[11px] font-bold uppercase text-[#647384] block">Annual Bill Savings</span>
               <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1722] font-mono mt-1">
-                {formatCurrencyINR(result.annualSavings)}
+                {formatCurrencyINR(result.estimatedAnnualSavings)}
               </div>
-              <span className="text-[11px] text-[#647384] mt-1 block">Estimated Payback: ~{result.paybackYears} Years</span>
+              <span className="text-[11px] text-[#647384] mt-1 block">Estimated Payback: ~{result.estimatedPaybackYears} Years</span>
             </div>
           </div>
 
@@ -163,17 +163,17 @@ export default function SolarCalculator() {
             <div className="space-y-2 text-xs sm:text-sm">
               <div className="flex justify-between py-1 border-b border-[#E1E7ED]">
                 <span className="text-[#647384]">Estimated Turnkey System Cost:</span>
-                <span className="font-bold text-[#0B1722] font-mono">{formatCurrencyINR(result.estimatedGrossCost)}</span>
+                <span className="font-bold text-[#0B1722] font-mono">{formatCurrencyINR(result.estimatedSystemCost)}</span>
               </div>
 
               <div className="flex justify-between py-1 border-b border-[#E1E7ED] text-[#16835D]">
                 <span>Less: PM Surya Ghar Central Subsidy (DBT):</span>
-                <span className="font-bold font-mono">- {formatCurrencyINR(result.subsidyAmount)}</span>
+                <span className="font-bold font-mono">- {formatCurrencyINR(result.estimatedSubsidy)}</span>
               </div>
 
               <div className="flex justify-between pt-2 text-sm sm:text-base font-extrabold text-[#0B1722]">
                 <span>Estimated Net Investment:</span>
-                <span className="text-[#D9232E] font-mono">{formatCurrencyINR(result.estimatedNetCost)}</span>
+                <span className="text-[#D9232E] font-mono">{formatCurrencyINR(result.netInvestmentCost)}</span>
               </div>
             </div>
 
