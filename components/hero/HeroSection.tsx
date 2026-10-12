@@ -81,7 +81,7 @@ export default function HeroSection() {
           <div className="lg:col-span-5 relative w-full">
             <div className="relative rounded-2xl overflow-hidden shadow-xl bg-[#F5F7FA] aspect-[4/3] lg:aspect-auto lg:h-[480px] border border-[#E1E7ED] group">
               <Image
-                src="/images/ecosystem/solar-10kwp.jpeg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6gXTi8At3n31FA4WS2em-POCb5Q_SvnuPTmXN4BzKhE9lyBZUE7AgaWASfScf3nLmIMCaUiU28ffPI6ibutHsKp1DnIlIJeU05TkkIzm2YFcqAwKHhn7-mb0ij2RTVHRWRJt8uErLWLZSCdYS0gF0WHbphsTBFUz1XYLucGJ20zx8vsUYKMTCm3NwAFKy_v7Fv1r-fNB4wN5gotX7QHZdnVxi4xvEl9SNmYxVftSNhDzHtE044_26-w"
                 alt="Authentic Residential Rooftop Solar Installation by NS Batteries in Tamil Nadu"
                 fill
                 priority
