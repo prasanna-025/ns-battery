@@ -4,19 +4,21 @@
 
 @layer base {
   :root {
-    --color-obsidian: #060b10;
-    --color-surface: #0a141e;
-    --color-panel: #0e1c2a;
-    --color-vikram-red: #cd2028;
-    --color-vikram-darkred: #b0171e;
-    --color-emerald-glow: #00e676;
-    --color-solar: #f59e0b;
-    --border-hairline: rgba(255, 255, 255, 0.08);
+    --color-primary-navy: #0B1722;
+    --color-secondary-navy: #122333;
+    --color-dark-text: #17212B;
+    --color-primary-red: #D9232E;
+    --color-hover-red: #B91F29;
+    --color-solar-amber: #F4B323;
+    --color-light-bg: #F5F7FA;
+    --color-secondary-text: #647384;
+    --color-border: #E1E7ED;
+    --color-success-green: #16835D;
   }
 
   body {
-    background-color: var(--color-obsidian);
-    color: #f1f5f9;
+    background-color: #FFFFFF;
+    color: #17212B;
     overflow-x: hidden;
   }
 
@@ -26,7 +28,7 @@
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid #cd2028;
+    outline: 2px solid #D9232E;
     outline-offset: 2px;
   }
 }
@@ -36,57 +38,57 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #060b10;
+  background: #F5F7FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a2a38;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #cd2028;
+  background: #D9232E;
 }
 
-/* Vikram Corporate Button */
+/* Corporate Primary Button */
+.corporate-btn,
 .vikram-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #cd2028;
+  background-color: #D9232E;
   color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.85rem 1.85rem;
-  border-radius: 6px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 14px rgba(205, 32, 40, 0.35);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(217, 35, 46, 0.25);
 }
 
+.corporate-btn:hover,
 .vikram-btn:hover {
-  background-color: #b0171e;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(205, 32, 40, 0.5);
+  background-color: #B91F29;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(217, 35, 46, 0.35);
 }
 
+.corporate-btn-outline,
 .vikram-btn-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.85rem 1.85rem;
-  border-radius: 6px;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  transition: all 0.25s ease;
+  color: #17212B;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  border: 1.5px solid #E1E7ED;
+  transition: all 0.2s ease-in-out;
 }
 
+.corporate-btn-outline:hover,
 .vikram-btn-outline:hover {
-  border-color: #cd2028;
-  color: #ffffff;
-  background: rgba(205, 32, 40, 0.12);
+  border-color: #D9232E;
+  color: #D9232E;
+  background-color: rgba(217, 35, 46, 0.04);
 }
 
 /* Vikram Action Tabs Dock (Right Sidebar) */

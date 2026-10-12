@@ -36,13 +36,13 @@ function useCountUp(target: string, isVisible: boolean) {
 function StatCard({ stat, isVisible }: { stat: typeof COMPANY_INFO.stats[0]; isVisible: boolean }) {
   const animated = useCountUp(stat.value, isVisible);
   return (
-    <div className="p-6 sm:p-8 rounded-2xl bg-[#0c1017] border border-white/10 hover:border-red-500/30 transition-all group text-center sm:text-left">
-      <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-red-400 transition-colors font-mono">
+    <div className="p-6 sm:p-7 rounded-xl bg-white border border-[#E1E7ED] hover:border-[#CBD5E1] transition-shadow duration-200 hover:shadow-sm text-center sm:text-left">
+      <div className="text-3xl sm:text-4xl font-extrabold text-[#0B1722] tracking-tight font-sans">
         {animated}
       </div>
-      <div className="text-sm font-semibold text-slate-200 mt-2">{stat.label}</div>
+      <div className="text-sm font-bold text-[#17212B] mt-2">{stat.label}</div>
       {'sub' in stat && (
-        <div className="text-[11px] text-slate-500 mt-1 uppercase tracking-wider font-mono">
+        <div className="text-xs text-[#647384] mt-1 font-medium">
           {(stat as any).sub}
         </div>
       )}

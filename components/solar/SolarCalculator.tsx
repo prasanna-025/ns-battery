@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Sun, IndianRupee, ShieldCheck, TreePine, Zap, ArrowRight, CheckCircle2, Building, Home, Sparkles } from 'lucide-react';
+import { Sun, IndianRupee, ShieldCheck, TreePine, Zap, ArrowRight, CheckCircle2, Building, Home } from 'lucide-react';
 import { calculateSolarSavings } from '@/data/solarCalculator';
 import { formatCurrencyINR } from '@/lib/utils';
 import Link from 'next/link';
@@ -15,41 +15,37 @@ export default function SolarCalculator() {
   }, [monthlyBill, connectionType]);
 
   return (
-    <div id="calculator" className="w-full rounded-xl bg-[#0a1622] border border-white/10 p-6 sm:p-8 md:p-10 shadow-2xl relative overflow-hidden">
-      {/* Decorative Glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#cd2028]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div id="calculator" className="w-full rounded-2xl bg-white border border-[#E1E7ED] p-6 sm:p-8 md:p-10 shadow-sm relative">
       {/* Title */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto mb-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-sm bg-[#07111a] border-l-4 border-[#cd2028] border-y border-r border-white/10 text-white text-xs font-bold uppercase tracking-wider">
-          <Sun className="w-3.5 h-3.5 text-amber-400" />
+      <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+          <Sun className="w-3.5 h-3.5 text-[#F4B323]" />
           <span>SOLAR CALCULATOR & PM SURYA GHAR SUBSIDY ESTIMATOR</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight font-display">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
           Calculate Your Rooftop Solar Savings & Subsidies
         </h2>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-sm sm:text-base text-[#647384] leading-relaxed">
           See how quickly rooftop solar pays for itself in Tamil Nadu with net metering and the central PM Surya Ghar Muft Bijli Yojana.
         </p>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Interactive Controls */}
-        <div className="lg:col-span-5 space-y-6 bg-[#08121c] p-5 sm:p-6 rounded-xl border border-white/10 backdrop-blur-md">
+        <div className="lg:col-span-5 space-y-6 bg-[#F5F7FA] p-5 sm:p-6 rounded-xl border border-[#E1E7ED]">
           {/* Connection Type Switcher */}
           <div>
-            <label className="block text-xs font-bold text-white uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-[#0B1722] uppercase tracking-wider mb-2">
               Property / Connection Type
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => setConnectionType('residential')}
-                className={`py-2.5 px-3 rounded text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
+                className={`py-2.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                   connectionType === 'residential'
-                    ? 'bg-[#cd2028] text-white shadow-md'
-                    : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
+                    ? 'bg-[#D9232E] text-white shadow-sm'
+                    : 'bg-white text-[#647384] hover:text-[#0B1722] border border-[#E1E7ED]'
                 }`}
               >
                 <Home className="w-3.5 h-3.5" />
@@ -58,65 +54,60 @@ export default function SolarCalculator() {
               <button
                 type="button"
                 onClick={() => setConnectionType('commercial')}
-                className={`py-2.5 px-3 rounded text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
+                className={`py-2.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                   connectionType === 'commercial'
-                    ? 'bg-[#cd2028] text-white shadow-md'
-                    : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
+                    ? 'bg-[#D9232E] text-white shadow-sm'
+                    : 'bg-white text-[#647384] hover:text-[#0B1722] border border-[#E1E7ED]'
                 }`}
               >
                 <Building className="w-3.5 h-3.5" />
-                <span>Commercial / Shop</span>
+                <span>Commercial Facility</span>
               </button>
             </div>
-            {connectionType === 'residential' && (
-              <p className="text-[11px] text-amber-300 mt-2 flex items-center gap-1.5 font-medium">
-                <Sparkles className="w-3 h-3 text-amber-400" />
-                PM Surya Ghar Subsidy applied automatically (Up to ₹78,000)
-              </p>
-            )}
           </div>
 
-          {/* Monthly Electricity Bill Slider */}
+          {/* Monthly Bill Input */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-bold text-emerald-300 uppercase tracking-wider">
-                Average Monthly Power Bill
+              <label className="text-xs font-bold text-[#0B1722] uppercase tracking-wider">
+                Current Monthly Power Bill
               </label>
-              <span className="text-lg font-extrabold text-amber-400 font-mono">
+              <span className="text-base font-bold text-[#D9232E] font-mono">
                 {formatCurrencyINR(monthlyBill)}
               </span>
             </div>
 
+            {/* Slider */}
             <input
               type="range"
-              min={1000}
-              max={30000}
-              step={500}
+              min="1000"
+              max="50000"
+              step="500"
               value={monthlyBill}
               onChange={(e) => setMonthlyBill(Number(e.target.value))}
-              className="w-full h-2.5 bg-emerald-950 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+              className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#D9232E]"
             />
 
-            <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-              <span>₹1,000/mo</span>
-              <span>₹15,000/mo</span>
-              <span>₹30,000+/mo</span>
+            <div className="flex justify-between text-[11px] text-[#647384] font-mono">
+              <span>₹1,000</span>
+              <span>₹25,000</span>
+              <span>₹50,000+</span>
             </div>
           </div>
 
-          {/* Quick Preset Buttons */}
+          {/* Preset Buttons */}
           <div className="space-y-1.5">
-            <p className="text-[11px] text-slate-400 font-medium">Quick Select Bill:</p>
+            <span className="text-[11px] font-semibold text-[#647384]">Quick Presets:</span>
             <div className="flex flex-wrap gap-2">
-              {[2000, 3500, 5000, 8000, 15000].map((preset) => (
+              {[2500, 4500, 8000, 15000, 25000].map((preset) => (
                 <button
                   key={preset}
                   type="button"
                   onClick={() => setMonthlyBill(preset)}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all ${
+                  className={`text-xs px-2.5 py-1 rounded border font-mono transition-colors ${
                     monthlyBill === preset
-                      ? 'bg-amber-400 text-slate-950 font-bold'
-                      : 'bg-emerald-950/80 text-emerald-300 hover:bg-emerald-900 border border-emerald-800/40'
+                      ? 'bg-[#0B1722] text-white border-[#0B1722]'
+                      : 'bg-white text-[#647384] border-[#E1E7ED] hover:border-[#CBD5E1]'
                   }`}
                 >
                   ₹{preset.toLocaleString('en-IN')}
@@ -125,131 +116,89 @@ export default function SolarCalculator() {
             </div>
           </div>
 
-          {/* Consultation Note */}
-          <div className="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-xs text-slate-300 space-y-1">
-            <p className="font-semibold text-white flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              Tailored Ramanathapuram Engineering
-            </p>
-            <p className="text-[11px] text-slate-400 leading-relaxed">
-              Our certified technicians visit your premises to assess shadow-free roof angles, structural strength, and grid connectivity.
-            </p>
+          <div className="p-4 rounded-lg bg-white border border-[#E1E7ED] text-xs text-[#647384] space-y-1">
+            <p className="font-semibold text-[#0B1722]">TANGEDCO Sizing Formula:</p>
+            <p>Calculated assuming ~4.5 to 5 peak sun hours in coastal Ramanathapuram district with bi-directional net metering.</p>
           </div>
         </div>
 
-        {/* Right Column: Calculated Results Display */}
+        {/* Right Column: Calculated Results */}
         <div className="lg:col-span-7 space-y-6">
-          {/* Main Key Highlights Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-            {/* System Size */}
-            <div className="p-4 rounded-xl bg-[#051a0e] border border-emerald-500/30 space-y-1">
-              <span className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider block">
-                Recommended Size
-              </span>
-              <p className="text-2xl sm:text-3xl font-extrabold text-white">
-                {result.recommendedKw} <span className="text-base text-emerald-400 font-normal">kW</span>
-              </p>
-              <p className="text-[11px] text-slate-400">
-                ~{result.panelCount} Mono PERC Panels
-              </p>
+          {/* Key Output Metrics Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* Recommended Capacity */}
+            <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-center sm:text-left">
+              <span className="text-[11px] font-bold uppercase text-[#647384] block">Recommended System</span>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1722] font-mono mt-1">
+                {result.recommendedKw} <span className="text-base text-[#D9232E]">kW</span>
+              </div>
+              <span className="text-[11px] text-[#647384] mt-1 block">Rooftop Area: ~{result.requiredAreaSqFt} sq.ft</span>
             </div>
 
-            {/* Annual Savings */}
-            <div className="p-4 rounded-xl bg-[#051a0e] border border-amber-500/30 space-y-1">
-              <span className="text-[11px] font-semibold text-amber-400 uppercase tracking-wider block">
-                Yearly Savings
-              </span>
-              <p className="text-2xl sm:text-3xl font-extrabold text-amber-300 font-mono">
-                {formatCurrencyINR(result.estimatedAnnualSavings)}
-              </p>
-              <p className="text-[11px] text-slate-400">
-                ~{result.monthlyGenerationKwh} Units / month
-              </p>
+            {/* Central Subsidy */}
+            <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-center sm:text-left">
+              <span className="text-[11px] font-bold uppercase text-[#16835D] block">PM Surya Ghar Subsidy</span>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#16835D] font-mono mt-1">
+                {formatCurrencyINR(result.subsidyAmount)}
+              </div>
+              <span className="text-[11px] text-[#647384] mt-1 block">Direct DBT bank transfer</span>
             </div>
 
-            {/* Payback Period */}
-            <div className="col-span-2 sm:col-span-1 p-4 rounded-xl bg-[#051a0e] border border-emerald-500/30 space-y-1">
-              <span className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider block">
-                Est. Payback Time
-              </span>
-              <p className="text-2xl sm:text-3xl font-extrabold text-emerald-300">
-                {result.estimatedPaybackYears} <span className="text-base text-slate-300 font-normal">Years</span>
-              </p>
-              <p className="text-[11px] text-slate-400">
-                25-Yr Free Energy Post ROI
-              </p>
+            {/* Estimated Annual Savings */}
+            <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-center sm:text-left">
+              <span className="text-[11px] font-bold uppercase text-[#647384] block">Annual Bill Savings</span>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1722] font-mono mt-1">
+                {formatCurrencyINR(result.annualSavings)}
+              </div>
+              <span className="text-[11px] text-[#647384] mt-1 block">Estimated Payback: ~{result.paybackYears} Years</span>
             </div>
           </div>
 
-          {/* Financial Breakdown Card */}
-          <div className="p-5 sm:p-6 rounded-xl bg-[#08121c] border border-white/10 space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center justify-between">
-              <span>Estimated Cost & Subsidy Breakdown</span>
-              <span className="text-xs text-slate-400 font-normal">(Indicative Estimates)</span>
+          {/* Detailed Financial Overview Box */}
+          <div className="p-6 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1722]">
+              Estimated Investment Breakdown
             </h4>
 
-            <div className="space-y-2.5 text-xs sm:text-sm">
-              <div className="flex justify-between items-center text-slate-300 pb-2 border-b border-white/5">
-                <span>Indicative Turnkey System Cost ({result.recommendedKw} kW)</span>
-                <span className="font-semibold text-white font-mono">{formatCurrencyINR(result.estimatedSystemCost)}</span>
+            <div className="space-y-2 text-xs sm:text-sm">
+              <div className="flex justify-between py-1 border-b border-[#E1E7ED]">
+                <span className="text-[#647384]">Estimated Turnkey System Cost:</span>
+                <span className="font-bold text-[#0B1722] font-mono">{formatCurrencyINR(result.estimatedGrossCost)}</span>
               </div>
 
-              {connectionType === 'residential' && (
-                <div className="flex justify-between items-center text-amber-400 font-medium pb-2 border-b border-white/5">
-                  <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    Central Govt Subsidy (PM Surya Ghar)
-                  </span>
-                  <span className="font-bold font-mono">- {formatCurrencyINR(result.estimatedSubsidy)}</span>
-                </div>
-              )}
+              <div className="flex justify-between py-1 border-b border-[#E1E7ED] text-[#16835D]">
+                <span>Less: PM Surya Ghar Central Subsidy (DBT):</span>
+                <span className="font-bold font-mono">- {formatCurrencyINR(result.subsidyAmount)}</span>
+              </div>
 
-              <div className="flex justify-between items-center text-white font-bold pt-1 text-sm sm:text-base">
-                <span className="text-slate-300">Estimated Net Investment</span>
-                <span className="text-[#cd2028] text-lg sm:text-xl font-mono">
-                  {formatCurrencyINR(result.netInvestmentCost)}
-                </span>
+              <div className="flex justify-between pt-2 text-sm sm:text-base font-extrabold text-[#0B1722]">
+                <span>Estimated Net Investment:</span>
+                <span className="text-[#D9232E] font-mono">{formatCurrencyINR(result.estimatedNetCost)}</span>
               </div>
             </div>
 
-            {/* Practical Technical Specs */}
-            <div className="pt-3 border-t border-white/10 grid grid-cols-2 gap-3 text-xs text-slate-300">
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Roof Required: <strong className="text-white">~{result.roofAreaSqFt} sq. ft</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TreePine className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Offset: <strong className="text-white">{result.co2ReductionTonsPerYear} Tons CO₂/yr</strong></span>
-              </div>
-            </div>
+            <p className="text-[11px] text-[#647384] leading-relaxed pt-1">
+              * Note: Calculations are estimates based on standard residential rooftop guidelines in Tamil Nadu. Actual pricing depends on structural requirements, wiring runs, and shadow profiles.
+            </p>
           </div>
 
-          {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          {/* Action CTA */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
             <Link
-              href={`/quote?kw=${result.recommendedKw}&bill=${monthlyBill}&type=${connectionType}`}
-              className="vikram-btn flex-1 py-3.5 px-6 rounded text-xs font-bold uppercase tracking-wider text-center text-white flex items-center justify-center gap-2"
+              href="/quote"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm text-center flex items-center justify-center gap-2"
             >
-              <span>Book Free Site Assessment for {result.recommendedKw} kW</span>
+              <span>Get Free Site Inspection</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-            <a
-              href={`https://wa.me/918870120911?text=${encodeURIComponent(
-                `Hello NS Batteries, I calculated my rooftop solar on your website. My bill is ₹${monthlyBill}/month and recommended size is ${result.recommendedKw} kW. Please provide an official quotation.`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-3.5 px-5 rounded text-xs font-bold uppercase tracking-wider text-[#25D366] bg-[#0c1a27] border border-white/10 hover:bg-[#25D366] hover:text-white transition-all text-center flex items-center justify-center gap-1.5"
+            <Link
+              href="/solar#pm-surya-ghar"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-lg bg-white hover:bg-slate-50 border border-[#E1E7ED] text-[#0B1722] text-xs font-bold uppercase tracking-wider transition-colors text-center"
             >
-              <span>Instant WhatsApp Quote</span>
-            </a>
+              Learn About Subsidy Rules
+            </Link>
           </div>
-
-          <p className="text-[11px] text-slate-400 text-center italic">
-            *Estimates based on southern Tamil Nadu solar irradiance and current TANGEDCO residential slabs. Exact capacity confirmed upon physical roof survey.
-          </p>
         </div>
       </div>
     </div>
