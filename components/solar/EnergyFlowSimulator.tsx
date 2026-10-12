@@ -52,7 +52,7 @@ export default function EnergyFlowSimulator() {
       homeKw: '3.7 kW (Full Backup)',
       inverterToGrid: false,
       gridKw: 'DISCONNECTED (Safe Islanding)',
-      gridColor: 'text-[#D9232E]',
+      gridColor: 'text-[#16a34a]',
       description: 'Grid voltage drops to 0V. The NS Hybrid Inverter disconnects from the grid in <10ms to protect line workers, keeping your home completely illuminated with zero flicker.',
     },
   };
@@ -121,7 +121,7 @@ export default function EnergyFlowSimulator() {
       {/* Header & Mode Toggles */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#D9232E] mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#16a34a] mb-1">
             <Radio className="w-3.5 h-3.5" />
             <span className="uppercase tracking-wider">Interactive Energy Flow</span>
           </div>
@@ -156,7 +156,7 @@ export default function EnergyFlowSimulator() {
             onClick={() => setMode('outage')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               mode === 'outage'
-                ? 'bg-[#D9232E] text-white shadow-sm font-bold'
+                ? 'bg-[#16a34a] text-white shadow-sm font-bold'
                 : 'text-[#647384] hover:text-[#0B1722]'
             }`}
           >
@@ -268,15 +268,15 @@ export default function EnergyFlowSimulator() {
           onClick={() => setSelectedNode('home')}
           className={`col-span-2 md:col-span-1 p-4 rounded-xl border transition-all text-left flex flex-col justify-between ${
             selectedNode === 'home'
-              ? 'bg-[#D9232E]/10 border-[#D9232E] shadow-sm'
-              : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#D9232E]/50'
+              ? 'bg-[#16a34a]/10 border-[#16a34a] shadow-sm'
+              : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#16a34a]/50'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="w-9 h-9 rounded-lg bg-[#D9232E]/15 flex items-center justify-center text-[#D9232E]">
+            <div className="w-9 h-9 rounded-lg bg-[#16a34a]/15 flex items-center justify-center text-[#16a34a]">
               <Home className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold text-[#D9232E] uppercase">Load</span>
+            <span className="text-[10px] font-bold text-[#16a34a] uppercase">Load</span>
           </div>
           <div>
             <p className="text-xs text-[#647384]">Home + Grid</p>

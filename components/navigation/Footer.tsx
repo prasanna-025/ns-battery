@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <div className="relative h-11 w-48">
               <Image
-                src="/logos/asset_4.svg"
+                src="/logos/asset_2.svg"
                 alt="NS Batteries"
                 fill
                 className="object-contain"
@@ -25,7 +25,7 @@ export default function Footer() {
               Ramanathapuram’s authorized partner for Tier-1 solar modules, automotive batteries, inverters, and industrial lubrication. Built on trust, technical service, and community relationships since 1989.
             </p>
             <div className="flex items-start gap-2.5 text-xs text-slate-300 pt-1">
-              <MapPin className="w-4 h-4 text-[#D9232E] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#16a34a] shrink-0 mt-0.5" />
               <span>{COMPANY_INFO.address}</span>
             </div>
           </div>
@@ -119,16 +119,16 @@ export default function Footer() {
             <div className="space-y-2 pt-1 font-mono text-xs">
               <a
                 href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-                className="flex items-center gap-2 text-white hover:text-[#D9232E] transition-colors"
+                className="flex items-center gap-2 text-white hover:text-[#16a34a] transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+                <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
                 <span className="font-semibold">{COMPANY_INFO.phones[0].display}</span>
               </a>
               <a
                 href={`tel:+91${COMPANY_INFO.phones[1].raw.slice(2)}`}
-                className="flex items-center gap-2 text-white hover:text-[#D9232E] transition-colors"
+                className="flex items-center gap-2 text-white hover:text-[#16a34a] transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+                <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
                 <span className="font-semibold">{COMPANY_INFO.phones[1].display}</span>
               </a>
               <a

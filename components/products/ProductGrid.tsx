@@ -72,7 +72,7 @@ export default function ProductGrid({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search products..."
-            className="w-full pl-9 pr-8 py-2 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] placeholder-[#647384] focus:bg-white focus:border-[#D9232E] focus:outline-none transition-colors"
+            className="w-full pl-9 pr-8 py-2 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] placeholder-[#647384] focus:bg-white focus:border-[#16a34a] focus:outline-none transition-colors"
           />
           {searchQuery && (
             <button

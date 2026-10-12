@@ -97,8 +97,8 @@ export default function CoastalResilienceEngine() {
               onClick={() => setActiveTab(key)}
               className={`p-3.5 rounded-xl border flex items-center justify-center gap-2 transition-all text-xs font-semibold ${
                 activeTab === key
-                  ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
-                  : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E] hover:text-[#D9232E]'
+                  ? 'bg-[#16a34a] text-white border-[#16a34a] shadow-sm'
+                  : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#16a34a] hover:text-[#16a34a]'
               }`}
             >
               <tab.icon className="w-4 h-4 shrink-0" />
@@ -112,7 +112,7 @@ export default function CoastalResilienceEngine() {
       <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7 space-y-4">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-[#16a34a] uppercase tracking-wider">
               {current.tagline}
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-[#0B1722]">

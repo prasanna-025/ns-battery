@@ -102,8 +102,8 @@ export default function FoundersTrustStory() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
-            <Users className="w-3.5 h-3.5 text-[#D9232E]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#16a34a]">
+            <Users className="w-3.5 h-3.5 text-[#16a34a]" />
             <span>FOUNDER & SECOND-GENERATION LEADERSHIP</span>
           </div>
 
@@ -126,7 +126,7 @@ export default function FoundersTrustStory() {
                 onClick={() => setActiveId(leader.id)}
                 className={`text-left p-3.5 rounded-lg transition-all flex flex-col justify-between ${
                   isActive
-                    ? 'bg-white border-l-4 border-[#D9232E] shadow-sm text-[#0B1722]'
+                    ? 'bg-white border-l-4 border-[#16a34a] shadow-sm text-[#0B1722]'
                     : 'text-[#647384] hover:text-[#0B1722] hover:bg-white/50'
                 }`}
               >
@@ -140,7 +140,7 @@ export default function FoundersTrustStory() {
                 </div>
                 <div className="pt-2 flex items-center justify-between text-[11px] text-[#647384]">
                   <span className="line-clamp-1">{leader.role.split('&')[0]}</span>
-                  <ChevronRight className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-[#D9232E]' : 'opacity-40'}`} />
+                  <ChevronRight className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-[#16a34a]' : 'opacity-40'}`} />
                 </div>
               </button>
             );
@@ -171,7 +171,7 @@ export default function FoundersTrustStory() {
           <div className="lg:col-span-7 space-y-5">
             {/* Quote */}
             <div className="p-5 rounded-xl bg-white border border-[#E1E7ED] shadow-sm space-y-2">
-              <Quote className="w-6 h-6 text-[#D9232E]" />
+              <Quote className="w-6 h-6 text-[#16a34a]" />
               <p className="text-sm sm:text-base text-[#17212B] italic leading-relaxed">
                 &ldquo;{activeLeader.quote}&rdquo;
               </p>
@@ -201,7 +201,7 @@ export default function FoundersTrustStory() {
                 href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0B1722] hover:bg-[#122333] text-white text-xs font-semibold transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+                <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
                 <span>Call Storefront</span>
               </a>
               <a

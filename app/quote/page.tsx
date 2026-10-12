@@ -69,7 +69,7 @@ export default function QuotePage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-8 space-y-8">
         {/* Title */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#16a34a]">
             <Sun className="w-3.5 h-3.5 text-[#F4B323]" />
             <span>OFFICIAL SOLAR ESTIMATOR & ASSESSMENT</span>
           </div>
@@ -120,7 +120,7 @@ export default function QuotePage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-[#647384]">Est. Annual Bill Savings:</span>
-                <span className="font-bold text-[#D9232E] font-mono">{formatCurrencyINR(calculation.estimatedAnnualSavings)}</span>
+                <span className="font-bold text-[#16a34a] font-mono">{formatCurrencyINR(calculation.estimatedAnnualSavings)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-[#647384]">Central Subsidy:</span>
@@ -148,7 +148,7 @@ export default function QuotePage() {
                 href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
                 className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white border border-[#E1E7ED] text-[#0B1722] hover:bg-[#F5F7FA] font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#D9232E]" />
+                <Phone className="w-4 h-4 text-[#16a34a]" />
                 <span>Call Store: {COMPANY_INFO.phones[0].display}</span>
               </a>
             </div>
@@ -189,7 +189,7 @@ export default function QuotePage() {
                 <div className="space-y-3 pt-2">
                   <div className="flex justify-between items-center text-xs">
                     <span className="font-semibold text-[#17212B]">Average Monthly Electricity Bill:</span>
-                    <span className="text-lg font-bold text-[#D9232E] font-mono">{formatCurrencyINR(billAmount)}</span>
+                    <span className="text-lg font-bold text-[#16a34a] font-mono">{formatCurrencyINR(billAmount)}</span>
                   </div>
                   <input
                     type="range"
@@ -198,7 +198,7 @@ export default function QuotePage() {
                     step={500}
                     value={billAmount}
                     onChange={(e) => setBillAmount(Number(e.target.value))}
-                    className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#D9232E]"
+                    className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#16a34a]"
                   />
                 </div>
 
@@ -210,7 +210,7 @@ export default function QuotePage() {
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="w-full py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
+                  className="w-full py-3.5 rounded-lg bg-[#16a34a] hover:bg-[#15803d] text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
                 >
                   <span>Continue to Step 2</span>
                   <ArrowRight className="w-4 h-4" />
@@ -243,7 +243,7 @@ export default function QuotePage() {
                       onClick={() => setSystemType(s.type)}
                       className={`p-5 rounded-xl border cursor-pointer transition-all flex flex-col justify-between space-y-3 ${
                         systemType === s.type
-                          ? 'bg-[#F5F7FA] border-[#D9232E] shadow-sm'
+                          ? 'bg-[#F5F7FA] border-[#16a34a] shadow-sm'
                           : 'bg-white border-[#E1E7ED] hover:border-[#CBD5E1]'
                       }`}
                     >
@@ -251,7 +251,7 @@ export default function QuotePage() {
                         <h4 className="text-sm font-bold text-[#0B1722]">{s.type}</h4>
                         <p className="text-xs text-[#647384] mt-2 leading-relaxed">{s.desc}</p>
                       </div>
-                      <span className={`text-[11px] font-semibold ${systemType === s.type ? 'text-[#D9232E]' : 'text-slate-400'}`}>
+                      <span className={`text-[11px] font-semibold ${systemType === s.type ? 'text-[#16a34a]' : 'text-slate-400'}`}>
                         {systemType === s.type ? '✓ Selected' : 'Click to select'}
                       </span>
                     </div>
@@ -269,7 +269,7 @@ export default function QuotePage() {
                   <button
                     type="button"
                     onClick={() => setStep(3)}
-                    className="w-2/3 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
+                    className="w-2/3 py-3.5 rounded-lg bg-[#16a34a] hover:bg-[#15803d] text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
                   >
                     <span>Continue to Proposal Details</span>
                     <ArrowRight className="w-4 h-4" />
@@ -290,7 +290,7 @@ export default function QuotePage() {
                   </div>
                   <div>
                     <span className="text-[#647384] block">Yearly Savings:</span>
-                    <strong className="text-[#D9232E] font-mono text-sm">{formatCurrencyINR(calculation.estimatedAnnualSavings)}</strong>
+                    <strong className="text-[#16a34a] font-mono text-sm">{formatCurrencyINR(calculation.estimatedAnnualSavings)}</strong>
                   </div>
                   <div>
                     <span className="text-[#647384] block">Subsidy:</span>
@@ -311,7 +311,7 @@ export default function QuotePage() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. S. Ramanathan"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#D9232E]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#16a34a]"
                     />
                   </div>
                   <div>
@@ -322,7 +322,7 @@ export default function QuotePage() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="e.g. 98765 43210"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#D9232E]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#16a34a]"
                     />
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function QuotePage() {
                       value={town}
                       onChange={(e) => setTown(e.target.value)}
                       placeholder="Ramanathapuram / Rameswaram / Paramakudi"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#D9232E]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#16a34a]"
                     />
                   </div>
                   <div>
@@ -345,7 +345,7 @@ export default function QuotePage() {
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="RCC roof, sheet roof, battery backup..."
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#D9232E]"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#17212B] focus:outline-none focus:border-[#16a34a]"
                     />
                   </div>
                 </div>
@@ -361,7 +361,7 @@ export default function QuotePage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-2/3 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm disabled:opacity-50"
+                    className="w-2/3 py-3.5 rounded-lg bg-[#16a34a] hover:bg-[#15803d] text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm disabled:opacity-50"
                   >
                     <span>{isSubmitting ? 'Generating Proposal...' : 'Submit & Book Free Roof Inspection'}</span>
                     <ArrowRight className="w-4 h-4" />

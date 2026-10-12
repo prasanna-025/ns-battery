@@ -317,8 +317,8 @@ export default function RoofSolarVisualizer3D() {
                 onClick={() => setRoofType('rcc')}
                 className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all border ${
                   roofType === 'rcc'
-                    ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
-                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E]'
+                    ? 'bg-[#16a34a] text-white border-[#16a34a] shadow-sm'
+                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#16a34a]'
                 }`}
               >
                 Flat RCC Slab
@@ -328,8 +328,8 @@ export default function RoofSolarVisualizer3D() {
                 onClick={() => setRoofType('tiled')}
                 className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all border ${
                   roofType === 'tiled'
-                    ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
-                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E]'
+                    ? 'bg-[#16a34a] text-white border-[#16a34a] shadow-sm'
+                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#16a34a]'
                 }`}
               >
                 Slanted Tiles
@@ -339,8 +339,8 @@ export default function RoofSolarVisualizer3D() {
                 onClick={() => setRoofType('tin')}
                 className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all border ${
                   roofType === 'tin'
-                    ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
-                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E]'
+                    ? 'bg-[#16a34a] text-white border-[#16a34a] shadow-sm'
+                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#16a34a]'
                 }`}
               >
                 Metal / Shed
@@ -376,14 +376,14 @@ export default function RoofSolarVisualizer3D() {
                 step={2}
                 value={panelCount}
                 onChange={(e) => setPanelCount(Number(e.target.value))}
-                className="flex-1 h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#D9232E]"
+                className="flex-1 h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#16a34a]"
               />
 
               <button
                 type="button"
                 onClick={() => setPanelCount(Math.min(20, panelCount + 2))}
                 disabled={panelCount >= 20}
-                className="w-10 h-10 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold flex items-center justify-center shadow-sm disabled:opacity-40 transition-colors"
+                className="w-10 h-10 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold flex items-center justify-center shadow-sm disabled:opacity-40 transition-colors"
               >
                 <Plus className="w-4 h-4" />
               </button>
@@ -417,7 +417,7 @@ export default function RoofSolarVisualizer3D() {
             <div className="pt-2">
               <Link
                 href={`/quote?kw=${totalKw}&panels=${panelCount}&roof=${roofType}`}
-                className="w-full py-3 px-4 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
+                className="w-full py-3 px-4 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
               >
                 <span>Book On-Site Roof Inspection for {totalKw} kW</span>
                 <ArrowRight className="w-4 h-4" />

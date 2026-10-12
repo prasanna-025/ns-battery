@@ -20,13 +20,13 @@ export default function BatteriesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="rounded-2xl bg-[#0B1722] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-sm">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-xs font-semibold text-[#D9232E]">
-              <Battery className="w-4 h-4 text-[#D9232E]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-xs font-semibold text-[#16a34a]">
+              <Battery className="w-4 h-4 text-[#16a34a]" />
               <span>AUTHORIZED OEM BATTERY SPECIALIST • RAMANATHAPURAM</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              High-Cranking Power for <span className="text-[#D9232E]">Every Vehicle & Backup Need</span>
+              High-Cranking Power for <span className="text-[#16a34a]">Every Vehicle & Backup Need</span>
             </h1>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -75,7 +75,7 @@ export default function BatteriesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-2">
-            <span className="text-xs font-bold text-[#D9232E] uppercase tracking-wider flex items-center gap-1.5">
+            <span className="text-xs font-bold text-[#16a34a] uppercase tracking-wider flex items-center gap-1.5">
               <RefreshCw className="w-3.5 h-3.5" />
               Eco-Friendly Lead Recycling &amp; Scrap Rebate
             </span>
@@ -89,7 +89,7 @@ export default function BatteriesPage() {
 
           <a
             href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-            className="px-5 py-3 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs shrink-0 flex items-center gap-2 transition-colors shadow-sm"
+            className="px-5 py-3 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs shrink-0 flex items-center gap-2 transition-colors shadow-sm"
           >
             <Phone className="w-4 h-4" />
             <span>Check Scrap Rebate Value</span>

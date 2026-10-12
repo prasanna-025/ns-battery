@@ -18,7 +18,7 @@ export default function SolarCalculator() {
     <div id="calculator" className="w-full rounded-2xl bg-white border border-[#E1E7ED] p-6 sm:p-8 md:p-10 shadow-sm relative">
       {/* Title */}
       <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#15803d]">
           <Sun className="w-3.5 h-3.5 text-[#F4B323]" />
           <span>SOLAR CALCULATOR & PM SURYA GHAR SUBSIDY ESTIMATOR</span>
         </div>
@@ -44,7 +44,7 @@ export default function SolarCalculator() {
                 onClick={() => setConnectionType('residential')}
                 className={`py-2.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                   connectionType === 'residential'
-                    ? 'bg-[#D9232E] text-white shadow-sm'
+                    ? 'bg-[#15803d] text-white shadow-sm'
                     : 'bg-white text-[#647384] hover:text-[#0B1722] border border-[#E1E7ED]'
                 }`}
               >
@@ -56,7 +56,7 @@ export default function SolarCalculator() {
                 onClick={() => setConnectionType('commercial')}
                 className={`py-2.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                   connectionType === 'commercial'
-                    ? 'bg-[#D9232E] text-white shadow-sm'
+                    ? 'bg-[#15803d] text-white shadow-sm'
                     : 'bg-white text-[#647384] hover:text-[#0B1722] border border-[#E1E7ED]'
                 }`}
               >
@@ -72,7 +72,7 @@ export default function SolarCalculator() {
               <label className="text-xs font-bold text-[#0B1722] uppercase tracking-wider">
                 Current Monthly Power Bill
               </label>
-              <span className="text-base font-bold text-[#D9232E] font-mono">
+              <span className="text-base font-bold text-[#16a34a] font-mono">
                 {formatCurrencyINR(monthlyBill)}
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function SolarCalculator() {
               step="500"
               value={monthlyBill}
               onChange={(e) => setMonthlyBill(Number(e.target.value))}
-              className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#D9232E]"
+              className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#16a34a]"
             />
 
             <div className="flex justify-between text-[11px] text-[#647384] font-mono">
@@ -130,7 +130,7 @@ export default function SolarCalculator() {
             <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-center sm:text-left">
               <span className="text-[11px] font-bold uppercase text-[#647384] block">Recommended System</span>
               <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1722] font-mono mt-1">
-                {result.recommendedKw} <span className="text-base text-[#D9232E]">kW</span>
+                {result.recommendedKw} <span className="text-base text-[#16a34a]">kW</span>
               </div>
               <span className="text-[11px] text-[#647384] mt-1 block">Rooftop Area: ~{result.roofAreaSqFt} sq.ft</span>
             </div>
@@ -173,7 +173,7 @@ export default function SolarCalculator() {
 
               <div className="flex justify-between pt-2 text-sm sm:text-base font-extrabold text-[#0B1722]">
                 <span>Estimated Net Investment:</span>
-                <span className="text-[#D9232E] font-mono">{formatCurrencyINR(result.netInvestmentCost)}</span>
+                <span className="text-[#16a34a] font-mono">{formatCurrencyINR(result.netInvestmentCost)}</span>
               </div>
             </div>
 
@@ -186,7 +186,7 @@ export default function SolarCalculator() {
           <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
             <Link
               href="/quote"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm text-center flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm text-center flex items-center justify-center gap-2"
             >
               <span>Get Free Site Inspection</span>
               <ArrowRight className="w-4 h-4" />

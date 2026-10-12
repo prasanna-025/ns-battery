@@ -53,7 +53,7 @@ export default function SubsidyGuideSection() {
               Direct Benefit Transfer (DBT)
             </div>
             <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B1722]">
-              Up to <span className="text-[#D9232E]">₹78,000</span> in eligible central subsidy
+              Up to <span className="text-[#16a34a]">₹78,000</span> in eligible central subsidy
             </h3>
             <p className="text-xs sm:text-sm text-[#647384] leading-relaxed">
               Subsidy amounts depend on current scheme guidelines, applicant eligibility, system capacity, and official DISCOM approval requirements.
@@ -63,7 +63,7 @@ export default function SubsidyGuideSection() {
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
               href="/calculator"
-              className="px-5 py-3 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+              className="px-5 py-3 rounded-lg bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
             >
               Check Subsidy Eligibility
             </Link>
@@ -71,7 +71,7 @@ export default function SubsidyGuideSection() {
               href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
               className="px-4 py-3 rounded-lg bg-transparent hover:bg-[#F5F7FA] border border-[#E1E7ED] text-[#0B1722] text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5"
             >
-              <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+              <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
               <span>Talk to an Expert</span>
             </a>
           </div>
@@ -89,7 +89,7 @@ export default function SubsidyGuideSection() {
                   <span className="text-xs font-mono font-bold px-2 py-1 rounded bg-[#F5F7FA] text-[#647384] border border-[#E1E7ED]">
                     STEP {item.step}
                   </span>
-                  <item.icon className="w-5 h-5 text-[#D9232E]" />
+                  <item.icon className="w-5 h-5 text-[#16a34a]" />
                 </div>
                 <h4 className="text-base font-bold text-[#0B1722]">
                   {item.title}

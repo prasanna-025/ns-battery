@@ -87,7 +87,7 @@ export default function BatteryDiagnosticDoctor() {
     <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Title */}
       <div className="max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#D9232E] uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#16a34a] uppercase tracking-wider">
           <Stethoscope className="w-3.5 h-3.5" />
           <span>Battery Diagnostic Guide</span>
         </div>
@@ -113,17 +113,17 @@ export default function BatteryDiagnosticDoctor() {
                 onClick={() => setSelectedId(item.id)}
                 className={`p-3.5 rounded-xl border cursor-pointer transition-all text-xs font-medium flex items-center justify-between ${
                   selectedId === item.id
-                    ? 'bg-white border-[#D9232E] text-[#0B1722] font-semibold shadow-sm'
-                    : 'bg-[#F5F7FA] border-[#E1E7ED] text-[#647384] hover:border-[#D9232E]/40 hover:text-[#0B1722]'
+                    ? 'bg-white border-[#16a34a] text-[#0B1722] font-semibold shadow-sm'
+                    : 'bg-[#F5F7FA] border-[#E1E7ED] text-[#647384] hover:border-[#16a34a]/40 hover:text-[#0B1722]'
                 }`}
               >
                 <div className="flex items-center gap-2.5 pr-2">
                   <span className={`w-2 h-2 rounded-full shrink-0 ${
-                    item.urgency === 'critical' ? 'bg-[#D9232E]' : item.urgency === 'moderate' ? 'bg-[#F4B323]' : 'bg-[#16835D]'
+                    item.urgency === 'critical' ? 'bg-[#16a34a]' : item.urgency === 'moderate' ? 'bg-[#F4B323]' : 'bg-[#16835D]'
                   }`} />
                   <span>{item.label}</span>
                 </div>
-                <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${selectedId === item.id ? 'text-[#D9232E]' : 'text-[#647384]'}`} />
+                <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${selectedId === item.id ? 'text-[#16a34a]' : 'text-[#647384]'}`} />
               </div>
             ))}
           </div>
@@ -145,7 +145,7 @@ export default function BatteryDiagnosticDoctor() {
             </div>
             <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${
               current.urgency === 'critical'
-                ? 'bg-red-50 text-[#D9232E] border-red-200'
+                ? 'bg-red-50 text-[#16a34a] border-red-200'
                 : current.urgency === 'moderate'
                 ? 'bg-amber-50 text-[#F4B323] border-amber-200'
                 : 'bg-emerald-50 text-[#16835D] border-emerald-200'
@@ -159,7 +159,7 @@ export default function BatteryDiagnosticDoctor() {
             <div className="flex justify-between text-xs">
               <span className="text-[#647384]">Estimated Battery Health:</span>
               <span className={`font-mono font-bold ${
-                current.healthScore <= 20 ? 'text-[#D9232E]' : current.healthScore <= 50 ? 'text-[#F4B323]' : 'text-[#16835D]'
+                current.healthScore <= 20 ? 'text-[#16a34a]' : current.healthScore <= 50 ? 'text-[#F4B323]' : 'text-[#16835D]'
               }`}>
                 {current.healthScore}%
               </span>
@@ -168,7 +168,7 @@ export default function BatteryDiagnosticDoctor() {
               <div
                 className={`h-full transition-all duration-500 ${
                   current.healthScore <= 20
-                    ? 'bg-[#D9232E]'
+                    ? 'bg-[#16a34a]'
                     : current.healthScore <= 50
                     ? 'bg-[#F4B323]'
                     : 'bg-[#16835D]'
@@ -205,7 +205,7 @@ export default function BatteryDiagnosticDoctor() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
+              className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Store Desk</span>
@@ -213,9 +213,9 @@ export default function BatteryDiagnosticDoctor() {
 
             <a
               href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-              className="w-full sm:w-auto py-3 px-4 rounded-xl bg-white border border-[#E1E7ED] text-[#0B1722] hover:text-[#D9232E] font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
+              className="w-full sm:w-auto py-3 px-4 rounded-xl bg-white border border-[#E1E7ED] text-[#0B1722] hover:text-[#16a34a] font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#D9232E]" />
+              <Phone className="w-4 h-4 text-[#16a34a]" />
               <span>Call: {COMPANY_INFO.phones[0].display}</span>
             </a>
           </div>

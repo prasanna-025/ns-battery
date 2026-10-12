@@ -56,7 +56,7 @@ export default function LubricantsPage() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              100% Genuine <span className="text-[#D9232E]">Gulf Lubricants & SKF Bearings</span>
+              100% Genuine <span className="text-[#16a34a]">Gulf Lubricants & SKF Bearings</span>
             </h1>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -93,11 +93,11 @@ export default function LubricantsPage() {
           {gulfDivisions.map((div, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4 hover:border-[#D9232E]/40 hover:shadow-md transition-all"
+              className="p-6 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4 hover:border-[#16a34a]/40 hover:shadow-md transition-all"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-[#E1E7ED] flex items-center justify-center text-[#D9232E]">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-[#E1E7ED] flex items-center justify-center text-[#16a34a]">
                     <div.icon className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-mono font-bold text-[#F4B323] px-2 py-0.5 rounded bg-amber-50 border border-amber-200">
@@ -120,7 +120,7 @@ export default function LubricantsPage() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-3 rounded-xl bg-white hover:bg-[#D9232E] hover:text-white text-[#D9232E] font-semibold text-xs text-center border border-[#D9232E]/30 hover:border-[#D9232E] transition-all shadow-sm"
+                className="w-full py-2.5 px-3 rounded-xl bg-white hover:bg-[#16a34a] hover:text-white text-[#16a34a] font-semibold text-xs text-center border border-[#16a34a]/30 hover:border-[#16a34a] transition-all shadow-sm"
               >
                 Inquire Stock / Bulk Packs
               </a>
@@ -134,7 +134,7 @@ export default function LubricantsPage() {
         <div className="rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] p-6 sm:p-10 shadow-sm space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E1E7ED] text-[#D9232E] text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E1E7ED] text-[#16a34a] text-xs font-semibold">
                 <Wrench className="w-3.5 h-3.5" />
                 <span>SKF Original Bearings &amp; Greases</span>
               </div>

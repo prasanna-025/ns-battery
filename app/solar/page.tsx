@@ -121,7 +121,7 @@ export default function SolarPage() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href="#calculator"
-                className="px-6 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-colors"
+                className="px-6 py-3.5 rounded-lg bg-[#16a34a] hover:bg-[#15803d] text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-colors"
               >
                 <span>Calculate My Savings</span>
                 <ArrowRight className="w-4 h-4" />
@@ -169,17 +169,17 @@ export default function SolarPage() {
             <div
               key={idx}
               className={`rounded-xl p-6 sm:p-7 bg-white border border-[#E1E7ED] flex flex-col justify-between space-y-5 shadow-sm hover:shadow-md transition-shadow relative ${
-                arch.popular ? 'border-[#D9232E]/40' : ''
+                arch.popular ? 'border-[#16a34a]/40' : ''
               }`}
             >
               {arch.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#D9232E] text-white font-bold text-[10px] uppercase tracking-wider shadow">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#16a34a] text-white font-bold text-[10px] uppercase tracking-wider shadow">
                   Most Popular
                 </div>
               )}
 
               <div className="space-y-3">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#D9232E] block">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#16a34a] block">
                   {arch.badge}
                 </span>
                 <h3 className="text-lg font-bold text-[#0B1722]">{arch.title}</h3>

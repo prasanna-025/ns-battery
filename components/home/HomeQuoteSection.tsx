@@ -64,7 +64,7 @@ export default function HomeQuoteSection() {
           {/* Left Column: Heading, Supporting Info & Contact details */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#15803d]">
                 DIRECT ADVISORY & ESTIMATES
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
@@ -82,7 +82,7 @@ export default function HomeQuoteSection() {
               </h3>
 
               <div className="flex items-start gap-3 text-xs sm:text-sm text-[#17212B]">
-                <MapPin className="w-4 h-4 text-[#D9232E] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#16a34a] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold">{COMPANY_INFO.address}</p>
                   <p className="text-xs text-[#647384] mt-0.5">{COMPANY_INFO.landmark}</p>
@@ -92,13 +92,13 @@ export default function HomeQuoteSection() {
               <div className="pt-3 border-t border-[#E1E7ED] space-y-2">
                 <span className="text-[11px] font-medium text-[#647384] uppercase">Direct Store Helplines:</span>
                 <div className="flex flex-wrap items-center gap-3 text-sm font-bold text-[#0B1722] font-mono">
-                  <a href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`} className="hover:text-[#D9232E] flex items-center gap-1.5 transition-colors">
-                    <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+                  <a href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`} className="hover:text-[#16a34a] flex items-center gap-1.5 transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
                     <span>{COMPANY_INFO.phones[0].display}</span>
                   </a>
                   <span className="text-slate-300">/</span>
-                  <a href={`tel:+91${COMPANY_INFO.phones[1].raw.slice(2)}`} className="hover:text-[#D9232E] flex items-center gap-1.5 transition-colors">
-                    <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+                  <a href={`tel:+91${COMPANY_INFO.phones[1].raw.slice(2)}`} className="hover:text-[#16a34a] flex items-center gap-1.5 transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
                     <span>{COMPANY_INFO.phones[1].display}</span>
                   </a>
                 </div>
@@ -135,7 +135,7 @@ export default function HomeQuoteSection() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {error && (
                     <div className="p-3.5 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
-                      <AlertCircle className="w-4 h-4 shrink-0 text-[#D9232E]" />
+                      <AlertCircle className="w-4 h-4 shrink-0 text-[#16a34a]" />
                       <span>{error}</span>
                     </div>
                   )}
@@ -144,7 +144,7 @@ export default function HomeQuoteSection() {
                     {/* Full Name */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-[#17212B]">
-                        Full Name <span className="text-[#D9232E]">*</span>
+                        Full Name <span className="text-[#16a34a]">*</span>
                       </label>
                       <input
                         type="text"
@@ -152,14 +152,14 @@ export default function HomeQuoteSection() {
                         onChange={(e) => setName(e.target.value)}
                         placeholder="e.g. Syed Ibrahim"
                         required
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#D9232E] focus:outline-none transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#16a34a] focus:outline-none transition-colors"
                       />
                     </div>
 
                     {/* Phone Number */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-[#17212B]">
-                        Mobile Number <span className="text-[#D9232E]">*</span>
+                        Mobile Number <span className="text-[#16a34a]">*</span>
                       </label>
                       <input
                         type="tel"
@@ -167,7 +167,7 @@ export default function HomeQuoteSection() {
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="10-digit number"
                         required
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#D9232E] focus:outline-none transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#16a34a] focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export default function HomeQuoteSection() {
                       <select
                         value={service}
                         onChange={(e) => setService(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#D9232E] focus:outline-none transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#16a34a] focus:outline-none transition-colors"
                       >
                         <option value="Solar Rooftop Installation">Solar Rooftop Installation</option>
                         <option value="PM Surya Ghar Subsidy">PM Surya Ghar Subsidy Assistance</option>
@@ -203,7 +203,7 @@ export default function HomeQuoteSection() {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         placeholder="e.g. Ramanathapuram, Kilakarai"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#D9232E] focus:outline-none transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#16a34a] focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -218,7 +218,7 @@ export default function HomeQuoteSection() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Mention your estimated monthly power bill or required capacity..."
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#D9232E] focus:outline-none transition-colors resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-lg border border-[#E1E7ED] text-sm text-[#17212B] bg-[#F5F7FA] focus:bg-white focus:border-[#16a34a] focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
@@ -226,7 +226,7 @@ export default function HomeQuoteSection() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full py-3.5 px-6 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-95 disabled:opacity-50"
+                    className="w-full py-3.5 px-6 rounded-lg bg-[#15803d] hover:bg-[#166534] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-95 disabled:opacity-50"
                   >
                     {isLoading ? (
                       <>

@@ -72,7 +72,7 @@ export default function ApplianceLoadBuilder() {
     <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Header */}
       <div className="max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#D9232E] uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#16a34a] uppercase tracking-wider">
           <Zap className="w-3.5 h-3.5" />
           <span>Inverter Sizing Tool</span>
         </div>
@@ -97,19 +97,19 @@ export default function ApplianceLoadBuilder() {
                   key={app.id}
                   className={`p-4 rounded-xl border transition-all flex items-center justify-between ${
                     currentCount > 0
-                      ? 'bg-white border-[#D9232E]/30 shadow-sm'
+                      ? 'bg-white border-[#16a34a]/30 shadow-sm'
                       : 'bg-[#F5F7FA] border-[#E1E7ED]'
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex items-center justify-center text-[#D9232E]">
+                    <div className="w-10 h-10 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex items-center justify-center text-[#16a34a]">
                       <app.icon className="w-5 h-5" />
                     </div>
                     <div>
                       <h4 className="text-xs sm:text-sm font-semibold text-[#0B1722]">{app.name}</h4>
                       <p className="text-[11px] text-[#647384] font-mono">
                         {app.watts}W each •{' '}
-                        <strong className="text-[#D9232E]">{subtotal}W</strong>
+                        <strong className="text-[#16a34a]">{subtotal}W</strong>
                       </p>
                     </div>
                   </div>
@@ -129,7 +129,7 @@ export default function ApplianceLoadBuilder() {
                     <button
                       type="button"
                       onClick={() => updateCount(app.id, 1)}
-                      className="w-7 h-7 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold flex items-center justify-center shadow-sm transition-colors"
+                      className="w-7 h-7 rounded-lg bg-[#16a34a] hover:bg-[#15803d] text-white font-bold flex items-center justify-center shadow-sm transition-colors"
                     >
                       <Plus className="w-3.5 h-3.5" />
                     </button>
@@ -150,7 +150,7 @@ export default function ApplianceLoadBuilder() {
         {/* Right: Recommendation Box */}
         <div className="lg:col-span-5 bg-[#F5F7FA] p-6 sm:p-7 rounded-2xl border border-[#E1E7ED] space-y-5">
           <div className="space-y-1">
-            <span className="text-[10px] font-bold text-[#D9232E] uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-[#16a34a] uppercase tracking-wider">
               Recommended Inverter
             </span>
             <h3 className="text-xl font-bold text-[#0B1722]">{recommendedModel}</h3>
@@ -195,7 +195,7 @@ export default function ApplianceLoadBuilder() {
             href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(whatsappInquiry)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-3 px-4 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
+            className="w-full py-3 px-4 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
           >
             <MessageCircle className="w-4 h-4" />
             <span>Get Official Inverter &amp; Battery Combo Price</span>

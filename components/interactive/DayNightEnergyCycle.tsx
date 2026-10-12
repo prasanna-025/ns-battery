@@ -96,8 +96,8 @@ export default function DayNightEnergyCycle() {
             onClick={() => setGridOutage(!gridOutage)}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all border ${
               gridOutage
-                ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm animate-pulse'
-                : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E] hover:text-[#D9232E]'
+                ? 'bg-[#16a34a] text-white border-[#16a34a] shadow-sm animate-pulse'
+                : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#16a34a] hover:text-[#16a34a]'
             }`}
           >
             {gridOutage ? '⚠️ Grid Cut Active' : 'Simulate Grid Cut'}
@@ -150,7 +150,7 @@ export default function DayNightEnergyCycle() {
             step={0.5}
             value={timeHour}
             onChange={(e) => setTimeHour(Number(e.target.value))}
-            className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#D9232E]"
+            className="w-full h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#16a34a]"
           />
           <div className="flex justify-between text-[10px] text-[#647384] font-mono">
             <span>12:00 AM</span>
@@ -187,11 +187,11 @@ export default function DayNightEnergyCycle() {
           {/* Home Load */}
           <div className={`p-4 rounded-xl border space-y-1 ${sim.isDaytime || sim.isSunset ? 'bg-white border-[#E1E7ED]' : 'bg-white/10 border-white/10'}`}>
             <div className={`flex items-center justify-between text-xs ${sim.isDaytime || sim.isSunset ? 'text-[#647384]' : 'text-white/60'}`}>
-              <span className="flex items-center gap-1.5 font-semibold text-[#D9232E]">
+              <span className="flex items-center gap-1.5 font-semibold text-[#16a34a]">
                 <Home className="w-4 h-4" />
                 Home Load
               </span>
-              <span className="text-[10px] uppercase font-bold text-[#D9232E]">Live</span>
+              <span className="text-[10px] uppercase font-bold text-[#16a34a]">Live</span>
             </div>
             <p className={`text-2xl sm:text-3xl font-extrabold font-mono ${sim.isDaytime || sim.isSunset ? 'text-[#0B1722]' : 'text-white'}`}>
               {sim.homeLoadKw} <span className="text-sm font-normal text-[#647384]">kW</span>
@@ -229,7 +229,7 @@ export default function DayNightEnergyCycle() {
                 <Zap className="w-4 h-4" />
                 TANGEDCO Grid
               </span>
-              <span className={`text-[10px] uppercase font-bold ${gridOutage ? 'text-[#D9232E]' : 'text-[#16835D]'}`}>
+              <span className={`text-[10px] uppercase font-bold ${gridOutage ? 'text-[#16a34a]' : 'text-[#16835D]'}`}>
                 {gridOutage ? 'Outage' : sim.gridKw > 0 ? 'Exporting' : 'Zero Draw'}
               </span>
             </div>
@@ -257,7 +257,7 @@ export default function DayNightEnergyCycle() {
                 </span>
               ) : (
                 <span>
-                  At {formattedTime}, stored clean power in your LiFePO4 battery delivers <strong className="text-[#16835D]">{sim.batteryKw} kW</strong> to your home. You draw <strong className="text-[#D9232E]">0 units from the grid</strong> during peak evening electricity rates.
+                  At {formattedTime}, stored clean power in your LiFePO4 battery delivers <strong className="text-[#16835D]">{sim.batteryKw} kW</strong> to your home. You draw <strong className="text-[#16a34a]">0 units from the grid</strong> during peak evening electricity rates.
                 </span>
               )}
             </div>

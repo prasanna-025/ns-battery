@@ -18,8 +18,8 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="rounded-2xl bg-[#0B1722] text-white p-8 sm:p-12 relative overflow-hidden shadow-sm">
           <div className="relative z-10 max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-xs font-semibold text-[#D9232E]">
-              <MapPin className="w-4 h-4 text-[#D9232E]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-xs font-semibold text-[#16a34a]">
+              <MapPin className="w-4 h-4 text-[#16a34a]" />
               <span>DIRECT STORE CONTACT & LOCATION</span>
             </div>
 

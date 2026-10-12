@@ -138,7 +138,7 @@ export default function BatteryTeardown3D() {
             </span>
             <button
               onClick={() => setIsExploded(!isExploded)}
-              className="text-[#D9232E] hover:underline font-semibold"
+              className="text-[#16a34a] hover:underline font-semibold"
             >
               {isExploded ? 'Compact View' : 'Exploded View'}
             </button>
@@ -152,15 +152,15 @@ export default function BatteryTeardown3D() {
                 onClick={() => setSelectedPartIndex(idx)}
                 className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 flex items-center justify-between ${
                   selectedPartIndex === idx
-                    ? 'bg-white border-[#D9232E] shadow-sm translate-x-1'
-                    : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#D9232E]/40'
+                    ? 'bg-white border-[#16a34a] shadow-sm translate-x-1'
+                    : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#16a34a]/40'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs ${
                       selectedPartIndex === idx
-                        ? 'bg-[#D9232E] text-white'
+                        ? 'bg-[#16a34a] text-white'
                         : 'bg-[#E1E7ED] text-[#0B1722]'
                     }`}
                   >
@@ -178,7 +178,7 @@ export default function BatteryTeardown3D() {
                   </span>
                   <ChevronRight
                     className={`w-4 h-4 transition-transform ${
-                      selectedPartIndex === idx ? 'text-[#D9232E] translate-x-1' : 'text-[#647384]'
+                      selectedPartIndex === idx ? 'text-[#16a34a] translate-x-1' : 'text-[#647384]'
                     }`}
                   />
                 </div>
@@ -195,7 +195,7 @@ export default function BatteryTeardown3D() {
         {/* Right Column: Deep-Dive Component Inspector */}
         <div className="lg:col-span-6 bg-[#F5F7FA] p-6 sm:p-7 rounded-2xl border border-[#E1E7ED] space-y-5">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-[#16a34a] uppercase tracking-wider">
               Component #{selectedPartIndex + 1}
             </span>
             <h3 className="text-xl font-bold text-[#0B1722]">

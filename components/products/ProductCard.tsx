@@ -31,7 +31,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Name */}
-        <h3 className="text-base font-bold text-[#0B1722] group-hover:text-[#D9232E] transition-colors leading-snug">
+        <h3 className="text-base font-bold text-[#0B1722] group-hover:text-[#16a34a] transition-colors leading-snug">
           {product.name}
         </h3>
 
@@ -78,7 +78,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
             className="w-full py-2 px-3 rounded-lg bg-[#F5F7FA] hover:bg-[#E1E7ED] border border-[#E1E7ED] text-[#0B1722] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
+            <Phone className="w-3.5 h-3.5 text-[#16a34a]" />
             <span>Call</span>
           </a>
         </div>

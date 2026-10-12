@@ -30,8 +30,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
-                <Sparkles className="w-3.5 h-3.5 text-[#D9232E]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#16a34a]">
+                <Sparkles className="w-3.5 h-3.5 text-[#16a34a]" />
                 <span>AUTHORIZED OEM STOCK</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
@@ -47,7 +47,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#0B1722] hover:bg-[#122333] text-white text-xs font-bold uppercase tracking-wider transition-colors self-start md:self-auto shrink-0"
             >
               <span>View Full Catalogue</span>
-              <ArrowRight className="w-4 h-4 text-[#D9232E]" />
+              <ArrowRight className="w-4 h-4 text-[#16a34a]" />
             </Link>
           </div>
 

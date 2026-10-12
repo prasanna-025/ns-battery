@@ -52,7 +52,7 @@ export default function InvertersPage() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              Silent, Flicker-Free <span className="text-[#D9232E]">Power Backup for Your Family</span>
+              Silent, Flicker-Free <span className="text-[#16a34a]">Power Backup for Your Family</span>
             </h1>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -97,18 +97,18 @@ export default function InvertersPage() {
             </ul>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#D9232E]/30 space-y-4 shadow-sm">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#16a34a]/30 space-y-4 shadow-sm">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold text-[#D9232E]">Generic Square / Quasi Wave</h3>
-              <span className="px-2 py-0.5 rounded bg-red-50 text-[#D9232E] border border-red-200 text-[10px] font-bold">Old Technology</span>
+              <h3 className="text-xl font-bold text-[#16a34a]">Generic Square / Quasi Wave</h3>
+              <span className="px-2 py-0.5 rounded bg-red-50 text-[#16a34a] border border-red-200 text-[10px] font-bold">Old Technology</span>
             </div>
             <p className="text-xs text-[#647384] leading-relaxed">
               Crude step-voltage outputs that inject heavy harmonic distortion into household wiring. Often leads to hot fan bearings, high buzzing sound, and premature motherboard failure in modern smart appliances.
             </p>
             <ul className="space-y-1.5 text-xs text-[#647384] pt-2 border-t border-[#E1E7ED]">
-              <li className="flex items-center gap-2 text-[#D9232E]">✗ Annoying buzzing hum from ceiling fans</li>
-              <li className="flex items-center gap-2 text-[#D9232E]">✗ Causes excessive heat in AC motor windings</li>
-              <li className="flex items-center gap-2 text-[#D9232E]">✗ Not recommended for modern electronic appliances</li>
+              <li className="flex items-center gap-2 text-[#16a34a]">✗ Annoying buzzing hum from ceiling fans</li>
+              <li className="flex items-center gap-2 text-[#16a34a]">✗ Causes excessive heat in AC motor windings</li>
+              <li className="flex items-center gap-2 text-[#16a34a]">✗ Not recommended for modern electronic appliances</li>
             </ul>
           </div>
         </div>

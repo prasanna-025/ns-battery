@@ -35,7 +35,7 @@ export default function StorefrontShowcase() {
     <div className="w-full rounded-2xl bg-white border border-[#E1E7ED] p-6 sm:p-10 shadow-sm overflow-hidden">
       {/* Header */}
       <div className="max-w-3xl mb-10 space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold text-[#16a34a] uppercase tracking-wider">
           <Store className="w-3.5 h-3.5" />
           <span>RAMANATHAPURAM FLAGSHIP SHOWROOM</span>
         </div>
@@ -70,7 +70,7 @@ export default function StorefrontShowcase() {
                 href="https://maps.google.com/?q=21/20+AKB+Complex+GH+Road+Ramanathapuram+623501"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-[#D9232E] hover:text-[#B91F29] font-bold text-xs transition-colors"
+                className="flex items-center gap-1 text-[#16a34a] hover:text-[#15803d] font-bold text-xs transition-colors"
               >
                 <span>Navigate</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -92,13 +92,13 @@ export default function StorefrontShowcase() {
                   onClick={() => setActiveTab(idx)}
                   className={`p-3.5 rounded-lg border cursor-pointer transition-all ${
                     activeTab === idx
-                      ? 'bg-[#F5F7FA] border-[#D9232E]/40 shadow-sm'
+                      ? 'bg-[#F5F7FA] border-[#16a34a]/40 shadow-sm'
                       : 'bg-white border-[#E1E7ED] hover:border-[#CBD5E1]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full ${activeTab === idx ? 'bg-[#D9232E]' : 'bg-slate-300'}`} />
+                      <span className={`w-2 h-2 rounded-full ${activeTab === idx ? 'bg-[#16a34a]' : 'bg-slate-300'}`} />
                       <h4 className="text-sm font-bold text-[#0B1722]">{item.title}</h4>
                     </div>
                     <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-[#F5F7FA] text-[#647384] border border-[#E1E7ED]">
@@ -118,7 +118,7 @@ export default function StorefrontShowcase() {
           {/* Location & Quick Contact Block */}
           <div className="p-4 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] space-y-3">
             <div className="flex items-start gap-2.5 text-xs text-[#17212B]">
-              <MapPin className="w-4 h-4 text-[#D9232E] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#16a34a] shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold text-[#0B1722]">{COMPANY_INFO.address}</p>
                 <p className="text-[#647384] text-[11px]">{COMPANY_INFO.landmark}</p>
@@ -129,11 +129,11 @@ export default function StorefrontShowcase() {
               <div className="space-y-0.5">
                 <span className="text-[11px] text-[#647384] block font-medium">Store Helplines:</span>
                 <div className="flex items-center gap-2 text-xs font-bold text-[#0B1722] font-mono">
-                  <a href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`} className="hover:text-[#D9232E] transition-colors">
+                  <a href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`} className="hover:text-[#16a34a] transition-colors">
                     {COMPANY_INFO.phones[0].display}
                   </a>
                   <span className="text-slate-300">/</span>
-                  <a href={`tel:+91${COMPANY_INFO.phones[1].raw.slice(2)}`} className="hover:text-[#D9232E] transition-colors">
+                  <a href={`tel:+91${COMPANY_INFO.phones[1].raw.slice(2)}`} className="hover:text-[#16a34a] transition-colors">
                     {COMPANY_INFO.phones[1].display}
                   </a>
                 </div>
@@ -143,7 +143,7 @@ export default function StorefrontShowcase() {
                 href="https://maps.google.com/?q=21/20+AKB+Complex+GH+Road+Ramanathapuram+623501"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
+                className="px-3.5 py-2 rounded-lg bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs flex items-center gap-1.5 transition-colors shadow-sm"
               >
                 <span>Google Maps</span>
                 <ExternalLink className="w-3.5 h-3.5" />

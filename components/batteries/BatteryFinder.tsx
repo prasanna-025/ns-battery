@@ -131,7 +131,7 @@ export default function BatteryFinder() {
     <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Header */}
       <div className="max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#D9232E] uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#16a34a] uppercase tracking-wider">
           <Battery className="w-3.5 h-3.5" />
           <span>Battery Finder</span>
         </div>
@@ -151,8 +151,8 @@ export default function BatteryFinder() {
             onClick={() => setVehicleType(key)}
             className={`p-3.5 rounded-xl border flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm font-semibold ${
               vehicleType === key
-                ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
-                : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E] hover:text-[#D9232E]'
+                ? 'bg-[#16a34a] text-white border-[#16a34a] shadow-sm'
+                : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#16a34a] hover:text-[#16a34a]'
             }`}
           >
             <Icon className="w-4 h-4" />
@@ -166,11 +166,11 @@ export default function BatteryFinder() {
         {currentList.map((rec, idx) => (
           <div
             key={idx}
-            className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4 hover:border-[#D9232E]/40 hover:shadow-md transition-all group"
+            className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4 hover:border-[#16a34a]/40 hover:shadow-md transition-all group"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-[#D9232E] uppercase tracking-wide">
+                <span className="text-[11px] font-bold text-[#16a34a] uppercase tracking-wide">
                   {rec.brand} Genuine
                 </span>
                 <span className="px-2 py-0.5 rounded bg-white text-[#647384] border border-[#E1E7ED] text-[10px] font-semibold">
@@ -178,7 +178,7 @@ export default function BatteryFinder() {
                 </span>
               </div>
 
-              <h3 className="text-base font-bold text-[#0B1722] leading-snug group-hover:text-[#D9232E] transition-colors">
+              <h3 className="text-base font-bold text-[#0B1722] leading-snug group-hover:text-[#16a34a] transition-colors">
                 {rec.recommendedModel}
               </h3>
 
@@ -203,7 +203,7 @@ export default function BatteryFinder() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 px-3 rounded-lg bg-white hover:bg-[#D9232E] hover:text-white text-[#D9232E] font-semibold text-xs flex items-center justify-center gap-2 border border-[#D9232E]/30 hover:border-[#D9232E] transition-all duration-200"
+              className="w-full py-2.5 px-3 rounded-lg bg-white hover:bg-[#16a34a] hover:text-white text-[#16a34a] font-semibold text-xs flex items-center justify-center gap-2 border border-[#16a34a]/30 hover:border-[#16a34a] transition-all duration-200"
             >
               <MessageCircle className="w-3.5 h-3.5" />
               <span>Inquire Price on WhatsApp</span>
@@ -220,7 +220,7 @@ export default function BatteryFinder() {
         </div>
         <a
           href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-          className="text-[#D9232E] hover:text-[#B91F29] font-bold flex items-center gap-1.5 shrink-0"
+          className="text-[#16a34a] hover:text-[#15803d] font-bold flex items-center gap-1.5 shrink-0"
         >
           <Phone className="w-3.5 h-3.5" />
           <span>Call: {COMPANY_INFO.phones[0].display}</span>

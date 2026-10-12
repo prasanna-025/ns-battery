@@ -14,7 +14,7 @@ export default function CompanyJourney() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Header */}
         <div className="mb-12 sm:mb-16 space-y-3 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#16a34a]">
             OUR JOURNEY — FROM 1989 TO THE FUTURE
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
@@ -35,11 +35,11 @@ export default function CompanyJourney() {
                 onClick={() => setActive(idx)}
                 className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
                   active === idx
-                    ? 'bg-[#F5F7FA] border-l-4 border-[#D9232E] shadow-sm text-[#0B1722]'
+                    ? 'bg-[#F5F7FA] border-l-4 border-[#16a34a] shadow-sm text-[#0B1722]'
                     : 'text-[#647384] hover:text-[#0B1722] hover:bg-[#F8FAFC]'
                 }`}
               >
-                <div className={`text-xs font-mono font-bold ${active === idx ? 'text-[#D9232E]' : 'text-[#647384]'}`}>
+                <div className={`text-xs font-mono font-bold ${active === idx ? 'text-[#16a34a]' : 'text-[#647384]'}`}>
                   {item.year}
                 </div>
                 <div className="text-sm font-semibold mt-0.5 leading-snug line-clamp-1">
@@ -86,7 +86,7 @@ export default function CompanyJourney() {
                         key={idx}
                         onClick={() => setActive(idx)}
                         className={`h-1.5 rounded-full transition-all ${
-                          idx === active ? 'w-6 bg-[#D9232E]' : 'w-2 bg-[#CBD5E1] hover:bg-[#94A3B8]'
+                          idx === active ? 'w-6 bg-[#16a34a]' : 'w-2 bg-[#CBD5E1] hover:bg-[#94A3B8]'
                         }`}
                       />
                     ))}

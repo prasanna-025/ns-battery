@@ -3,136 +3,138 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle2, Phone, ArrowRight, ShieldCheck, Wrench, Headphones } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Calculator, Headphones, Wrench, ShieldCheck, Sun } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
 export default function HeroSection() {
-  const benefits = [
-    'Government solar subsidy assistance.',
-    'High-efficiency solar solutions.',
-    'Professional installation and service support.',
-  ];
-
-  const trustIndicators = [
-    {
-      icon: Headphones,
-      title: 'Local Customer Support',
-      desc: 'Direct assistance from our Ramanathapuram store.',
-    },
-    {
-      icon: Wrench,
-      title: 'Solar Installation Assistance',
-      desc: 'Expert sizing, site evaluation, and net-metering.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Product Warranty Support',
-      desc: 'Backed by official manufacturer warranty terms.',
-    },
+  const verifiedBenefits = [
+    'Government solar subsidy assistance (up to ₹78,000 via PM Surya Ghar)',
+    'High-efficiency Tier-1 solar modules & pure sine wave inverters',
+    'Professional on-site engineering, rooftop installation & warranty support',
   ];
 
   return (
-    <section className="bg-white text-[#17212B] pt-8 sm:pt-12 pb-12 sm:pb-16 border-b border-[#E1E7ED]">
+    <section className="w-full bg-white pt-6 pb-16 md:py-20 lg:py-24 border-b border-[#E1E7ED]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Main 2-Column Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column (approx 52%) */}
-          <div className="lg:col-span-6 xl:col-span-7 space-y-6">
-            {/* Eyebrow Label */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[12px] font-semibold tracking-wider text-[#0B1722] uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#D9232E]" />
-              <span>PM SURYA GHAR | SOLAR ENERGY SOLUTIONS</span>
+          {/* 52% Content Column */}
+          <div className="lg:col-span-7 flex flex-col items-start space-y-6">
+            {/* Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200">
+              <span className="w-2 h-2 rounded-full bg-[#16a34a]" />
+              <span className="font-mono uppercase tracking-wider text-xs font-semibold">
+                PM SURYA GHAR | SOLAR ENERGY SOLUTIONS
+              </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1722] leading-[1.15] tracking-tight">
-              Powering a Smarter,<br />
-              <span className="text-[#D9232E]">Cleaner Energy Future.</span>
+            {/* Headline with Light Green Accent */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[64px] font-bold text-[#0B1722] tracking-tight">
+              Powering a Smarter, <span className="text-[#16a34a]">Cleaner Energy</span> Future.
             </h1>
 
-            {/* Supporting Description */}
-            <p className="text-base sm:text-lg text-[#647384] leading-relaxed max-w-xl">
+            {/* Supporting Copy */}
+            <p className="text-base sm:text-lg text-[#54606d] max-w-2xl leading-relaxed">
               Discover reliable solar modules, high-performance batteries, and complete energy solutions backed by trusted service in Ramanathapuram and across southern Tamil Nadu.
             </p>
 
-            {/* 3 Concise Benefits */}
-            <ul className="space-y-2.5 pt-1">
-              {benefits.map((benefit, idx) => (
-                <li key={idx} className="flex items-center gap-2.5 text-sm sm:text-base font-medium text-[#17212B]">
-                  <CheckCircle2 className="w-5 h-5 text-[#16835D] shrink-0" />
-                  <span>{benefit}</span>
-                </li>
+            {/* Verified Benefits */}
+            <div className="w-full space-y-3 pt-2">
+              {verifiedBenefits.map((benefit, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#16a34a] shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-[#17212B] font-medium leading-snug">
+                    {benefit}
+                  </span>
+                </div>
               ))}
-            </ul>
+            </div>
 
-            {/* Action Buttons & Subtle Phone Link */}
-            <div className="pt-3 flex flex-wrap items-center gap-4">
+            {/* Action CTAs in Brand Light Green */}
+            <div className="flex flex-wrap items-center gap-4 pt-3 w-full">
               <Link
-                href="/solar"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white text-sm font-semibold shadow-sm transition-colors active:scale-95"
+                href="/quote"
+                className="inline-flex items-center justify-center text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl text-white bg-[#15803d] hover:bg-[#166534] transition-colors shadow-sm"
               >
                 <span>Explore Solar Solutions</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
 
               <Link
                 href="/calculator"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-transparent hover:bg-[#F5F7FA] text-[#0B1722] text-sm font-semibold border border-[#E1E7ED] hover:border-[#CBD5E1] transition-colors"
+                className="inline-flex items-center justify-center text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl text-[#0B1722] bg-white hover:bg-[#F5F7FA] border border-[#E1E7ED] transition-colors shadow-sm"
               >
                 <span>Calculate Your Subsidy</span>
+                <Calculator className="ml-2 w-4 h-4" />
               </Link>
             </div>
 
-            {/* Subtle Phone Link */}
-            <div className="pt-2 flex items-center gap-2 text-xs sm:text-sm text-[#647384]">
-              <span>Speak with a local energy advisor:</span>
-              <a
-                href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-                className="font-semibold text-[#0B1722] hover:text-[#D9232E] underline flex items-center gap-1 transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#D9232E]" />
-                <span>{COMPANY_INFO.phones[0].display}</span>
-              </a>
+            {/* Direct Helpline Info */}
+            <div className="flex items-center gap-2 pt-2 text-[#647384] text-xs sm:text-sm">
+              <Headphones className="w-4 h-4 text-[#F4B323] shrink-0" />
+              <span>
+                Direct helpline: <strong className="text-[#0B1722] font-semibold font-mono">{COMPANY_INFO.phones[0].display}</strong> • Mon-Sat 8:30 AM – 9:00 PM
+              </span>
             </div>
           </div>
 
-          {/* Right Column (approx 48%) - Realistic Rooftop Solar Photograph */}
-          <div className="lg:col-span-6 xl:col-span-5">
-            <div className="relative aspect-[4/3] sm:aspect-[14/11] rounded-2xl overflow-hidden shadow-lg border border-[#E1E7ED] bg-[#F5F7FA] group">
+          {/* 48% Asset Column */}
+          <div className="lg:col-span-5 relative w-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl bg-[#F5F7FA] aspect-[4/3] lg:aspect-auto lg:h-[480px] border border-[#E1E7ED] group">
               <Image
                 src="/images/ecosystem/solar-10kwp.jpeg"
-                alt="Professionally installed rooftop solar energy system"
+                alt="Authentic Residential Rooftop Solar Installation by NS Batteries in Tamil Nadu"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 550px"
                 className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
 
-              {/* Single Subtle Overlay Badge */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/95 backdrop-blur-sm border border-[#E1E7ED] shadow-sm text-xs font-semibold text-[#0B1722]">
-                  <span className="w-2 h-2 rounded-full bg-[#16835D]" />
-                  <span>Reliable Solar Solutions — Ramanathapuram</span>
+              {/* Contextual Overlay Pill */}
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-[#0B1722]/90 backdrop-blur-md px-4 py-2.5 rounded-lg flex items-center gap-3 text-white shadow-lg">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#16a34a] animate-pulse shrink-0" />
+                <div className="flex flex-col text-left">
+                  <span className="font-mono text-xs uppercase tracking-wider text-[#F4B323] font-semibold">
+                    Authentic Rooftop Installation
+                  </span>
+                  <span className="text-xs text-slate-200 font-medium">
+                    Bifacial Mono PERC Array • Ramanathapuram
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Thin Trust-Indicator Row Below Hero */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-[#E1E7ED]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {trustIndicators.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-lg bg-[#F5F7FA] border border-[#E1E7ED] flex items-center justify-center shrink-0 text-[#0B1722]">
-                  <item.icon className="w-5 h-5 text-[#D9232E]" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0B1722]">{item.title}</h4>
-                  <p className="text-xs text-[#647384] mt-0.5 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+        {/* Trust Indicator Bar */}
+        <div className="mt-14 pt-8 bg-[#F5F7FA] border border-[#E1E7ED] rounded-xl shadow-sm p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-lg bg-emerald-100/70 flex items-center justify-center text-[#16a34a] shrink-0">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-[#0B1722] leading-tight">Authorized OEM Dealer</h4>
+              <p className="text-xs text-[#647384] mt-0.5">Direct tier-1 factory warranties for solar &amp; storage</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center text-[#F4B323] shrink-0">
+              <Wrench className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-[#0B1722] leading-tight">TANGEDCO Net-Metering</h4>
+              <p className="text-xs text-[#647384] mt-0.5">Turnkey utility approvals and bi-directional bi-phase meters</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-[#10805a] shrink-0">
+              <Headphones className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-[#0B1722] leading-tight">Local Service &amp; Spares</h4>
+              <p className="text-xs text-[#647384] mt-0.5">Flagship engineering center at AKB Complex, GH Road</p>
+            </div>
           </div>
         </div>
       </div>

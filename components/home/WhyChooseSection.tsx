@@ -44,7 +44,7 @@ export default function WhyChooseSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F5F7FA] border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#15803d]">
             THE NS BATTERIES PROMISE
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
@@ -62,7 +62,7 @@ export default function WhyChooseSection() {
               key={idx}
               className="p-6 sm:p-7 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] hover:border-[#CBD5E1] transition-all hover:shadow-sm space-y-3"
             >
-              <div className="w-10 h-10 rounded-lg bg-white border border-[#E1E7ED] flex items-center justify-center text-[#D9232E]">
+              <div className="w-10 h-10 rounded-lg bg-white border border-[#E1E7ED] flex items-center justify-center text-[#16a34a]">
                 <pt.icon className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-[#0B1722]">

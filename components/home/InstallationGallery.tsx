@@ -36,7 +36,7 @@ export default function InstallationGallery() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#D9232E]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-[#E1E7ED] text-[11px] font-bold uppercase tracking-wider text-[#16a34a]">
               PROVEN FIELD EXPERIENCE
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1722] tracking-tight">
@@ -52,7 +52,7 @@ export default function InstallationGallery() {
             className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white hover:bg-[#F1F5F9] border border-[#E1E7ED] text-xs font-bold uppercase tracking-wider text-[#0B1722] transition-colors self-start md:self-auto shrink-0"
           >
             <span>Request Site Survey</span>
-            <ArrowRight className="w-4 h-4 text-[#D9232E]" />
+            <ArrowRight className="w-4 h-4 text-[#16a34a]" />
           </Link>
         </div>
 
@@ -81,7 +81,7 @@ export default function InstallationGallery() {
               <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-1.5 text-xs text-[#647384]">
-                    <MapPin className="w-3.5 h-3.5 text-[#D9232E]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#16a34a]" />
                     <span>{proj.location}</span>
                   </div>
                   <h3 className="text-base font-bold text-[#0B1722]">
