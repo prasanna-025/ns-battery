@@ -42,10 +42,10 @@ export const COMPANY_INFO = {
     },
   ],
   stats: [
-    { value: "1989", label: "Established", sub: "Our founding year" },
-    { value: "37+", label: "Years of Legacy", sub: "As of 2026" },
-    { value: "No. 1", label: "Power Zone Distributor", sub: "South Tamil Nadu · FY 2023–24" },
-    { value: "6+", label: "Product Categories", sub: "Automotive and energy solutions" },
+    { value: "1989", label: "Established", sub: "Founding year on GH Road" },
+    { value: "35+", label: "Years of Legacy", sub: "Family retail heritage" },
+    { value: "Direct", label: "OEM Distribution Partner", sub: "Authorized Tier-1 brands" },
+    { value: "6+", label: "Product Categories", sub: "Energy and automotive" },
   ],
 
   // Company Journey — sourced from uploaded PDF and verified family history

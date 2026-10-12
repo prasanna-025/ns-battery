@@ -12,6 +12,8 @@ export interface Product {
   specs: Record<string, string>;
   isPopular?: boolean;
   isFeatured?: boolean;
+  image?: string;
+  isIllustrative?: boolean;
 }
 
 export const CATEGORIES = [
@@ -46,6 +48,8 @@ export const PRODUCTS: Product[] = [
     },
     isPopular: true,
     isFeatured: true,
+    image: '/images/products/solar-hybrid-smart.jpg',
+    isIllustrative: false,
   },
   {
     id: 'solar-ongrid-tangedco',
@@ -64,6 +68,8 @@ export const PRODUCTS: Product[] = [
       'Ideal For': 'Homes, Commercial Shops & Hospitals',
     },
     isFeatured: true,
+    image: '/images/products/solar-ongrid-tangedco.jpg',
+    isIllustrative: false,
   },
   {
     id: 'solar-offgrid-coastal',
@@ -81,6 +87,8 @@ export const PRODUCTS: Product[] = [
       'Waveform': 'Pure Sine Wave',
     },
     isPopular: true,
+    image: '/images/products/solar-offgrid-coastal.png',
+    isIllustrative: true,
   },
 
   // --- AUTOMOBILE BATTERIES ---
@@ -101,6 +109,8 @@ export const PRODUCTS: Product[] = [
       'Maintenance': 'Zero Maintenance',
     },
     isPopular: true,
+    image: '/images/products/bike-battery.jpg',
+    isIllustrative: true,
   },
   {
     id: 'amaron-flo-car-battery',
@@ -119,6 +129,8 @@ export const PRODUCTS: Product[] = [
     },
     isPopular: true,
     isFeatured: true,
+    image: '/images/products/car-battery.jpg',
+    isIllustrative: true,
   },
   {
     id: 'powerzone-commercial-heavy',
@@ -135,6 +147,8 @@ export const PRODUCTS: Product[] = [
       'Vehicle Compatibility': 'Tata 407, Ashok Leyland, Eicher, Mahindra Tractors, Marine Trawlers',
       'Terminal Type': 'Heavy Duty Stud / Taper',
     },
+    image: '/images/products/powerzone-commercial-heavy.jpg',
+    isIllustrative: false,
   },
 
   // --- INVERTER BATTERIES ---
@@ -156,6 +170,8 @@ export const PRODUCTS: Product[] = [
     },
     isPopular: true,
     isFeatured: true,
+    image: '/images/products/tubular-battery.jpg',
+    isIllustrative: true,
   },
   {
     id: 'powerzone-tall-tubular-200',
@@ -173,6 +189,8 @@ export const PRODUCTS: Product[] = [
       'Weight': '~58 kg',
       'Suitable For': 'Double-battery 24V UPS & Heavy Residential Loads',
     },
+    image: '/images/products/powerzone-tall-tubular-200.jpg',
+    isIllustrative: false,
   },
   {
     id: 'luminous-inverlast-220ah',
@@ -190,6 +208,8 @@ export const PRODUCTS: Product[] = [
       'Cycle Life': '1500+ Deep Cycles',
       'Plate Technology': 'HADI High Pressure Spine Casting',
     },
+    image: '/images/products/tubular-battery.jpg',
+    isIllustrative: true,
   },
 
   // --- INVERTERS & HOME UPS ---
@@ -211,6 +231,8 @@ export const PRODUCTS: Product[] = [
     },
     isPopular: true,
     isFeatured: true,
+    image: '/images/products/home-inverter.jpg',
+    isIllustrative: true,
   },
   {
     id: 'utl-gamma-plus-rmppt',
@@ -230,6 +252,8 @@ export const PRODUCTS: Product[] = [
     },
     isPopular: true,
     isFeatured: true,
+    image: '/images/products/home-inverter.jpg',
+    isIllustrative: true,
   },
   {
     id: 'luminous-cruze-2kba',
@@ -246,6 +270,8 @@ export const PRODUCTS: Product[] = [
       'Max Load': 'Refrigerator + 1HP Water Pump + 8 Fans + 12 Lights',
       'Transfer Time': '< 10ms (Zero disturbance to computers)',
     },
+    image: '/images/products/home-inverter.jpg',
+    isIllustrative: true,
   },
 
   // --- LITHIUM STORAGE ---
@@ -268,6 +294,8 @@ export const PRODUCTS: Product[] = [
     },
     isPopular: true,
     isFeatured: true,
+    image: '/images/products/lithium-storage.jpg',
+    isIllustrative: true,
   },
   {
     id: 'lithium-24v-100ah-heavy',
@@ -286,6 +314,8 @@ export const PRODUCTS: Product[] = [
       'Cycle Rating': '4000 Cycles @ 80% DOD',
     },
     isFeatured: true,
+    image: '/images/products/lithium-storage.jpg',
+    isIllustrative: true,
   },
   {
     id: 'lithium-home-1100-all-in-one',
@@ -303,6 +333,8 @@ export const PRODUCTS: Product[] = [
       'Solar Input': 'Built-in MPPT Solar Ready',
       'Backup Duration': 'Powers typical 2BHK lighting, TV, fans for 5-7 hours',
     },
+    image: '/images/products/lithium-storage.jpg',
+    isIllustrative: true,
   },
 
   // --- GULF OIL LUBRICANTS ---
@@ -322,6 +354,8 @@ export const PRODUCTS: Product[] = [
       'Standards': 'API SL, JASO MA2',
     },
     isPopular: true,
+    image: '/images/products/gulf-pride-4t-plus.webp',
+    isIllustrative: false,
   },
   {
     id: 'gulf-ultrasynth-x-5w30',
@@ -338,6 +372,8 @@ export const PRODUCTS: Product[] = [
       'Standards': 'API SP / SN Plus, ILSAC GF-6A',
     },
     isFeatured: true,
+    image: '/images/products/gulf-ultrasynth-x-5w30.webp',
+    isIllustrative: false,
   },
   {
     id: 'gulf-superfleet-special-15w40',
@@ -353,6 +389,8 @@ export const PRODUCTS: Product[] = [
       'Application': 'Tata Motors, Ashok Leyland, Eicher, BharatBenz, Swaraj, Tafe',
       'Standards': 'API CI-4 Plus / CH-4',
     },
+    image: '/images/products/gulf-superfleet-special-15w40.webp',
+    isIllustrative: false,
   },
   {
     id: 'gulf-marine-ship-oil',
@@ -368,6 +406,8 @@ export const PRODUCTS: Product[] = [
       'Application': 'Marine Inboard & Outboard Diesel Engines, Mechanized Trawlers, Gensets',
       'Corrosion Resistance': 'High Marine Salt-Fog Protection',
     },
+    image: '/images/products/gulf-pride-4t-plus.webp',
+    isIllustrative: true,
   },
   {
     id: 'gulf-ecohold-adblue',
@@ -383,6 +423,8 @@ export const PRODUCTS: Product[] = [
       'Urea Content': '32.5% High Purity Grade',
       'Vehicle Compatibility': 'BS-VI Trucks, Buses, SUVs (Fortuner, Innova Crysta, Scorpio-N, Harrier)',
     },
+    image: '/images/products/gulf-pride-4t-plus.webp',
+    isIllustrative: true,
   },
 
   // --- SKF BEARINGS & ACCESSORIES ---
@@ -399,6 +441,8 @@ export const PRODUCTS: Product[] = [
       'Series': '6000, 6200, 6300 Series (6201, 6202, 6204, 6301 etc.)',
       'Sealing': '2RS Rubber Sealed & 2Z Metal Shielded',
     },
+    image: '/images/products/ball-bearing.jpg',
+    isIllustrative: false,
   },
   {
     id: 'skf-lgmt2-general-grease',
@@ -414,5 +458,7 @@ export const PRODUCTS: Product[] = [
       'Temperature Range': '-30 °C to +120 °C',
       'Soap Type': 'Lithium Soap Thickened',
     },
+    image: '/images/products/ball-bearing.jpg',
+    isIllustrative: true,
   },
 ];

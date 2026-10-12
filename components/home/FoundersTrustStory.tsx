@@ -41,7 +41,7 @@ export default function FoundersTrustStory() {
         'Founded the business in 1989 with a focus on automobile electrical repair. Expanded into auto electrical spare parts in 1991, laying the groundwork for a generational energy enterprise.',
       credentials: [
         'Founded Automobile Electrical Shop (1989)',
-        '37+ Years of Family Heritage',
+        '35+ Years of Family Heritage',
         'Pioneered Technical Service in Ramanathapuram',
       ],
     },
@@ -68,11 +68,11 @@ export default function FoundersTrustStory() {
       era: '2012 — Present',
       image: '/images/ecosystem/powerzone-battery.jpg',
       quote:
-        'Taking over the second generation, our goal was to bring world-class brands like Amara Raja Power Zone, Luminous Solar, and SKF to South Tamil Nadu, earning No. 1 distributor recognition.',
+        'Taking over the second generation, our goal was to bring world-class brands like Amara Raja Power Zone, Luminous Solar, and SKF to South Tamil Nadu with direct factory warranty support.',
       bio:
-        'Joined in 2012 and spearheaded Power Zone battery wholesale distribution, achieving No. 1 Amara Raja distributor recognition in South Tamil Nadu for FY 2023–24. Diversified into solar, bearings, and lubricants.',
+        'Joined in 2012 and spearheaded Power Zone battery wholesale distribution and retail growth in South Tamil Nadu. Diversified into rooftop solar systems, precision SKF bearings, and Gulf Oil.',
       credentials: [
-        'No. 1 Power Zone Distributor South Tamil Nadu (FY 2023–24)',
+        'Direct Power Zone Distribution Partner',
         'Expanded Luminous Solar & Inverters (2019)',
         'Added SKF Bearings (2021) & Gulf Oil (2025)',
       ],
@@ -89,8 +89,8 @@ export default function FoundersTrustStory() {
         'Manages customer advisory, turnkey solar EPC deployment, and retail operations at AKB Complex, GH Road, Ramanathapuram.',
       credentials: [
         'Direct OEM Liaison & Store Operations',
-        '12,500+ Battery & Solar Installations',
-        'On-Counter Instant Battery Testing',
+        'Turnkey Residential & Commercial Solar EPC',
+        'On-Counter Instant Battery Testing & Diagnostics',
       ],
     },
   ];
@@ -112,7 +112,7 @@ export default function FoundersTrustStory() {
           </h2>
 
           <p className="text-sm sm:text-base text-[#647384] leading-relaxed">
-            From Hussain's automobile electrical workshop in 1989 to South Tamil Nadu's No. 1 Power Zone distributor today. Real people, authentic heritage, and direct accountability.
+            From Hussain&apos;s automobile electrical workshop in 1989 to South Tamil Nadu&apos;s authorized Power Zone and solar distribution hub today. Real people, authentic heritage, and direct accountability.
           </p>
         </div>
 

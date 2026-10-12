@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Auto Scaling Live Monitor</title>
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <h1>AWS Auto Scaling Live Monitor</h1>
+                <p class="subtitle">Real-time metrics for Tomcat ALB environment</p>
+            </div>
+            <div class="header-right">
+                <div class="status-badge" id="system-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Normal</span>
+                </div>
+                <div class="toggle-mock">
+                    <label class="switch">
+                      <input type="checkbox" id="mock-toggle" checked>
+                      <span class="slider round"></span>
+                    </label>
+                    <span class="mock-label">Demo Mode</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Top Cards -->
+            <section class="cards-section">
+                <!-- CPU Card -->
+                <div class="glass-card metric-card" id="cpu-card">
+                    <div class="card-icon cpu-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>CPU Utilization</h3>
+                        <div class="metric-value">
+                            <span id="cpu-value">--</span><span class="unit">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instances Card -->
+                <div class="glass-card metric-card" id="instances-card">
+                    <div class="card-icon instance-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>EC2 Instances</h3>
+                        <div class="metric-value">
+                            <span id="instance-count">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requests Rate Card -->
+                <div class="glass-card metric-card" id="requests-card">
+                    <div class="card-icon requests-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Request Rate</h3>
+                        <div class="metric-value">
+                            <span id="request-rate">--</span><span class="unit">req/s</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ALB Status Card -->
+                <div class="glass-card metric-card" id="alb-card">
+                    <div class="card-icon alb-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Load Balancer</h3>
+                        <div class="metric-value alb-status" id="alb-status-text" style="font-size: 1.5rem;">
+                            Active
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="glass-card chart-container">
+                    <h3>CPU Utilization (%) Over Time</h3>
+                    <div class="canvas-wrapper">
+                        <canvas id="cpuChart"></canvas>
+                    </div>
+                </div>
+                <div class="glass-card chart-container">
+                    <h3>Auto Scaling Instances Count</h3>
+                    <div class="canvas-wrapper">
+                        <canvas id="instancesChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lower Section: Instance Grid & Activity Feed -->
+            <section class="lower-section">
+                <!-- Instance Visualizer -->
+                <div class="glass-card visualizer-card">
+                    <h3>Active Instances Visualizer</h3>
+                    <div class="instances-grid" id="instances-grid">
+                        <!-- Instances inserted via JS -->
+                    </div>
+                </div>
+
+                <!-- Activity Feed -->
+                <div class="glass-card feed-card">
+                    <h3>Scaling Activity Feed</h3>
+                    <ul class="activity-feed" id="activity-feed">
+                        <!-- Logs inserted via JS -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

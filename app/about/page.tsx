@@ -37,7 +37,7 @@ export default function AboutPage() {
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0B1722] leading-[1.15]">
               From an Auto Workshop in 1989 to<br className="hidden sm:block" />{' '}
-              <span className="text-[#16a34a]">South Tamil Nadu's No. 1</span> Energy Business.
+              <span className="text-[#16a34a]">South Tamil Nadu&apos;s Trusted</span> Energy Partner.
             </h1>
 
             <p className="text-base sm:text-lg text-[#647384] leading-relaxed max-w-3xl">

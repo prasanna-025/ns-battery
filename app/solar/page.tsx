@@ -21,6 +21,7 @@ import RoofSolarVisualizer3D from '@/components/interactive/RoofSolarVisualizer3
 import DayNightEnergyCycle from '@/components/interactive/DayNightEnergyCycle';
 import CoastalResilienceEngine from '@/components/interactive/CoastalResilienceEngine';
 import HomeQuoteSection from '@/components/home/HomeQuoteSection';
+import ProductGrid from '@/components/products/ProductGrid';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
@@ -202,6 +203,31 @@ export default function SolarPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* 5B. Verified Solar Hardware Products */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span className="font-mono uppercase tracking-widest text-[#15803d] font-bold text-xs">
+              FIELD-TESTED HARDWARE
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1722] mt-1">
+              Authorized Solar Systems &amp; Modules
+            </h2>
+            <p className="text-xs sm:text-sm text-[#647384] mt-1">
+              Bifacial Mono PERC panels, smart hybrid PCUs, and off-grid stations with 25-year performance warranties.
+            </p>
+          </div>
+          <Link
+            href="/products"
+            className="text-xs font-semibold text-[#16a34a] hover:underline flex items-center gap-1 shrink-0"
+          >
+            <span>View Full Product Catalogue</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+        <ProductGrid initialCategory="solar" />
       </section>
 
       {/* 6. PM Surya Ghar Subsidy Guide Table */}
