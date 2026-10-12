@@ -81,10 +81,10 @@ export default function LubricantsPage() {
       {/* 2. Gulf Oil Application Sectors */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="space-y-1">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722]">
             Gulf Oil Performance Divisions
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300">
+          <p className="text-xs sm:text-sm text-[#647384]">
             Formulated to exceed rigorous OEM specifications in tropical and coastal environments.
           </p>
         </div>
@@ -93,23 +93,23 @@ export default function LubricantsPage() {
           {gulfDivisions.map((div, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-[#061e11] border border-emerald-500/30 flex flex-col justify-between space-y-4 hover:border-emerald-400/60 transition-all shadow-xl"
+              className="p-6 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4 hover:border-[#D9232E]/40 hover:shadow-md transition-all"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-[#E1E7ED] flex items-center justify-center text-[#D9232E]">
                     <div.icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-950/60 border border-amber-500/30">
+                  <span className="text-[10px] font-mono font-bold text-[#F4B323] px-2 py-0.5 rounded bg-amber-50 border border-amber-200">
                     {div.specs}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="text-lg font-bold text-[#0B1722]">
                   {div.title}
                 </h3>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-[#647384] leading-relaxed">
                   {div.desc}
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default function LubricantsPage() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-3 rounded-xl bg-emerald-950 hover:bg-emerald-500 hover:text-emerald-950 text-emerald-300 font-bold text-xs text-center border border-emerald-500/30 transition-all"
+                className="w-full py-2.5 px-3 rounded-xl bg-white hover:bg-[#D9232E] hover:text-white text-[#D9232E] font-semibold text-xs text-center border border-[#D9232E]/30 hover:border-[#D9232E] transition-all shadow-sm"
               >
                 Inquire Stock / Bulk Packs
               </a>
@@ -131,33 +131,33 @@ export default function LubricantsPage() {
 
       {/* 3. SKF Precision Bearings Section */}
       <section id="skf" className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl bg-[#061d10] border border-emerald-500/30 p-6 sm:p-10 shadow-xl space-y-6">
+        <div className="rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] p-6 sm:p-10 shadow-sm space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
-                <Wrench className="w-3.5 h-3.5 text-emerald-400" />
-                <span>SKF ORIGINAL BEARINGS & GREASES</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E1E7ED] text-[#D9232E] text-xs font-semibold">
+                <Wrench className="w-3.5 h-3.5" />
+                <span>SKF Original Bearings &amp; Greases</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722]">
                 Genuine SKF Bearings: Zero Counterfeits Guarantee
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-md">
+            <p className="text-xs sm:text-sm text-[#647384] max-w-md">
               Counterfeit bearings cause catastrophic wheel lockups and motor seizures. At NS Batteries, every SKF box features an authentic verify-code hologram.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-            <div className="p-5 rounded-xl bg-[#04150b] border border-emerald-900/60 space-y-2">
-              <h4 className="text-base font-bold text-white">Deep Groove Ball Bearings</h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Available in 6000, 6200, and 6300 series (2RS rubber sealed & 2Z metal shielded) for two-wheeler wheels, alternators, water pumps, and industrial electric motors.
+            <div className="p-5 rounded-xl bg-white border border-[#E1E7ED] space-y-2">
+              <h4 className="text-base font-bold text-[#0B1722]">Deep Groove Ball Bearings</h4>
+              <p className="text-xs text-[#647384] leading-relaxed">
+                Available in 6000, 6200, and 6300 series (2RS rubber sealed &amp; 2Z metal shielded) for two-wheeler wheels, alternators, water pumps, and industrial electric motors.
               </p>
             </div>
 
-            <div className="p-5 rounded-xl bg-[#04150b] border border-emerald-900/60 space-y-2">
-              <h4 className="text-base font-bold text-white">SKF LGMT 2 Multi-Purpose Grease</h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
+            <div className="p-5 rounded-xl bg-white border border-[#E1E7ED] space-y-2">
+              <h4 className="text-base font-bold text-[#0B1722]">SKF LGMT 2 Multi-Purpose Grease</h4>
+              <p className="text-xs text-[#647384] leading-relaxed">
                 Mineral oil based, lithium soap thickened grease with exceptional rust inhibition and thermal stability from -30 °C to +120 °C. Available in 500g, 1kg, and 5kg packs.
               </p>
             </div>
@@ -168,10 +168,10 @@ export default function LubricantsPage() {
       {/* 4. Products Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-white">
-            Lubricants & Accessories in Stock
+          <h2 className="text-2xl font-bold text-[#0B1722]">
+            Lubricants &amp; Accessories in Stock
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#647384]">
             Gulf engine oils, AdBlue DEF cans, and SKF grease packs ready for store pickup or delivery.
           </p>
         </div>
