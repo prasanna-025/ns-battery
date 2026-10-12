@@ -13,44 +13,44 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/solar', label: 'Solar Modules' },
-    { href: '/solar#pm-surya-ghar', label: 'PM Surya Ghar' },
-    { href: '/batteries', label: 'Batteries' },
-    { href: '/inverters', label: 'Inverters & UPS' },
-    { href: '/lubricants', label: 'Gulf Oil & SKF' },
+    { href: '/about', label: 'About Us' },
     { href: '/products', label: 'Products' },
-    { href: '/about', label: 'Company' },
+    { href: '/solar', label: 'Solar Solutions' },
+    { href: '/batteries', label: 'Our Brands' },
+    { href: '/gallery', label: 'Gallery' },
     { href: '/contact', label: 'Contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* 1. Top Bar: Navy Strip */}
-      <div className="bg-[#0B1722] text-[#FFFFFF] text-[12px] border-b border-[#122333]/40">
+      {/* 1. Top Bar: Dark Forest Green Strip from Solar1.png */}
+      <div className="bg-[#032b21] text-white text-[12px] border-b border-[#05382b]/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 h-10 flex items-center justify-between text-xs">
           <div className="flex items-center gap-4 truncate">
-            <div className="hidden md:flex items-center gap-1.5 text-slate-300">
-              <MapPin className="w-3.5 h-3.5 text-[#F4B323] shrink-0" />
-              <span className="truncate">21/20, AKB Complex, GH Road, Ramanathapuram – 623501</span>
-            </div>
-            <span className="hidden md:inline text-[#122333]">|</span>
-            <div className="flex items-center gap-1.5 bg-[#122333]/80 px-2 py-0.5 rounded">
-              <Sun className="w-3.5 h-3.5 text-[#F4B323] shrink-0" />
-              <span className="font-mono text-[#F4B323] tracking-wider text-[11px] uppercase font-semibold">
-                PM Surya Ghar Partner
-              </span>
+            <div className="flex items-center gap-1.5 text-slate-200">
+              <MapPin className="w-3.5 h-3.5 text-[#22c55e] shrink-0" />
+              <span className="truncate">21/20, AKB Complex, Ground Floor, Lathams Bangalow GH Road, Ramanathapuram – 623501, Tamil Nadu</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1.5 font-mono text-[12px] text-slate-300">
-              <Phone className="w-3.5 h-3.5 text-[#86efac] shrink-0" />
-              <a href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`} className="text-white font-semibold hover:text-[#86efac]">
-                {COMPANY_INFO.phones[0].display}
+          <div className="flex items-center gap-4 shrink-0">
+            <div className="flex items-center gap-2 font-mono text-[12px] text-slate-200">
+              <Phone className="w-3.5 h-3.5 text-[#22c55e] shrink-0" />
+              <a href="tel:+918870120911" className="text-white font-semibold hover:text-[#86efac] transition-colors">
+                88701 20911
               </a>
-              <span className="text-slate-500">/</span>
-              <a href={`tel:+91${COMPANY_INFO.phones[1].raw.slice(2)}`} className="text-white font-semibold hover:text-[#86efac]">
-                {COMPANY_INFO.phones[1].display}
+              <span className="text-slate-400">|</span>
+              <a href="tel:+919514520911" className="text-white font-semibold hover:text-[#86efac] transition-colors">
+                95145 20911
+              </a>
+              <span className="text-slate-400">|</span>
+              <a
+                href="https://wa.me/918870120911?text=Hello%20NS%20Batteries%2C%20I%20would%20like%20to%20enquire%20about%20your%20products"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#86efac] hover:text-white transition-colors font-sans font-semibold inline-flex items-center gap-1"
+              >
+                WhatsApp
               </a>
             </div>
           </div>
@@ -96,17 +96,11 @@ export default function Navbar() {
           {/* Action CTAs */}
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              href="/calculator"
-              className="hidden sm:inline-flex items-center text-xs font-semibold px-4 py-2 rounded-xl text-[#0B1722] border border-[#0B1722] hover:bg-[#F5F7FA] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
-            >
-              Solar Calculator
-            </Link>
-
-            <Link
               href="/quote"
-              className="inline-flex items-center text-xs font-semibold px-4 py-2 rounded-xl text-white bg-[#15803d] hover:bg-[#166534] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
+              className="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full text-white bg-[#15803d] hover:bg-[#166534] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
             >
-              Get a Quote
+              <span>Get a Quote</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
 
             {/* Mobile Hamburger Button */}

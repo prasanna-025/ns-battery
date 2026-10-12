@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import HeroSection from '@/components/hero/HeroSection';
-import CompanyStats from '@/components/home/CompanyStats';
 import CategoryGrid from '@/components/home/CategoryGrid';
+import BrandTrustBar from '@/components/home/BrandTrustBar';
+import SolarShowcaseSplit from '@/components/home/SolarShowcaseSplit';
+import CompanyStats from '@/components/home/CompanyStats';
 import SubsidyGuideSection from '@/components/home/SubsidyGuideSection';
-import WhyChooseSection from '@/components/home/WhyChooseSection';
 import InstallationGallery from '@/components/home/InstallationGallery';
 import FoundersTrustStory from '@/components/home/FoundersTrustStory';
-import StorefrontShowcase from '@/components/store/StorefrontShowcase';
 import SolarCalculator from '@/components/solar/SolarCalculator';
 import HomeQuoteSection from '@/components/home/HomeQuoteSection';
 import ProductGrid from '@/components/products/ProductGrid';
@@ -16,16 +16,19 @@ import ProductGrid from '@/components/products/ProductGrid';
 export default function HomePage() {
   return (
     <div className="bg-white text-[#17212B]">
-      {/* 1. HERO SECTION (Corporate 2-Column with Realistic Rooftop Solar Photo) */}
+      {/* 1. HERO SECTION (Matching Solar1.png layout with Tree.png image) */}
       <HeroSection />
 
-      {/* 2. COMPANY STATISTICS ("OUR JOURNEY IN NUMBERS") */}
-      <CompanyStats />
-
-      {/* 3. PRODUCT CATEGORIES ("Complete Energy Solutions for Every Need") */}
+      {/* 2. 7-CATEGORY ROW (Automotive Batteries, Solar Solutions, Inverter Batteries, Inverters & UPS, Solar Batteries, Lubricants, SKF / Accessories) */}
       <CategoryGrid />
 
-      {/* 4. FEATURED PRODUCTS CATALOGUE */}
+      {/* 3. BRAND PARTNER STRIP (Luminous, Powerzone, UTL, Gulf, SKF + Quality Products | Trusted Brands | Better Energy) */}
+      <BrandTrustBar />
+
+      {/* 4. 3-COLUMN SPLIT SECTION (Why Choose NS Batteries | Storefront photo | Powering Homes Businesses) */}
+      <SolarShowcaseSplit />
+
+      {/* 5. FEATURED PRODUCTS CATALOGUE (Maintained working functionality) */}
       <section className="bg-white py-16 sm:py-24 border-b border-[#E1E7ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -56,24 +59,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PM SURYA GHAR SUBSIDY GUIDANCE SECTION */}
+      {/* 6. PM SURYA GHAR SUBSIDY GUIDANCE SECTION */}
       <SubsidyGuideSection />
 
-      {/* 6. WHY CHOOSE NS BATTERIES (6 Core Trust Pillars) */}
-      <WhyChooseSection />
+      {/* 7. COMPANY STATS */}
+      <CompanyStats />
 
-      {/* 7. SOLAR SOLUTIONS IN ACTION (Verified Field Installation Gallery) */}
+      {/* 8. SOLAR SOLUTIONS IN ACTION (Field Installation Gallery) */}
       <InstallationGallery />
 
-      {/* 8. FOUNDER & SECOND-GENERATION LEADERSHIP */}
+      {/* 9. FOUNDER & LEADERSHIP STORY */}
       <FoundersTrustStory />
-
-      {/* 9. FLAGSHIP SHOWROOM WALK-IN SHOWCASE */}
-      <section className="bg-white py-16 sm:py-24 border-b border-[#E1E7ED]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <StorefrontShowcase />
-        </div>
-      </section>
 
       {/* 10. INTERACTIVE SOLAR SAVINGS CALCULATOR */}
       <section className="bg-[#F5F7FA] py-16 sm:py-24 border-b border-[#E1E7ED]">
