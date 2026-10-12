@@ -17,19 +17,20 @@ export default function HeroSection() {
           <div className="lg:col-span-7 flex flex-col items-start z-10 space-y-6">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2">
-              <span className="text-xs uppercase tracking-widest text-[#86efac] font-bold font-mono">
-                NS BATTERIES &bull; RAMANATHAPURAM
+              <span className="text-xs uppercase tracking-widest text-slate-200 font-semibold font-mono">
+                NS BATTERIES
               </span>
             </div>
 
             {/* Main Headline from Solar1.png */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[1.12] font-extrabold text-white tracking-tight">
-              Powering a <span className="text-[#22c55e]">Sustainable</span> Tomorrow
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.12] font-extrabold text-white tracking-tight">
+              Powering a <br className="hidden sm:inline" />
+              <span className="text-[#22c55e]">Sustainable</span> Tomorrow
             </h1>
 
             {/* Supporting Paragraph from Solar1.png */}
-            <p className="text-base sm:text-lg text-slate-200 max-w-xl leading-relaxed">
-              Leading the transition to clean, renewable solar energy, automotive power, and reliable backup solutions. Quality products for homes, commercial fleets, and industrial enterprises.
+            <p className="text-sm sm:text-base text-slate-200 max-w-lg leading-relaxed">
+              Your trusted partner for solar solutions, batteries, inverters, UPS and complete power backup systems.
             </p>
 
             {/* CTA Buttons Matching Solar1.png Pill Styling */}
