@@ -82,33 +82,33 @@ export default function InvertersPage() {
       {/* 3. Sine Wave vs Square Wave Quality Guide */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#061e11] border border-emerald-500/40 space-y-4 shadow-xl">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#16835D]/30 space-y-4 shadow-sm">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold text-emerald-400">Pure Sine Wave (Recommended)</h3>
-              <span className="px-2 py-0.5 rounded bg-emerald-900/60 text-emerald-300 text-[10px] font-bold">NS Standard</span>
+              <h3 className="text-xl font-bold text-[#16835D]">Pure Sine Wave (Recommended)</h3>
+              <span className="px-2 py-0.5 rounded bg-emerald-50 text-[#16835D] border border-emerald-200 text-[10px] font-bold">NS Standard</span>
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-xs text-[#647384] leading-relaxed">
               Identical to the clean grid power supplied by TANGEDCO. Smooth sinusoidal oscillation prevents motor overheating, eliminates buzzing noise in fans, and keeps televisions and computer monitors completely flicker-free.
             </p>
-            <ul className="space-y-1.5 text-xs text-slate-300 pt-2 border-t border-emerald-950">
-              <li className="flex items-center gap-2 text-emerald-300">✓ Completely silent operation</li>
-              <li className="flex items-center gap-2 text-emerald-300">✓ Preserves motor lifespan of fans and refrigerators</li>
-              <li className="flex items-center gap-2 text-emerald-300">✓ Zero risk to sensitive laptops and LED screens</li>
+            <ul className="space-y-1.5 text-xs text-[#647384] pt-2 border-t border-[#E1E7ED]">
+              <li className="flex items-center gap-2 text-[#16835D]">✓ Completely silent operation</li>
+              <li className="flex items-center gap-2 text-[#16835D]">✓ Preserves motor lifespan of fans and refrigerators</li>
+              <li className="flex items-center gap-2 text-[#16835D]">✓ Zero risk to sensitive laptops and LED screens</li>
             </ul>
           </div>
 
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#140b07] border border-red-900/40 space-y-4 shadow-xl">
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#D9232E]/30 space-y-4 shadow-sm">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold text-red-400">Generic Square / Quasi Wave</h3>
-              <span className="px-2 py-0.5 rounded bg-red-950/60 text-red-300 text-[10px] font-bold">Old Technology</span>
+              <h3 className="text-xl font-bold text-[#D9232E]">Generic Square / Quasi Wave</h3>
+              <span className="px-2 py-0.5 rounded bg-red-50 text-[#D9232E] border border-red-200 text-[10px] font-bold">Old Technology</span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-[#647384] leading-relaxed">
               Crude step-voltage outputs that inject heavy harmonic distortion into household wiring. Often leads to hot fan bearings, high buzzing sound, and premature motherboard failure in modern smart appliances.
             </p>
-            <ul className="space-y-1.5 text-xs text-slate-400 pt-2 border-t border-red-950/60">
-              <li className="flex items-center gap-2 text-red-400">✗ Annoying buzzing hum from ceiling fans</li>
-              <li className="flex items-center gap-2 text-red-400">✗ Causes excessive heat in AC motor windings</li>
-              <li className="flex items-center gap-2 text-red-400">✗ Not recommended for modern electronic appliances</li>
+            <ul className="space-y-1.5 text-xs text-[#647384] pt-2 border-t border-[#E1E7ED]">
+              <li className="flex items-center gap-2 text-[#D9232E]">✗ Annoying buzzing hum from ceiling fans</li>
+              <li className="flex items-center gap-2 text-[#D9232E]">✗ Causes excessive heat in AC motor windings</li>
+              <li className="flex items-center gap-2 text-[#D9232E]">✗ Not recommended for modern electronic appliances</li>
             </ul>
           </div>
         </div>
@@ -117,10 +117,10 @@ export default function InvertersPage() {
       {/* 4. Products Catalog filtered to Inverters */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-white">
-            Inverters & Solar PCU Models in Stock
+          <h2 className="text-2xl font-bold text-[#0B1722]">
+            Inverters &amp; Solar PCU Models in Stock
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#647384]">
             Luminous Zelio+, Cruze, and UTL Gamma Plus rMPPT systems available at our counter.
           </p>
         </div>

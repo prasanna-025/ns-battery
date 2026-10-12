@@ -73,23 +73,23 @@ export default function BatteriesPage() {
 
       {/* 5. Old Battery Exchange / Rebate Explainer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="p-6 sm:p-8 rounded-2xl bg-[#061d10] border border-emerald-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-2">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <span className="text-xs font-bold text-[#D9232E] uppercase tracking-wider flex items-center gap-1.5">
               <RefreshCw className="w-3.5 h-3.5" />
-              ECO-FRIENDLY LEAD RECYCLING & SCRAP REBATE
+              Eco-Friendly Lead Recycling &amp; Scrap Rebate
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#0B1722]">
               Get Maximum Value for Your Old Dead Battery
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+            <p className="text-xs sm:text-sm text-[#647384] max-w-xl">
               Bring your scrap bike, car, or inverter battery to our counter. We calculate instant credit against your new purchase and send the old lead for certified green smelting.
             </p>
           </div>
 
           <a
             href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-            className="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold text-xs shrink-0 flex items-center gap-2 transition-colors shadow"
+            className="px-5 py-3 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs shrink-0 flex items-center gap-2 transition-colors shadow-sm"
           >
             <Phone className="w-4 h-4" />
             <span>Check Scrap Rebate Value</span>
@@ -100,10 +100,10 @@ export default function BatteriesPage() {
       {/* 6. Complete Battery Products Catalog */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-[#0B1722]">
             Explore All Batteries in Stock
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#647384]">
             Automobile, tall tubular inverter, and LiFePO4 lithium batteries ready for immediate Ramanathapuram delivery.
           </p>
         </div>

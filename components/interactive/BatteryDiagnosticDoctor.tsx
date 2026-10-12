@@ -84,28 +84,25 @@ export default function BatteryDiagnosticDoctor() {
   const current = symptoms.find((s) => s.id === selectedId) || symptoms[0];
 
   return (
-    <div className="w-full rounded-3xl bg-gradient-to-b from-[#062413] via-[#04160c] to-[#020d06] border border-emerald-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-      {/* Glow Halo */}
-      <div className="absolute top-0 right-1/3 w-80 h-80 bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Title */}
       <div className="max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
-          <Stethoscope className="w-3.5 h-3.5 text-emerald-400" />
-          <span>VIRTUAL BATTERY DIAGNOSTIC DOCTOR</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#D9232E] uppercase tracking-wider">
+          <Stethoscope className="w-3.5 h-3.5" />
+          <span>Battery Diagnostic Guide</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722] tracking-tight">
           Experiencing Battery Trouble? Diagnose It in Seconds
         </h2>
-        <p className="text-xs sm:text-sm text-slate-300">
-          Select what your vehicle or inverter is doing. Our diagnostic engine pinpoints the root mechanical cause and provides the exact remedy.
+        <p className="text-xs sm:text-sm text-[#647384]">
+          Select what your vehicle or inverter is doing. Our diagnostic tool pinpoints the likely cause and recommended action.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Symptom Picker List */}
         <div className="lg:col-span-6 space-y-2.5">
-          <label className="block text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">
+          <label className="block text-xs font-bold text-[#0B1722] uppercase tracking-wider mb-1">
             Choose What You Are Experiencing:
           </label>
 
@@ -116,65 +113,65 @@ export default function BatteryDiagnosticDoctor() {
                 onClick={() => setSelectedId(item.id)}
                 className={`p-3.5 rounded-xl border cursor-pointer transition-all text-xs font-medium flex items-center justify-between ${
                   selectedId === item.id
-                    ? 'bg-gradient-to-r from-emerald-950 to-[#072d17] border-emerald-400 ring-2 ring-emerald-400/30 text-white font-bold shadow-md'
-                    : 'bg-[#04160c] border-emerald-900/50 text-slate-300 hover:border-emerald-700'
+                    ? 'bg-white border-[#D9232E] text-[#0B1722] font-semibold shadow-sm'
+                    : 'bg-[#F5F7FA] border-[#E1E7ED] text-[#647384] hover:border-[#D9232E]/40 hover:text-[#0B1722]'
                 }`}
               >
                 <div className="flex items-center gap-2.5 pr-2">
                   <span className={`w-2 h-2 rounded-full shrink-0 ${
-                    item.urgency === 'critical' ? 'bg-red-400' : item.urgency === 'moderate' ? 'bg-amber-400' : 'bg-emerald-400'
+                    item.urgency === 'critical' ? 'bg-[#D9232E]' : item.urgency === 'moderate' ? 'bg-[#F4B323]' : 'bg-[#16835D]'
                   }`} />
                   <span>{item.label}</span>
                 </div>
-                <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${selectedId === item.id ? 'text-emerald-400' : 'text-slate-600'}`} />
+                <ArrowRight className={`w-3.5 h-3.5 shrink-0 ${selectedId === item.id ? 'text-[#D9232E]' : 'text-[#647384]'}`} />
               </div>
             ))}
           </div>
 
-          <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-xs text-slate-300 flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <div className="p-3 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#647384] flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[#16835D] shrink-0" />
             <span>We never recommend battery replacement if a simple terminal cleaning or recharge solves the issue.</span>
           </div>
         </div>
 
         {/* Right Column: Diagnostic Result Card */}
-        <div className="lg:col-span-6 bg-[#03150b] p-6 sm:p-7 rounded-2xl border border-emerald-500/30 space-y-5 shadow-xl">
+        <div className="lg:col-span-6 bg-[#F5F7FA] p-6 sm:p-7 rounded-2xl border border-[#E1E7ED] space-y-5">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                DIAGNOSED CONDITION
+              <span className="text-[10px] font-bold text-[#647384] uppercase tracking-wider block">
+                Diagnosed Condition
               </span>
-              <h3 className="text-xl font-bold text-white mt-0.5">{current.diagnosis}</h3>
+              <h3 className="text-xl font-bold text-[#0B1722] mt-0.5">{current.diagnosis}</h3>
             </div>
             <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${
               current.urgency === 'critical'
-                ? 'bg-red-950/80 text-red-300 border-red-500/40'
+                ? 'bg-red-50 text-[#D9232E] border-red-200'
                 : current.urgency === 'moderate'
-                ? 'bg-amber-950/80 text-amber-300 border-amber-500/40'
-                : 'bg-emerald-950/80 text-emerald-300 border-emerald-500/40'
+                ? 'bg-amber-50 text-[#F4B323] border-amber-200'
+                : 'bg-emerald-50 text-[#16835D] border-emerald-200'
             }`}>
               {current.urgency} Urgency
             </span>
           </div>
 
           {/* Health Score Meter */}
-          <div className="space-y-1.5 p-3.5 rounded-xl bg-[#061d10] border border-emerald-950">
+          <div className="space-y-1.5 p-3.5 rounded-xl bg-white border border-[#E1E7ED]">
             <div className="flex justify-between text-xs">
-              <span className="text-slate-400">Estimated Battery Health:</span>
+              <span className="text-[#647384]">Estimated Battery Health:</span>
               <span className={`font-mono font-bold ${
-                current.healthScore <= 20 ? 'text-red-400' : current.healthScore <= 50 ? 'text-amber-400' : 'text-emerald-400'
+                current.healthScore <= 20 ? 'text-[#D9232E]' : current.healthScore <= 50 ? 'text-[#F4B323]' : 'text-[#16835D]'
               }`}>
                 {current.healthScore}%
               </span>
             </div>
-            <div className="w-full h-2 bg-emerald-950 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-[#E1E7ED] rounded-full overflow-hidden">
               <div
                 className={`h-full transition-all duration-500 ${
                   current.healthScore <= 20
-                    ? 'bg-red-500'
+                    ? 'bg-[#D9232E]'
                     : current.healthScore <= 50
-                    ? 'bg-amber-500'
-                    : 'bg-emerald-500'
+                    ? 'bg-[#F4B323]'
+                    : 'bg-[#16835D]'
                 }`}
                 style={{ width: `${current.healthScore}%` }}
               />
@@ -183,19 +180,19 @@ export default function BatteryDiagnosticDoctor() {
 
           {/* Technical Explanation */}
           <div className="space-y-1">
-            <h4 className="text-xs font-bold text-emerald-300 uppercase">What Is Happening:</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <h4 className="text-xs font-bold text-[#0B1722] uppercase">What Is Happening:</h4>
+            <p className="text-xs text-[#647384] leading-relaxed">
               {current.explanation}
             </p>
           </div>
 
           {/* Recommended Solution */}
-          <div className="p-3.5 rounded-xl bg-emerald-950/70 border border-emerald-500/30 space-y-1">
-            <div className="flex items-center gap-1.5 text-xs font-bold text-white">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <div className="p-3.5 rounded-xl bg-white border border-[#E1E7ED] space-y-1">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#0B1722]">
+              <ShieldCheck className="w-4 h-4 text-[#16835D]" />
               <span>Recommended Action:</span>
             </div>
-            <p className="text-xs text-slate-200 leading-relaxed">
+            <p className="text-xs text-[#647384] leading-relaxed">
               {current.solution}
             </p>
           </div>
@@ -208,17 +205,17 @@ export default function BatteryDiagnosticDoctor() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold text-xs flex items-center justify-center gap-2 shadow transition-all"
+              className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
             >
-              <MessageCircle className="w-4 h-4 fill-emerald-950" />
+              <MessageCircle className="w-4 h-4" />
               <span>WhatsApp Store Desk</span>
             </a>
 
             <a
               href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-              className="w-full sm:w-auto py-3 px-4 rounded-xl bg-emerald-950 border border-emerald-500/40 text-emerald-200 hover:text-white font-semibold text-xs flex items-center justify-center gap-2"
+              className="w-full sm:w-auto py-3 px-4 rounded-xl bg-white border border-[#E1E7ED] text-[#0B1722] hover:text-[#D9232E] font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
             >
-              <Phone className="w-4 h-4 text-emerald-400" />
+              <Phone className="w-4 h-4 text-[#D9232E]" />
               <span>Call: {COMPANY_INFO.phones[0].display}</span>
             </a>
           </div>

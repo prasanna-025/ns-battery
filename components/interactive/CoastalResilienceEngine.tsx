@@ -72,17 +72,17 @@ export default function CoastalResilienceEngine() {
   const current = pillars[activeTab];
 
   return (
-    <div className="w-full rounded-3xl bg-gradient-to-b from-[#072415] via-[#04160c] to-[#020e06] border border-emerald-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+    <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Title */}
       <div className="max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-          <span>RAMANATHAPURAM CLIMATE & COASTAL RESILIENCE</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#16835D] uppercase tracking-wider">
+          <ShieldCheck className="w-3.5 h-3.5" />
+          <span>Ramanathapuram Climate &amp; Coastal Resilience</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-          Engineered for Coastal Salt, Extreme Heat & Monsoons
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722] tracking-tight">
+          Engineered for Coastal Salt, Extreme Heat &amp; Monsoons
         </h2>
-        <p className="text-xs sm:text-sm text-slate-300">
+        <p className="text-xs sm:text-sm text-[#647384]">
           Why off-the-shelf equipment fails along the Tamil Nadu coastline, and how our specialized engineering protects your investment for 25+ years.
         </p>
       </div>
@@ -95,10 +95,10 @@ export default function CoastalResilienceEngine() {
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`p-3.5 rounded-xl border flex items-center justify-center gap-2 transition-all text-xs font-bold ${
+              className={`p-3.5 rounded-xl border flex items-center justify-center gap-2 transition-all text-xs font-semibold ${
                 activeTab === key
-                  ? 'bg-emerald-500 text-emerald-950 border-emerald-400 shadow-md shadow-emerald-500/20'
-                  : 'bg-[#05180e] text-slate-300 border-emerald-900/50 hover:border-emerald-600'
+                  ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
+                  : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E] hover:text-[#D9232E]'
               }`}
             >
               <tab.icon className="w-4 h-4 shrink-0" />
@@ -109,44 +109,44 @@ export default function CoastalResilienceEngine() {
       </div>
 
       {/* Main Feature Details Card */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-[#03150b] border border-emerald-500/30 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xl">
+      <div className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7 space-y-4">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
               {current.tagline}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#0B1722]">
               {current.title}
             </h3>
-            <p className="text-xs font-mono font-bold text-amber-300">
+            <p className="text-xs font-mono font-semibold text-[#F4B323]">
               Benchmark: {current.stats}
             </p>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#647384] leading-relaxed">
             {current.desc}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-emerald-950">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-[#E1E7ED]">
             {current.bulletPoints.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-xs text-slate-200">
-                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-2 text-xs text-[#647384]">
+                <Check className="w-3.5 h-3.5 text-[#16835D] shrink-0 mt-0.5" />
                 <span>{item}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="lg:col-span-5 p-6 rounded-2xl bg-gradient-to-b from-[#062413] to-[#04160c] border border-emerald-500/40 text-center space-y-3 shadow-inner">
-          <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+        <div className="lg:col-span-5 p-6 rounded-2xl bg-[#0B1722] border border-[#0B1722] text-center space-y-3">
+          <div className="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center mx-auto">
             <current.icon className="w-8 h-8" />
           </div>
           <h4 className="text-base font-bold text-white">The NS Engineering Standard</h4>
-          <p className="text-xs text-slate-300 leading-relaxed">
+          <p className="text-xs text-white/60 leading-relaxed">
             Every product installed or sold from our Ramanathapuram showroom is pre-inspected for coastal durability so you never suffer rust or premature failure.
           </p>
           <div className="pt-2">
-            <span className="inline-block px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-[11px] font-semibold text-emerald-300">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-[11px] font-semibold text-[#16835D]">
               100% Coastal Marine Grade Guaranteed
             </span>
           </div>

@@ -82,36 +82,33 @@ export default function BatteryTeardown3D() {
   const activePart = currentParts[selectedPartIndex] || currentParts[0];
 
   return (
-    <div className="w-full rounded-3xl bg-gradient-to-b from-[#062413] via-[#04160c] to-[#020d06] border border-emerald-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-1/4 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Title */}
-      <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
-            <Layers className="w-3.5 h-3.5 text-emerald-400" />
-            <span>INTERACTIVE BATTERY ANATOMY & TEARDOWN</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#16835D] uppercase tracking-wider">
+            <Layers className="w-3.5 h-3.5" />
+            <span>Interactive Battery Anatomy</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722] tracking-tight">
             Look Inside: Why NS Batteries Never Fail Prematurely
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300">
+          <p className="text-xs sm:text-sm text-[#647384]">
             Click internal components below to inspect the engineering differences between genuine OEM cells and cheap market alternatives.
           </p>
         </div>
 
         {/* Battery Chemistry Switcher */}
-        <div className="flex items-center gap-1.5 p-1 bg-[#031309] rounded-xl border border-emerald-500/20 shrink-0">
+        <div className="flex items-center gap-1.5 p-1 bg-[#F5F7FA] rounded-xl border border-[#E1E7ED] shrink-0">
           <button
             onClick={() => {
               setBatteryType('lithium');
               setSelectedPartIndex(0);
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               batteryType === 'lithium'
-                ? 'bg-teal-500 text-teal-950 shadow-md font-bold'
-                : 'text-slate-300 hover:text-white'
+                ? 'bg-[#0B1722] text-white shadow-sm font-bold'
+                : 'text-[#647384] hover:text-[#0B1722]'
             }`}
           >
             ⚡ LiFePO4 Lithium
@@ -121,10 +118,10 @@ export default function BatteryTeardown3D() {
               setBatteryType('tubular');
               setSelectedPartIndex(0);
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               batteryType === 'tubular'
-                ? 'bg-emerald-500 text-emerald-950 shadow-md font-bold'
-                : 'text-slate-300 hover:text-white'
+                ? 'bg-[#0B1722] text-white shadow-sm font-bold'
+                : 'text-[#647384] hover:text-[#0B1722]'
             }`}
           >
             🔋 Tall Tubular
@@ -132,16 +129,16 @@ export default function BatteryTeardown3D() {
         </div>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Column: Interactive Layered Exploded Teardown Stack */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left Column: Interactive Layered Stack */}
         <div className="lg:col-span-6 space-y-3">
-          <div className="flex items-center justify-between text-xs text-slate-400 pb-1">
-            <span className="font-semibold text-emerald-300">
+          <div className="flex items-center justify-between text-xs text-[#647384] pb-1">
+            <span className="font-semibold text-[#0B1722]">
               {batteryType === 'lithium' ? 'LiFePO4 Internal Architecture' : 'Tall Tubular Cell Architecture'}
             </span>
             <button
               onClick={() => setIsExploded(!isExploded)}
-              className="text-emerald-400 hover:text-white underline font-medium"
+              className="text-[#D9232E] hover:underline font-semibold"
             >
               {isExploded ? 'Compact View' : 'Exploded View'}
             </button>
@@ -153,35 +150,35 @@ export default function BatteryTeardown3D() {
               <div
                 key={idx}
                 onClick={() => setSelectedPartIndex(idx)}
-                className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 flex items-center justify-between ${
+                className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 flex items-center justify-between ${
                   selectedPartIndex === idx
-                    ? 'bg-gradient-to-r from-emerald-950 to-[#072916] border-emerald-400 ring-2 ring-emerald-400/30 shadow-lg translate-x-1.5'
-                    : 'bg-[#04160c]/80 border-emerald-900/50 hover:border-emerald-700'
+                    ? 'bg-white border-[#D9232E] shadow-sm translate-x-1'
+                    : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#D9232E]/40'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs ${
                       selectedPartIndex === idx
-                        ? 'bg-emerald-400 text-emerald-950'
-                        : 'bg-emerald-950 text-emerald-300'
+                        ? 'bg-[#D9232E] text-white'
+                        : 'bg-[#E1E7ED] text-[#0B1722]'
                     }`}
                   >
                     0{idx + 1}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">{part.name}</h4>
-                    <p className="text-[11px] text-emerald-400">{part.role}</p>
+                    <h4 className="text-sm font-bold text-[#0B1722]">{part.name}</h4>
+                    <p className="text-[11px] text-[#647384]">{part.role}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">
+                  <span className="text-[10px] text-[#647384] font-mono hidden sm:inline">
                     {part.specs}
                   </span>
                   <ChevronRight
                     className={`w-4 h-4 transition-transform ${
-                      selectedPartIndex === idx ? 'text-emerald-400 translate-x-1' : 'text-slate-600'
+                      selectedPartIndex === idx ? 'text-[#D9232E] translate-x-1' : 'text-[#647384]'
                     }`}
                   />
                 </div>
@@ -189,51 +186,51 @@ export default function BatteryTeardown3D() {
             ))}
           </div>
 
-          <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/20 text-xs text-slate-300 flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <div className="p-3 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] text-xs text-[#647384] flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[#16835D] shrink-0" />
             <span>All batteries include official manufacturer serial QR code for digital warranty registration.</span>
           </div>
         </div>
 
         {/* Right Column: Deep-Dive Component Inspector */}
-        <div className="lg:col-span-6 bg-[#03140a] p-6 sm:p-7 rounded-2xl border border-emerald-500/30 space-y-5 shadow-xl">
+        <div className="lg:col-span-6 bg-[#F5F7FA] p-6 sm:p-7 rounded-2xl border border-[#E1E7ED] space-y-5">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
-              INSPECTED COMPONENT #{selectedPartIndex + 1}
+            <span className="text-[11px] font-bold text-[#D9232E] uppercase tracking-wider">
+              Component #{selectedPartIndex + 1}
             </span>
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="text-xl font-bold text-[#0B1722]">
               {activePart.name}
             </h3>
-            <p className="text-xs font-semibold text-amber-300 font-mono">
+            <p className="text-xs font-semibold text-[#647384]">
               Function: {activePart.role}
             </p>
           </div>
 
           {/* Description */}
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#647384] leading-relaxed">
             {activePart.detail}
           </p>
 
           {/* Technical Spec Box */}
-          <div className="p-3.5 rounded-xl bg-[#061e11] border border-emerald-950 text-xs space-y-1">
-            <span className="text-slate-400 text-[11px] block">Factory Specification:</span>
-            <p className="font-mono font-bold text-white">{activePart.specs}</p>
+          <div className="p-3.5 rounded-xl bg-white border border-[#E1E7ED] text-xs space-y-1">
+            <span className="text-[#647384] text-[11px] block">Factory Specification:</span>
+            <p className="font-mono font-bold text-[#0B1722]">{activePart.specs}</p>
           </div>
 
           {/* NS Batteries Difference Guarantee */}
-          <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/30 space-y-1.5">
-            <div className="flex items-center gap-2 text-xs font-bold text-emerald-300">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <div className="p-4 rounded-xl bg-white border border-[#16835D]/30 space-y-1.5">
+            <div className="flex items-center gap-2 text-xs font-bold text-[#16835D]">
+              <ShieldCheck className="w-4 h-4 text-[#16835D]" />
               <span>The NS Batteries Quality Standard:</span>
             </div>
-            <p className="text-xs text-slate-200 leading-relaxed">
+            <p className="text-xs text-[#647384] leading-relaxed">
               {activePart.nsAdvantage}
             </p>
           </div>
 
           {/* Warning against cheap alternatives */}
-          <div className="flex items-start gap-2.5 text-xs text-amber-300/90 pt-1">
-            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+          <div className="flex items-start gap-2.5 text-xs text-[#647384] pt-1">
+            <AlertTriangle className="w-4 h-4 text-[#F4B323] shrink-0 mt-0.5" />
             <span>
               Beware of unbranded street batteries using recycled lead scraps or uncertified BMS boards that swell and pose fire hazards.
             </span>

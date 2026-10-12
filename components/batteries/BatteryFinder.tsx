@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Battery, Bike, Car, Truck, Zap, CheckCircle2, MessageCircle, Phone, ArrowRight } from 'lucide-react';
+import { Battery, Bike, Car, Truck, Zap, CheckCircle2, MessageCircle, Phone } from 'lucide-react';
 import { COMPANY_INFO } from '@/data/company';
 
 interface BatteryRecommendation {
@@ -120,71 +120,45 @@ export default function BatteryFinder() {
 
   const currentList = recommendations[vehicleType];
 
+  const tabs = [
+    { key: 'car' as const, label: 'Cars & SUVs', icon: Car },
+    { key: 'bike' as const, label: 'Two-Wheelers', icon: Bike },
+    { key: 'truck' as const, label: 'Commercial & Marine', icon: Truck },
+    { key: 'inverter' as const, label: 'Inverter & Lithium', icon: Zap },
+  ];
+
   return (
-    <div className="w-full rounded-2xl bg-gradient-to-b from-[#072113] to-[#04140b] border border-emerald-500/30 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-      {/* Title */}
+    <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
+      {/* Header */}
       <div className="max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
-          <Battery className="w-3.5 h-3.5 text-emerald-400" />
-          <span>INTELLIGENT BATTERY FINDER</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#D9232E] uppercase tracking-wider">
+          <Battery className="w-3.5 h-3.5" />
+          <span>Battery Finder</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722] tracking-tight">
           Find the Perfect Battery for Your Vehicle or Home
         </h2>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-          Select your category below to view recommended OEM batteries with exact capacities, warranty periods, and vehicle fitments.
+        <p className="text-[#647384] text-sm sm:text-base leading-relaxed">
+          Select your category to view recommended OEM batteries with exact capacities, warranty periods, and vehicle fitments.
         </p>
       </div>
 
-      {/* Category Switcher Tabs */}
+      {/* Category Tabs */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-        <button
-          onClick={() => setVehicleType('car')}
-          className={`p-3.5 rounded-xl border flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm font-bold ${
-            vehicleType === 'car'
-              ? 'bg-emerald-500 text-emerald-950 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#051a0e] text-slate-300 border-emerald-900/50 hover:border-emerald-600'
-          }`}
-        >
-          <Car className="w-4 h-4" />
-          <span>Cars & SUVs</span>
-        </button>
-
-        <button
-          onClick={() => setVehicleType('bike')}
-          className={`p-3.5 rounded-xl border flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm font-bold ${
-            vehicleType === 'bike'
-              ? 'bg-emerald-500 text-emerald-950 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#051a0e] text-slate-300 border-emerald-900/50 hover:border-emerald-600'
-          }`}
-        >
-          <Bike className="w-4 h-4" />
-          <span>Two-Wheelers</span>
-        </button>
-
-        <button
-          onClick={() => setVehicleType('truck')}
-          className={`p-3.5 rounded-xl border flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm font-bold ${
-            vehicleType === 'truck'
-              ? 'bg-emerald-500 text-emerald-950 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#051a0e] text-slate-300 border-emerald-900/50 hover:border-emerald-600'
-          }`}
-        >
-          <Truck className="w-4 h-4" />
-          <span>Commercial & Marine</span>
-        </button>
-
-        <button
-          onClick={() => setVehicleType('inverter')}
-          className={`p-3.5 rounded-xl border flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm font-bold ${
-            vehicleType === 'inverter'
-              ? 'bg-emerald-500 text-emerald-950 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#051a0e] text-slate-300 border-emerald-900/50 hover:border-emerald-600'
-          }`}
-        >
-          <Zap className="w-4 h-4" />
-          <span>Inverter & Lithium</span>
-        </button>
+        {tabs.map(({ key, label, icon: Icon }) => (
+          <button
+            key={key}
+            onClick={() => setVehicleType(key)}
+            className={`p-3.5 rounded-xl border flex items-center justify-center gap-2.5 transition-all text-xs sm:text-sm font-semibold ${
+              vehicleType === key
+                ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
+                : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E] hover:text-[#D9232E]'
+            }`}
+          >
+            <Icon className="w-4 h-4" />
+            <span>{label}</span>
+          </button>
+        ))}
       </div>
 
       {/* Recommendation Cards */}
@@ -192,33 +166,33 @@ export default function BatteryFinder() {
         {currentList.map((rec, idx) => (
           <div
             key={idx}
-            className="p-5 rounded-2xl bg-[#04170d] border border-emerald-500/30 flex flex-col justify-between space-y-4 hover:border-emerald-400/60 transition-all shadow-md group"
+            className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col justify-between space-y-4 hover:border-[#D9232E]/40 hover:shadow-md transition-all group"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wide">
+                <span className="text-[11px] font-bold text-[#D9232E] uppercase tracking-wide">
                   {rec.brand} Genuine
                 </span>
-                <span className="px-2 py-0.5 rounded bg-emerald-900/60 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
+                <span className="px-2 py-0.5 rounded bg-white text-[#647384] border border-[#E1E7ED] text-[10px] font-semibold">
                   {rec.warranty}
                 </span>
               </div>
 
-              <h3 className="text-base font-bold text-white leading-snug group-hover:text-emerald-300 transition-colors">
+              <h3 className="text-base font-bold text-[#0B1722] leading-snug group-hover:text-[#D9232E] transition-colors">
                 {rec.recommendedModel}
               </h3>
 
-              <div className="flex items-center gap-2 text-xs text-amber-300 font-mono">
-                <span>Capacity:</span>
-                <span className="font-bold">{rec.capacity}</span>
+              <div className="flex items-center gap-2 text-xs font-mono font-semibold">
+                <span className="text-[#647384] font-normal">Capacity:</span>
+                <span className="text-[#F4B323]">{rec.capacity}</span>
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-[#647384] leading-relaxed">
                 {rec.desc}
               </p>
 
-              <div className="pt-2 border-t border-emerald-950 text-xs text-slate-400">
-                <strong className="text-slate-300 block mb-1">Suitable Models:</strong>
+              <div className="pt-2 border-t border-[#E1E7ED] text-xs text-[#647384]">
+                <strong className="text-[#0B1722] block mb-1">Suitable Models:</strong>
                 <span>{rec.idealFor}</span>
               </div>
             </div>
@@ -229,7 +203,7 @@ export default function BatteryFinder() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 px-3 rounded-xl bg-emerald-950/80 hover:bg-emerald-500 hover:text-emerald-950 text-emerald-300 font-bold text-xs flex items-center justify-center gap-2 border border-emerald-500/30 transition-all duration-200"
+              className="w-full py-2.5 px-3 rounded-lg bg-white hover:bg-[#D9232E] hover:text-white text-[#D9232E] font-semibold text-xs flex items-center justify-center gap-2 border border-[#D9232E]/30 hover:border-[#D9232E] transition-all duration-200"
             >
               <MessageCircle className="w-3.5 h-3.5" />
               <span>Inquire Price on WhatsApp</span>
@@ -238,18 +212,18 @@ export default function BatteryFinder() {
         ))}
       </div>
 
-      {/* Emergency Assistance Footnote */}
-      <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-        <div className="flex items-center gap-2 text-slate-300">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-          <span>Battery dead on the road in Ramanathapuram? We offer quick jumpstart & replacement assistance.</span>
+      {/* Emergency Assistance */}
+      <div className="p-4 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        <div className="flex items-center gap-2 text-[#647384]">
+          <CheckCircle2 className="w-4 h-4 text-[#16835D] shrink-0" />
+          <span>Battery dead on the road in Ramanathapuram? We offer quick jumpstart &amp; replacement assistance.</span>
         </div>
         <a
           href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-          className="text-emerald-400 hover:text-white font-bold flex items-center gap-1.5 shrink-0 underline"
+          className="text-[#D9232E] hover:text-[#B91F29] font-bold flex items-center gap-1.5 shrink-0"
         >
           <Phone className="w-3.5 h-3.5" />
-          <span>Call Emergency Assistance: {COMPANY_INFO.phones[0].display}</span>
+          <span>Call: {COMPANY_INFO.phones[0].display}</span>
         </a>
       </div>
     </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Sun, BatteryCharging, Home, Zap, ArrowRight, ShieldCheck, RefreshCw, Radio } from 'lucide-react';
+import { Sun, BatteryCharging, Home, Zap, RefreshCw, ShieldCheck, Radio } from 'lucide-react';
 
 type SimulationMode = 'daytime' | 'evening' | 'outage';
 
@@ -22,7 +22,7 @@ export default function EnergyFlowSimulator() {
       homeKw: '1.4 kW',
       inverterToGrid: true,
       gridKw: '1.8 kW Export',
-      gridColor: 'text-emerald-400',
+      gridColor: 'text-[#16835D]',
       description: 'Solar panels generate 4.8 kW. The system powers the house, tops up the lithium battery, and exports the 1.8 kW surplus back to TANGEDCO to earn credits.',
     },
     evening: {
@@ -37,7 +37,7 @@ export default function EnergyFlowSimulator() {
       homeKw: '1.8 kW',
       inverterToGrid: false,
       gridKw: '0.0 kW (Zero Bill)',
-      gridColor: 'text-slate-400',
+      gridColor: 'text-[#647384]',
       description: 'Sun has set. Stored energy from the LiFePO4 battery smoothly powers refrigerators, fans, ACs and lights without drawing expensive electricity from the grid.',
     },
     outage: {
@@ -52,7 +52,7 @@ export default function EnergyFlowSimulator() {
       homeKw: '3.7 kW (Full Backup)',
       inverterToGrid: false,
       gridKw: 'DISCONNECTED (Safe Islanding)',
-      gridColor: 'text-red-400',
+      gridColor: 'text-[#D9232E]',
       description: 'Grid voltage drops to 0V. The NS Hybrid Inverter disconnects from the grid in <10ms to protect line workers, keeping your home completely illuminated with zero flicker.',
     },
   };
@@ -117,30 +117,27 @@ export default function EnergyFlowSimulator() {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-gradient-to-b from-[#072113] to-[#04140b] border border-emerald-500/30 p-5 sm:p-8 shadow-2xl relative overflow-hidden">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
-
+    <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-5 sm:p-8 shadow-sm">
       {/* Header & Mode Toggles */}
-      <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 mb-1">
-            <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
-            <span>INTERACTIVE ENERGY FLOW ARCHITECTURE</span>
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#D9232E] mb-1">
+            <Radio className="w-3.5 h-3.5" />
+            <span className="uppercase tracking-wider">Interactive Energy Flow</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white">
-            See How Solar, Battery & Grid Interact in Real Time
+          <h3 className="text-xl sm:text-2xl font-bold text-[#0B1722]">
+            See How Solar, Battery &amp; Grid Interact in Real Time
           </h3>
         </div>
 
-        {/* Mode Selector Buttons */}
-        <div className="flex items-center gap-1.5 p-1 bg-[#031309] rounded-xl border border-emerald-500/20 shrink-0">
+        {/* Mode Selector */}
+        <div className="flex items-center gap-1.5 p-1 bg-[#F5F7FA] rounded-xl border border-[#E1E7ED] shrink-0">
           <button
             onClick={() => setMode('daytime')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               mode === 'daytime'
-                ? 'bg-emerald-500 text-emerald-950 shadow-md font-bold'
-                : 'text-slate-300 hover:text-white'
+                ? 'bg-[#F4B323] text-[#0B1722] shadow-sm font-bold'
+                : 'text-[#647384] hover:text-[#0B1722]'
             }`}
           >
             ☀️ Daytime Solar
@@ -149,8 +146,8 @@ export default function EnergyFlowSimulator() {
             onClick={() => setMode('evening')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               mode === 'evening'
-                ? 'bg-amber-500 text-amber-950 shadow-md font-bold'
-                : 'text-slate-300 hover:text-white'
+                ? 'bg-[#0B1722] text-white shadow-sm font-bold'
+                : 'text-[#647384] hover:text-[#0B1722]'
             }`}
           >
             🌙 Evening Battery
@@ -159,8 +156,8 @@ export default function EnergyFlowSimulator() {
             onClick={() => setMode('outage')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               mode === 'outage'
-                ? 'bg-red-500 text-white shadow-md font-bold'
-                : 'text-slate-300 hover:text-white'
+                ? 'bg-[#D9232E] text-white shadow-sm font-bold'
+                : 'text-[#647384] hover:text-[#0B1722]'
             }`}
           >
             ⚡ Grid Power Cut
@@ -168,38 +165,38 @@ export default function EnergyFlowSimulator() {
         </div>
       </div>
 
-      {/* Mode Status Callout */}
-      <div className="relative z-10 mb-8 p-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+      {/* Mode Status Bar */}
+      <div className="mb-8 p-3.5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
         <div className="flex items-center gap-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="font-bold text-white">{current.title}</span>
-          <span className="text-emerald-400/80">({current.badge})</span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[#16835D] animate-ping" />
+          <span className="font-bold text-[#0B1722]">{current.title}</span>
+          <span className="text-[#647384]">({current.badge})</span>
         </div>
-        <p className="text-slate-300 text-[11px] sm:text-right max-w-md">
+        <p className="text-[#647384] text-[11px] sm:text-right max-w-md">
           {current.description}
         </p>
       </div>
 
-      {/* The Interactive Visual Nodes Grid */}
-      <div className="relative z-10 grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 mb-8">
+      {/* Node Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 mb-8">
         {/* Node 1: Sun */}
         <button
           onClick={() => setSelectedNode('sun')}
           className={`p-4 rounded-xl border transition-all text-left flex flex-col justify-between ${
             selectedNode === 'sun'
-              ? 'bg-amber-950/60 border-amber-400 shadow-lg shadow-amber-500/20'
-              : 'bg-[#061e11]/80 border-emerald-500/20 hover:border-emerald-400/50'
+              ? 'bg-[#F4B323]/10 border-[#F4B323] shadow-sm'
+              : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#F4B323]/50'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="w-9 h-9 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">
+            <div className="w-9 h-9 rounded-lg bg-[#F4B323]/20 flex items-center justify-center text-[#F4B323]">
               <Sun className={`w-5 h-5 ${mode === 'daytime' ? 'animate-spin' : ''}`} style={{ animationDuration: '12s' }} />
             </div>
-            <span className="text-[10px] font-bold text-amber-400 uppercase">Input</span>
+            <span className="text-[10px] font-bold text-[#F4B323] uppercase">Input</span>
           </div>
           <div>
-            <p className="text-xs text-slate-400">Solar Sun</p>
-            <p className="text-sm font-bold text-white">{mode === 'daytime' ? '100% Sunlight' : mode === 'evening' ? '0% (Night)' : '55% Radiance'}</p>
+            <p className="text-xs text-[#647384]">Solar Sun</p>
+            <p className="text-sm font-bold text-[#0B1722]">{mode === 'daytime' ? '100% Sunlight' : mode === 'evening' ? '0% (Night)' : '55% Radiance'}</p>
           </div>
         </button>
 
@@ -208,19 +205,19 @@ export default function EnergyFlowSimulator() {
           onClick={() => setSelectedNode('panels')}
           className={`p-4 rounded-xl border transition-all text-left flex flex-col justify-between ${
             selectedNode === 'panels'
-              ? 'bg-emerald-950/80 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#061e11]/80 border-emerald-500/20 hover:border-emerald-400/50'
+              ? 'bg-[#16835D]/10 border-[#16835D] shadow-sm'
+              : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#16835D]/50'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-300">
+            <div className="w-9 h-9 rounded-lg bg-[#16835D]/15 flex items-center justify-center text-[#16835D]">
               <Zap className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold text-emerald-400 uppercase">Generation</span>
+            <span className="text-[10px] font-bold text-[#16835D] uppercase">Generation</span>
           </div>
           <div>
-            <p className="text-xs text-slate-400">PV Modules</p>
-            <p className="text-sm font-bold text-white">{current.solarKw}</p>
+            <p className="text-xs text-[#647384]">PV Modules</p>
+            <p className="text-sm font-bold text-[#0B1722]">{current.solarKw}</p>
           </div>
         </button>
 
@@ -229,40 +226,40 @@ export default function EnergyFlowSimulator() {
           onClick={() => setSelectedNode('inverter')}
           className={`p-4 rounded-xl border transition-all text-left flex flex-col justify-between md:scale-105 ${
             selectedNode === 'inverter'
-              ? 'bg-gradient-to-b from-emerald-900/90 to-emerald-950 border-emerald-400 ring-2 ring-emerald-400/30 shadow-xl'
-              : 'bg-[#082a17] border-emerald-500/40 hover:border-emerald-300'
+              ? 'bg-[#0B1722] border-[#0B1722] ring-2 ring-[#0B1722]/30 shadow-xl'
+              : 'bg-[#122333] border-[#122333] hover:border-[#0B1722]'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-400 text-emerald-950 flex items-center justify-center font-bold">
+            <div className="w-9 h-9 rounded-lg bg-white/10 text-white flex items-center justify-center font-bold">
               <RefreshCw className="w-5 h-5 animate-spin" style={{ animationDuration: '6s' }} />
             </div>
-            <span className="text-[10px] font-extrabold text-emerald-300 uppercase">Core</span>
+            <span className="text-[10px] font-extrabold text-white/70 uppercase">Core</span>
           </div>
           <div>
-            <p className="text-xs text-emerald-300 font-medium">Hybrid PCU</p>
+            <p className="text-xs text-white/60 font-medium">Hybrid PCU</p>
             <p className="text-sm font-bold text-white">rMPPT Smart Core</p>
           </div>
         </button>
 
-        {/* Node 4: Battery Storage */}
+        {/* Node 4: Battery */}
         <button
           onClick={() => setSelectedNode('battery')}
           className={`p-4 rounded-xl border transition-all text-left flex flex-col justify-between ${
             selectedNode === 'battery'
-              ? 'bg-emerald-950/80 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#061e11]/80 border-emerald-500/20 hover:border-emerald-400/50'
+              ? 'bg-[#16835D]/10 border-[#16835D] shadow-sm'
+              : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#16835D]/50'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-300">
+            <div className="w-9 h-9 rounded-lg bg-[#16835D]/15 flex items-center justify-center text-[#16835D]">
               <BatteryCharging className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold text-emerald-400 uppercase">Storage</span>
+            <span className="text-[10px] font-bold text-[#16835D] uppercase">Storage</span>
           </div>
           <div>
-            <p className="text-xs text-slate-400">LiFePO4 Bank</p>
-            <p className="text-sm font-bold text-white">{current.batteryKw}</p>
+            <p className="text-xs text-[#647384]">LiFePO4 Bank</p>
+            <p className="text-sm font-bold text-[#0B1722]">{current.batteryKw}</p>
           </div>
         </button>
 
@@ -271,45 +268,45 @@ export default function EnergyFlowSimulator() {
           onClick={() => setSelectedNode('home')}
           className={`col-span-2 md:col-span-1 p-4 rounded-xl border transition-all text-left flex flex-col justify-between ${
             selectedNode === 'home'
-              ? 'bg-emerald-950/80 border-emerald-400 shadow-lg shadow-emerald-500/20'
-              : 'bg-[#061e11]/80 border-emerald-500/20 hover:border-emerald-400/50'
+              ? 'bg-[#D9232E]/10 border-[#D9232E] shadow-sm'
+              : 'bg-[#F5F7FA] border-[#E1E7ED] hover:border-[#D9232E]/50'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-300">
+            <div className="w-9 h-9 rounded-lg bg-[#D9232E]/15 flex items-center justify-center text-[#D9232E]">
               <Home className="w-5 h-5" />
             </div>
-            <span className="text-[10px] font-bold text-emerald-400 uppercase">Load & Grid</span>
+            <span className="text-[10px] font-bold text-[#D9232E] uppercase">Load</span>
           </div>
           <div>
-            <p className="text-xs text-slate-400">Home + Grid</p>
-            <p className="text-sm font-bold text-white">{current.homeKw}</p>
+            <p className="text-xs text-[#647384]">Home + Grid</p>
+            <p className="text-sm font-bold text-[#0B1722]">{current.homeKw}</p>
           </div>
         </button>
       </div>
 
-      {/* Selected Node Deep Dive Details Card */}
+      {/* Selected Node Detail */}
       {selectedNode && nodeDetails[selectedNode] && (
-        <div className="relative z-10 p-5 rounded-xl bg-[#04170d] border border-emerald-500/30">
+        <div className="p-5 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
             <div>
-              <h4 className="text-white font-bold text-base flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <h4 className="text-[#0B1722] font-bold text-base flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#16835D]" />
                 {nodeDetails[selectedNode].title}
               </h4>
-              <p className="text-xs text-emerald-400 font-medium">
+              <p className="text-xs text-[#647384] font-medium">
                 {nodeDetails[selectedNode].subtitle}
               </p>
             </div>
-            <span className="text-[11px] text-slate-400 italic">
+            <span className="text-[11px] text-[#647384] italic">
               Click any module above to inspect
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 border-t border-emerald-900/50">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 border-t border-[#E1E7ED]">
             {nodeDetails[selectedNode].bullets.map((bullet, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-2 text-xs text-[#647384]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#16835D] shrink-0 mt-0.5" />
                 <span>{bullet}</span>
               </div>
             ))}

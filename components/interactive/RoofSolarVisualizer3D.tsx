@@ -257,42 +257,38 @@ export default function RoofSolarVisualizer3D() {
   }, [sunAngle]);
 
   return (
-    <div className="w-full rounded-3xl bg-gradient-to-b from-[#072414] via-[#04160c] to-[#020e06] border border-emerald-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-
+    <div className="w-full bg-white border border-[#E1E7ED] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
       {/* Title */}
-      <div className="relative z-10 max-w-3xl mb-8 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold">
-          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-          <span>INTERACTIVE 3D ROOFTOP SOLAR CONFIGURATOR</span>
+      <div className="max-w-3xl mb-8 space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F7FA] border border-[#E1E7ED] text-xs font-semibold text-[#F4B323] uppercase tracking-wider">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Interactive 3D Rooftop Solar Configurator</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-          Customize Your Rooftop & Watch Power Scale in Real-Time
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0B1722] tracking-tight">
+          Customize Your Rooftop &amp; Watch Power Scale in Real-Time
         </h2>
-        <p className="text-xs sm:text-sm text-slate-300">
+        <p className="text-xs sm:text-sm text-[#647384]">
           Switch roof structures, add or remove high-efficiency Mono PERC panels, and rotate the 3D model 360° with your mouse or finger.
         </p>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left Column: 3D Interactive Canvas Viewer */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Left Column: 3D Canvas */}
         <div className="lg:col-span-7 relative">
-          <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-2xl overflow-hidden border border-emerald-500/40 bg-[#031107] shadow-2xl">
-            {/* Three.js Canvas Container */}
+          <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-2xl overflow-hidden border border-[#E1E7ED] bg-[#031107] shadow-md">
             <div ref={containerRef} className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing" />
 
-            {/* Orbit Instructions Floating Pill */}
-            <div className="absolute bottom-3 left-3 z-20 px-3 py-1.5 rounded-full bg-[#04170d]/80 border border-emerald-500/30 text-[11px] font-semibold text-emerald-300 backdrop-blur-md flex items-center gap-1.5 pointer-events-none">
-              <RotateCw className="w-3 h-3 text-emerald-400 animate-spin" style={{ animationDuration: '8s' }} />
+            {/* Orbit Instructions */}
+            <div className="absolute bottom-3 left-3 z-20 px-3 py-1.5 rounded-full bg-black/50 text-[11px] font-semibold text-white backdrop-blur-md flex items-center gap-1.5 pointer-events-none">
+              <RotateCw className="w-3 h-3 text-white animate-spin" style={{ animationDuration: '8s' }} />
               <span>Drag to rotate 3D roof 360°</span>
             </div>
 
-            {/* Sun Azimuth Slider on Canvas */}
-            <div className="absolute top-3 right-3 z-20 p-2.5 rounded-xl bg-[#03150b]/85 border border-emerald-500/30 backdrop-blur-md space-y-1">
-              <div className="flex items-center justify-between gap-3 text-[10px] font-bold text-amber-300">
+            {/* Sun Angle Slider on Canvas */}
+            <div className="absolute top-3 right-3 z-20 p-2.5 rounded-xl bg-black/60 border border-white/10 backdrop-blur-md space-y-1">
+              <div className="flex items-center justify-between gap-3 text-[10px] font-bold text-[#F4B323]">
                 <span className="flex items-center gap-1">
-                  <Sun className="w-3 h-3 text-amber-400" /> Sun Angle:
+                  <Sun className="w-3 h-3 text-[#F4B323]" /> Sun Angle:
                 </span>
                 <span>{sunAngle}°</span>
               </div>
@@ -302,27 +298,27 @@ export default function RoofSolarVisualizer3D() {
                 max={165}
                 value={sunAngle}
                 onChange={(e) => setSunAngle(Number(e.target.value))}
-                className="w-24 h-1.5 bg-emerald-950 rounded-lg appearance-none cursor-pointer accent-amber-400"
+                className="w-24 h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#F4B323]"
               />
             </div>
           </div>
         </div>
 
-        {/* Right Column: Dynamic Controls & Live Engineering Metrics */}
+        {/* Right Column: Controls & Metrics */}
         <div className="lg:col-span-5 space-y-6">
           {/* Roof Style Selector */}
           <div>
-            <label className="block text-xs font-bold text-emerald-300 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-[#647384] uppercase tracking-wider mb-2">
               1. Select Roof Structure
             </label>
             <div className="grid grid-cols-3 gap-2">
               <button
                 type="button"
                 onClick={() => setRoofType('rcc')}
-                className={`py-2 px-2.5 rounded-xl text-xs font-bold transition-all ${
+                className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all border ${
                   roofType === 'rcc'
-                    ? 'bg-emerald-500 text-emerald-950 shadow-md'
-                    : 'bg-[#05180e] text-slate-300 border border-emerald-900/50 hover:border-emerald-600'
+                    ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
+                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E]'
                 }`}
               >
                 Flat RCC Slab
@@ -330,10 +326,10 @@ export default function RoofSolarVisualizer3D() {
               <button
                 type="button"
                 onClick={() => setRoofType('tiled')}
-                className={`py-2 px-2.5 rounded-xl text-xs font-bold transition-all ${
+                className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all border ${
                   roofType === 'tiled'
-                    ? 'bg-emerald-500 text-emerald-950 shadow-md'
-                    : 'bg-[#05180e] text-slate-300 border border-emerald-900/50 hover:border-emerald-600'
+                    ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
+                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E]'
                 }`}
               >
                 Slanted Tiles
@@ -341,10 +337,10 @@ export default function RoofSolarVisualizer3D() {
               <button
                 type="button"
                 onClick={() => setRoofType('tin')}
-                className={`py-2 px-2.5 rounded-xl text-xs font-bold transition-all ${
+                className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all border ${
                   roofType === 'tin'
-                    ? 'bg-emerald-500 text-emerald-950 shadow-md'
-                    : 'bg-[#05180e] text-slate-300 border border-emerald-900/50 hover:border-emerald-600'
+                    ? 'bg-[#D9232E] text-white border-[#D9232E] shadow-sm'
+                    : 'bg-[#F5F7FA] text-[#647384] border-[#E1E7ED] hover:border-[#D9232E]'
                 }`}
               >
                 Metal / Shed
@@ -352,13 +348,13 @@ export default function RoofSolarVisualizer3D() {
             </div>
           </div>
 
-          {/* Panel Counter Controls */}
+          {/* Panel Counter */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-bold text-emerald-300 uppercase tracking-wider">
+              <label className="text-xs font-bold text-[#647384] uppercase tracking-wider">
                 2. Solar Modules Sizing
               </label>
-              <span className="text-xs font-bold text-amber-300 font-mono">
+              <span className="text-xs font-bold text-[#F4B323] font-mono">
                 {panelCount} Panels (550W Half-Cut)
               </span>
             </div>
@@ -368,7 +364,7 @@ export default function RoofSolarVisualizer3D() {
                 type="button"
                 onClick={() => setPanelCount(Math.max(4, panelCount - 2))}
                 disabled={panelCount <= 4}
-                className="w-10 h-10 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-500/30 text-white font-bold flex items-center justify-center disabled:opacity-40"
+                className="w-10 h-10 rounded-xl bg-[#F5F7FA] hover:bg-[#E1E7ED] border border-[#E1E7ED] text-[#0B1722] font-bold flex items-center justify-center disabled:opacity-40 transition-colors"
               >
                 <Minus className="w-4 h-4" />
               </button>
@@ -380,48 +376,48 @@ export default function RoofSolarVisualizer3D() {
                 step={2}
                 value={panelCount}
                 onChange={(e) => setPanelCount(Number(e.target.value))}
-                className="flex-1 h-2.5 bg-emerald-950 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+                className="flex-1 h-2 bg-[#E1E7ED] rounded-lg appearance-none cursor-pointer accent-[#D9232E]"
               />
 
               <button
                 type="button"
                 onClick={() => setPanelCount(Math.min(20, panelCount + 2))}
                 disabled={panelCount >= 20}
-                className="w-10 h-10 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold flex items-center justify-center shadow-md disabled:opacity-40"
+                className="w-10 h-10 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold flex items-center justify-center shadow-sm disabled:opacity-40 transition-colors"
               >
                 <Plus className="w-4 h-4" />
               </button>
             </div>
           </div>
 
-          {/* Live Engineering Metrics Output Box */}
-          <div className="p-5 rounded-2xl bg-[#04150b] border border-emerald-500/30 space-y-3">
+          {/* Live Metrics */}
+          <div className="p-5 rounded-2xl bg-[#F5F7FA] border border-[#E1E7ED] space-y-3">
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="space-y-0.5">
-                <span className="text-slate-400 block">System Capacity:</span>
-                <p className="text-xl font-bold text-white font-mono">{totalKw} kW Peak</p>
+                <span className="text-[#647384] block">System Capacity:</span>
+                <p className="text-xl font-bold text-[#0B1722] font-mono">{totalKw} kW Peak</p>
               </div>
 
               <div className="space-y-0.5">
-                <span className="text-slate-400 block">Est. Daily Generation:</span>
-                <p className="text-xl font-bold text-emerald-300 font-mono">~{dailyUnits} Units / day</p>
+                <span className="text-[#647384] block">Est. Daily Generation:</span>
+                <p className="text-xl font-bold text-[#16835D] font-mono">~{dailyUnits} Units / day</p>
               </div>
 
-              <div className="space-y-0.5 pt-2 border-t border-emerald-950">
-                <span className="text-slate-400 block">Est. Monthly Bill Savings:</span>
-                <p className="text-xl font-bold text-amber-300 font-mono">₹{monthlySavings.toLocaleString('en-IN')}</p>
+              <div className="space-y-0.5 pt-2 border-t border-[#E1E7ED]">
+                <span className="text-[#647384] block">Est. Monthly Bill Savings:</span>
+                <p className="text-xl font-bold text-[#F4B323] font-mono">₹{monthlySavings.toLocaleString('en-IN')}</p>
               </div>
 
-              <div className="space-y-0.5 pt-2 border-t border-emerald-950">
-                <span className="text-slate-400 block">Required Shadow-Free Roof:</span>
-                <p className="text-xl font-bold text-white font-mono">~{requiredAreaSqFt} sq. ft</p>
+              <div className="space-y-0.5 pt-2 border-t border-[#E1E7ED]">
+                <span className="text-[#647384] block">Required Shadow-Free Roof:</span>
+                <p className="text-xl font-bold text-[#0B1722] font-mono">~{requiredAreaSqFt} sq. ft</p>
               </div>
             </div>
 
             <div className="pt-2">
               <Link
                 href={`/quote?kw=${totalKw}&panels=${panelCount}&roof=${roofType}`}
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-400 to-amber-300 hover:from-emerald-300 hover:to-amber-200 text-emerald-950 font-bold text-xs flex items-center justify-center gap-2 shadow-lg hover:scale-[1.01] transition-transform"
+                className="w-full py-3 px-4 rounded-xl bg-[#D9232E] hover:bg-[#B91F29] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors"
               >
                 <span>Book On-Site Roof Inspection for {totalKw} kW</span>
                 <ArrowRight className="w-4 h-4" />
@@ -433,3 +429,4 @@ export default function RoofSolarVisualizer3D() {
     </div>
   );
 }
+
