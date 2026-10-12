@@ -7,7 +7,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
   TreePine,
   Banknote,
   Building,
@@ -21,11 +20,11 @@ import EnergyFlowSimulator from '@/components/solar/EnergyFlowSimulator';
 import RoofSolarVisualizer3D from '@/components/interactive/RoofSolarVisualizer3D';
 import DayNightEnergyCycle from '@/components/interactive/DayNightEnergyCycle';
 import CoastalResilienceEngine from '@/components/interactive/CoastalResilienceEngine';
-import LeadForm from '@/components/common/LeadForm';
+import HomeQuoteSection from '@/components/home/HomeQuoteSection';
 import { COMPANY_INFO } from '@/data/company';
 
 export const metadata: Metadata = {
-  title: 'Solar Rooftop Solutions Ramanathapuram | NS Batteries',
+  title: 'Solar Modules & Rooftop Solutions Ramanathapuram | NS Batteries',
   description:
     'High-efficiency On-grid, Off-grid and Hybrid solar systems in Ramanathapuram. TANGEDCO Net Metering and PM Surya Ghar subsidy up to ₹78,000.',
 };
@@ -36,7 +35,6 @@ export default function SolarPage() {
       title: 'On-Grid Solar (Grid-Tied)',
       subtitle: 'Fastest Payback & Maximum TANGEDCO Bill Reduction',
       badge: 'Best For Homes & Offices',
-      color: 'border-emerald-500/40',
       description:
         'Connected directly to the Tamil Nadu grid through a bi-directional net meter. When your panels produce excess energy during the day, it is exported to TANGEDCO, spinning your meter backwards.',
       features: [
@@ -52,31 +50,29 @@ export default function SolarPage() {
       title: 'Smart Hybrid Solar',
       subtitle: 'Grid Export Savings + Lithium / Tubular Battery Backup',
       badge: 'Most Popular Choice',
-      color: 'border-amber-500/50',
       popular: true,
       description:
-        'The ultimate energy security system. Generates clean solar, charges your lithium battery bank, powers your house, and exports any remaining excess to the grid. Zero disruption during power cuts.',
+        'The ultimate energy security system. Generates clean solar, charges your battery bank, powers your house, and exports any remaining excess to the grid. Zero disruption during power cuts.',
       features: [
         '24/7 Uninterrupted clean power',
-        'Instant < 10ms UPS switchover during grid cuts',
-        'Charges batteries from solar even when grid is down',
-        'Compatible with high-density LiFePO4 wall packs',
-        'Subsidies applicable for grid-connected portion',
+        'Works during daytime AND night blackouts',
+        'Supports high surge loads (fridge, pump, motors)',
+        'Compatible with advanced LiFePO4 lithium batteries',
+        'Eligible for residential central subsidies',
       ],
-      idealFor: 'Residences, clinics, IT home offices, coastal bungalows needing 100% reliable power',
+      idealFor: 'Homes in areas with frequent coastal power interruptions, clinics, diagnostic centers',
     },
     {
-      title: 'Off-Grid Standalone Solar',
-      subtitle: '100% Independent from Utility Grid',
-      badge: 'Zero Grid Connection',
-      color: 'border-emerald-500/40',
+      title: 'Off-Grid Solar',
+      subtitle: '100% Independent Power Without Any Grid Connection',
+      badge: 'Remote & Rural Sites',
       description:
-        'Operates completely autonomous from the electricity board. Harnesses solar energy with heavy-duty rMPPT charge controllers and deep-cycle solar batteries to power remote properties.',
+        'Stand-alone system with high-capacity solar batteries. Engineered for remote agricultural plots, prawn farms, and coastal sites where TANGEDCO grid power is absent or erratic.',
       features: [
         'Complete energy independence',
-        'Ideal where grid connection is weak or unavailable',
-        'Powers water pumps, lights, refrigeration & fans',
-        'Heavy-duty surge tolerance for motor loads',
+        'Heavy-duty deep-cycle tubular or lithium bank',
+        'Built-in MPPT solar charge controller',
+        'Corrosion-resistant coastal mounting hardware',
       ],
       idealFor: 'Farmhouses, coastal shrimp/fish hatcheries, agricultural pumps, remote installations',
     },
@@ -104,18 +100,18 @@ export default function SolarPage() {
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 py-12">
+    <div className="bg-white text-[#17212B] space-y-16 sm:space-y-24 py-12">
       {/* 1. Header Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-3xl bg-gradient-to-r from-[#062413] via-[#09351c] to-[#04150b] border border-emerald-500/30 p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="rounded-2xl bg-[#0B1722] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-sm">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold">
-              <Sun className="w-4 h-4 text-amber-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-[#F4B323] text-xs font-semibold">
+              <Sun className="w-4 h-4 text-[#F4B323]" />
               <span>ROOFTOP SOLAR ENGINEERING • RAMANATHAPURAM</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              Turn Your Rooftop Into a <span className="text-emerald-400">Green Power Station</span>
+              Turn Your Rooftop Into a <span className="text-[#F4B323]">Clean Power Station</span>
             </h1>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -125,7 +121,7 @@ export default function SolarPage() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href="#calculator"
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-amber-300 hover:from-emerald-300 hover:to-amber-200 text-emerald-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition-transform hover:scale-105"
+                className="px-6 py-3.5 rounded-lg bg-[#D9232E] hover:bg-[#B91F29] text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-colors"
               >
                 <span>Calculate My Savings</span>
                 <ArrowRight className="w-4 h-4" />
@@ -133,7 +129,7 @@ export default function SolarPage() {
 
               <Link
                 href="/quote"
-                className="px-6 py-3 rounded-xl bg-emerald-950 border border-emerald-500/40 hover:bg-emerald-900 text-emerald-200 font-semibold text-xs sm:text-sm transition-colors"
+                className="px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-semibold text-xs sm:text-sm border border-white/20 transition-colors"
               >
                 Request Free Roof Inspection
               </Link>
@@ -143,27 +139,27 @@ export default function SolarPage() {
       </section>
 
       {/* 2. Interactive 3D Rooftop Solar Configurator */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <RoofSolarVisualizer3D />
       </section>
 
       {/* 3. Interactive 24-Hour Energy Lifecycle */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <DayNightEnergyCycle />
       </section>
 
       {/* 4. Interactive Energy Flow Architecture */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <EnergyFlowSimulator />
       </section>
 
       {/* 5. Three Solar Architectures Comparison */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1722]">
             Choose the Right Solar Architecture
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300">
+          <p className="text-xs sm:text-sm text-[#647384]">
             Engineered for the high solar irradiance and coastal weather conditions of southern Tamil Nadu.
           </p>
         </div>
@@ -172,140 +168,84 @@ export default function SolarPage() {
           {solarArchitectures.map((arch, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl p-6 sm:p-7 bg-[#061e11] border ${arch.color} flex flex-col justify-between space-y-5 relative shadow-xl ${
-                arch.popular ? 'ring-2 ring-amber-400/40' : ''
+              className={`rounded-xl p-6 sm:p-7 bg-white border border-[#E1E7ED] flex flex-col justify-between space-y-5 shadow-sm hover:shadow-md transition-shadow relative ${
+                arch.popular ? 'border-[#D9232E]/40' : ''
               }`}
             >
               {arch.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-amber-500 text-amber-950 font-bold text-[10px] uppercase tracking-wider shadow">
-                  Most Recommended
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#D9232E] text-white font-bold text-[10px] uppercase tracking-wider shadow">
+                  Most Popular
                 </div>
               )}
 
-              <div className="space-y-4">
-                <div>
-                  <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wide">
-                    {arch.badge}
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-1">
-                    {arch.title}
-                  </h3>
-                  <p className="text-xs text-amber-300/90 font-medium mt-0.5">
-                    {arch.subtitle}
-                  </p>
-                </div>
+              <div className="space-y-3">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#D9232E] block">
+                  {arch.badge}
+                </span>
+                <h3 className="text-lg font-bold text-[#0B1722]">{arch.title}</h3>
+                <p className="text-xs font-semibold text-[#647384]">{arch.subtitle}</p>
+                <p className="text-xs text-[#647384] leading-relaxed pt-1">{arch.description}</p>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  {arch.description}
-                </p>
-
-                <div className="space-y-2 pt-2 border-t border-emerald-950">
+                <div className="space-y-1.5 pt-3 border-t border-[#F1F5F9]">
                   {arch.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-300">
-                      <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={fIdx} className="flex items-start gap-2 text-xs text-[#17212B]">
+                      <Check className="w-3.5 h-3.5 text-[#16835D] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-emerald-950 space-y-3">
-                <p className="text-[11px] text-slate-400">
-                  <strong className="text-slate-300">Best for:</strong> {arch.idealFor}
-                </p>
-
-                <Link
-                  href={`/quote?service=${encodeURIComponent(arch.title)}`}
-                  className="w-full py-2.5 px-3 rounded-xl bg-emerald-950 hover:bg-emerald-500 hover:text-emerald-950 text-emerald-300 font-bold text-xs flex items-center justify-center gap-1.5 border border-emerald-500/30 transition-all"
-                >
-                  <span>Select {arch.title}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+              <div className="pt-3 border-t border-[#F1F5F9] text-[11px] text-[#647384]">
+                <strong className="text-[#0B1722]">Best for:</strong> {arch.idealFor}
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 6. Coastal & Climate Resilience Shield */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* 6. PM Surya Ghar Subsidy Guide Table */}
+      <section id="pm-surya-ghar" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#F4B323]/15 text-[#0B1722] text-xs font-bold uppercase">
+            <Banknote className="w-3.5 h-3.5 text-[#F4B323]" />
+            <span>CENTRAL GOVT SUBSIDY BREAKDOWN</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1722]">
+            PM Surya Ghar Muft Bijli Yojana Subsidies
+          </h2>
+          <p className="text-xs sm:text-sm text-[#647384]">
+            Direct Benefit Transfer credited directly to your bank account after bi-directional net meter installation.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {subsidyTiers.map((tier, idx) => (
+            <div
+              key={idx}
+              className="p-6 rounded-xl bg-[#F5F7FA] border border-[#E1E7ED] space-y-3"
+            >
+              <h3 className="text-lg font-bold text-[#0B1722]">{tier.capacity}</h3>
+              <div className="text-xl font-extrabold text-[#16835D] font-mono">{tier.subsidy}</div>
+              <p className="text-xs text-[#647384]">Generates {tier.generation}</p>
+              <p className="text-xs font-semibold text-[#17212B] pt-1">{tier.benefit}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. Coastal Anti-Corrosion Engineering Engine */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <CoastalResilienceEngine />
       </section>
 
-      {/* 7. PM Surya Ghar Subsidy Breakdown */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-2xl bg-[#061d10] border border-emerald-500/30 p-6 sm:p-10 shadow-xl space-y-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-2">
-                <Banknote className="w-3.5 h-3.5 text-amber-400" />
-                <span>CENTRAL GOVERNMENT SOLAR SCHEME</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-                PM Surya Ghar: Muft Bijli Yojana Subsidies
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-md">
-              We handle the entire online application, portal approval, TANGEDCO inspection, and net-meter commissioning for you.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {subsidyTiers.map((tier, idx) => (
-              <div key={idx} className="p-5 rounded-xl bg-[#04150b] border border-emerald-900/60 space-y-2">
-                <p className="text-lg font-bold text-white">{tier.capacity}</p>
-                <p className="text-xl font-extrabold text-amber-400 font-mono">{tier.subsidy}</p>
-                <p className="text-xs text-emerald-300">{tier.generation}</p>
-                <p className="text-xs text-slate-400 pt-2 border-t border-emerald-950">{tier.benefit}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Step-by-step process */}
-          <div className="pt-4 border-t border-emerald-900/60 grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs text-slate-300">
-            <div className="space-y-1">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">1</span>
-              <p className="font-bold text-white">Free Roof Survey</p>
-              <p className="text-slate-400 text-[11px]">We measure shadow patterns & structural load.</p>
-            </div>
-            <div className="space-y-1">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">2</span>
-              <p className="font-bold text-white">Portal Registration</p>
-              <p className="text-slate-400 text-[11px]">We register your consumer number on the National Portal.</p>
-            </div>
-            <div className="space-y-1">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">3</span>
-              <p className="font-bold text-white">Installation & Testing</p>
-              <p className="text-slate-400 text-[11px]">Certified installation of 550W+ Mono PERC panels.</p>
-            </div>
-            <div className="space-y-1">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-xs">4</span>
-              <p className="font-bold text-white">Direct Subsidy Credit</p>
-              <p className="text-slate-400 text-[11px]">Net meter installed & subsidy credited to your bank account.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 8. Interactive Solar Savings Calculator */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <SolarCalculator />
       </section>
 
-      {/* 9. Consultation Booking Form */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="p-8 sm:p-10 rounded-2xl bg-[#061d10] border border-emerald-500/40 shadow-2xl space-y-6">
-          <div className="text-center space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Book Your Free Rooftop Solar Feasibility Survey
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
-              Our engineering team will visit your Ramanathapuram premises, inspect your distribution board, and prepare an engineering drawing with estimated unit generation.
-            </p>
-          </div>
-          <LeadForm defaultService="Rooftop Solar Consultation" />
-        </div>
-      </section>
+      {/* 9. Contact / Quote Form */}
+      <HomeQuoteSection />
     </div>
   );
 }

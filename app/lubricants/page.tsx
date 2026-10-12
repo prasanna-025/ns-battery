@@ -47,16 +47,16 @@ export default function LubricantsPage() {
   return (
     <div className="space-y-16 sm:space-y-20 py-12">
       {/* 1. Header Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-3xl bg-gradient-to-r from-[#062413] via-[#09351c] to-[#04150b] border border-emerald-500/30 p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="rounded-2xl bg-[#0B1722] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-sm">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold">
-              <Droplets className="w-4 h-4 text-amber-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-xs font-semibold text-[#F4B323]">
+              <Droplets className="w-4 h-4 text-[#F4B323]" />
               <span>AUTHORIZED GULF OIL & SKF DISTRIBUTOR</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              100% Genuine <span className="text-emerald-400">Gulf Lubricants & SKF Bearings</span>
+              100% Genuine <span className="text-[#D9232E]">Gulf Lubricants & SKF Bearings</span>
             </h1>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">

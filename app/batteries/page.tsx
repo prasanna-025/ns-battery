@@ -17,16 +17,16 @@ export default function BatteriesPage() {
   return (
     <div className="space-y-16 sm:space-y-20 py-12">
       {/* 1. Header Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="rounded-3xl bg-gradient-to-r from-[#062413] via-[#09351c] to-[#04150b] border border-emerald-500/30 p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="rounded-2xl bg-[#0B1722] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-sm">
           <div className="relative z-10 max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
-              <Battery className="w-4 h-4 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-xs font-semibold text-[#D9232E]">
+              <Battery className="w-4 h-4 text-[#D9232E]" />
               <span>AUTHORIZED OEM BATTERY SPECIALIST • RAMANATHAPURAM</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              High-Cranking Power for <span className="text-emerald-400">Every Vehicle & Backup Need</span>
+              High-Cranking Power for <span className="text-[#D9232E]">Every Vehicle & Backup Need</span>
             </h1>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -34,22 +34,22 @@ export default function BatteriesPage() {
             </p>
 
             {/* Quick Metrics */}
-            <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-emerald-900/60 max-w-2xl text-xs">
+            <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-white/10 max-w-2xl text-xs">
               <div>
                 <p className="font-bold text-white text-base">Up to 60 Mos</p>
-                <p className="text-emerald-400">Manufacturer Warranty</p>
+                <p className="text-slate-400">Manufacturer Warranty</p>
               </div>
               <div>
                 <p className="font-bold text-white text-base">Silver X Alloy</p>
-                <p className="text-slate-300">High Heat Resistance</p>
+                <p className="text-slate-400">High Heat Resistance</p>
               </div>
               <div>
                 <p className="font-bold text-white text-base">Zero Acid Leaks</p>
-                <p className="text-emerald-400">Factory Charged VRLA</p>
+                <p className="text-slate-400">Factory Charged VRLA</p>
               </div>
               <div>
                 <p className="font-bold text-white text-base">Old Battery Exchange</p>
-                <p className="text-amber-400">Best Scrap Value Rebate</p>
+                <p className="text-[#F4B323]">Best Scrap Rebate</p>
               </div>
             </div>
           </div>
