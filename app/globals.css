@@ -7,8 +7,9 @@
     --color-primary-navy: #0B1722;
     --color-secondary-navy: #122333;
     --color-dark-text: #17212B;
-    --color-primary-red: #D9232E;
-    --color-hover-red: #B91F29;
+    --color-brand-green: #16A34A;
+    --color-brand-green-hover: #15803D;
+    --color-brand-light-green: #8BC53F;
     --color-solar-amber: #F4B323;
     --color-light-bg: #F5F7FA;
     --color-secondary-text: #647384;
@@ -28,7 +29,7 @@
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid #D9232E;
+    outline: 2px solid #16A34A;
     outline-offset: 2px;
   }
 }
@@ -45,7 +46,7 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D9232E;
+  background: #16A34A;
 }
 
 /* Corporate Primary Button */
@@ -54,20 +55,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #D9232E;
+  background-color: #16A34A;
   color: #ffffff;
   font-weight: 600;
   padding: 0.75rem 1.75rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 8px rgba(217, 35, 46, 0.25);
 }
-
 .corporate-btn:hover,
 .vikram-btn:hover {
-  background-color: #B91F29;
+  background-color: #15803D;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(217, 35, 46, 0.35);
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
 }
 
 .corporate-btn-outline,

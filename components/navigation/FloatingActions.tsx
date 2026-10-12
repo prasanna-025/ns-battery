@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, ArrowUp, Calculator, MapPin, Sun } from 'lucide-react';
+import { Phone, MessageCircle, ArrowUp, Calculator, MapPin, Sun, ChevronRight, FileCheck } from 'lucide-react';
 import Link from 'next/link';
 import { COMPANY_INFO } from '@/data/company';
 
@@ -22,66 +22,96 @@ export default function FloatingActions() {
 
   return (
     <>
-      {/* Desktop: Refined, Compact, Unobtrusive Floating Utility Dock */}
+      {/* Desktop Floating Action Dock Styled Exactly like User Image 1 (with Light Green instead of Red) */}
       <aside
         aria-label="Quick Actions"
-        className="fixed right-3 bottom-8 z-40 hidden lg:flex flex-col gap-2 items-end pointer-events-auto"
+        className="fixed right-3 bottom-6 z-40 hidden lg:flex flex-col gap-2 items-end pointer-events-auto"
       >
-        <div className="flex flex-col gap-1.5 p-1.5 bg-white/95 backdrop-blur-md border border-[#E1E7ED] rounded-xl shadow-lg">
-          {/* Action 1: Call Helpline */}
+        <div className="flex flex-col gap-1.5 w-48 shadow-2xl">
+          {/* Action 1: Helpline with Light Green Border */}
           <a
             href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-            className="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:text-white hover:bg-[#D9232E] transition-colors group"
-            title="Call Helpline: 88701 20911"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#16A34A] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            title="Call Helpline"
           >
-            <Phone className="w-4 h-4 text-[#D9232E] group-hover:text-white" />
-            <span className="hidden xl:inline text-xs font-semibold">88701 20911</span>
+            <div className="flex items-center gap-2.5">
+              <Phone className="w-4 h-4 text-[#16A34A] shrink-0" />
+              <div className="text-left">
+                <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Helpline</span>
+                <span className="block text-xs font-bold text-white font-mono leading-tight">{COMPANY_INFO.phones[0].display}</span>
+              </div>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 group-hover:text-white transition-all" />
           </a>
 
-          {/* Action 2: WhatsApp Chat */}
+          {/* Action 2: WhatsApp Live Chat with Green Border */}
           <a
             href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(
               'Hello NS Batteries, I would like to inquire about your solar and battery solutions.'
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:text-white hover:bg-[#16835D] transition-colors group"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#22C55E] border-y border-r border-white/10 text-white transition-all shadow-md group"
             title="WhatsApp Live Chat"
           >
-            <MessageCircle className="w-4 h-4 text-[#16835D] group-hover:text-white" />
-            <span className="hidden xl:inline text-xs font-semibold">WhatsApp</span>
+            <div className="flex items-center gap-2.5">
+              <MessageCircle className="w-4 h-4 text-[#22C55E] shrink-0" />
+              <div className="text-left">
+                <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">WhatsApp</span>
+                <span className="block text-xs font-bold text-white leading-tight">Live Chat</span>
+              </div>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 group-hover:text-white transition-all" />
           </a>
 
-          {/* Action 3: Solar Calculator */}
+          {/* Action 3: Solar Calculator with Yellow/Amber Border */}
           <Link
             href="/calculator"
-            className="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:text-white hover:bg-[#0B1722] transition-colors group"
-            title="Solar Savings Calculator"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#F4B323] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            title="Solar Calculator"
           >
-            <Calculator className="w-4 h-4 text-[#F4B323] group-hover:text-white" />
-            <span className="hidden xl:inline text-xs font-semibold">Calculator</span>
+            <div className="flex items-center gap-2.5">
+              <Sun className="w-4 h-4 text-[#F4B323] shrink-0" />
+              <div className="text-left">
+                <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Solar Calculator</span>
+                <span className="block text-xs font-bold text-[#F4B323] leading-tight">Save 90% EB</span>
+              </div>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 group-hover:text-white transition-all" />
           </Link>
 
-          {/* Action 4: Store Location */}
+          {/* Action 4: Store Locator with Cyan/Blue Border */}
           <a
             href="https://maps.google.com/?q=21/20+AKB+Complex+GH+Road+Ramanathapuram+623501"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:text-white hover:bg-[#0B1722] transition-colors group"
-            title="Store Location (AKB Complex)"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#38BDF8] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            title="Store Locator (AKB Complex)"
           >
-            <MapPin className="w-4 h-4 text-[#D9232E] group-hover:text-white" />
-            <span className="hidden xl:inline text-xs font-semibold">Store Map</span>
+            <div className="flex items-center gap-2.5">
+              <MapPin className="w-4 h-4 text-[#38BDF8] shrink-0" />
+              <div className="text-left">
+                <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Store Locator</span>
+                <span className="block text-xs font-bold text-white leading-tight">AKB Complex</span>
+              </div>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 group-hover:text-white transition-all" />
           </a>
 
-          {/* Action 5: Subsidy Guide */}
+          {/* Action 5: Subsidy Guide Pill in Light Green */}
           <Link
             href="/solar#pm-surya-ghar"
-            className="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:text-white hover:bg-[#0B1722] transition-colors group"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white transition-all shadow-lg group mt-0.5"
             title="PM Surya Ghar Subsidy Guide"
           >
-            <Sun className="w-4 h-4 text-[#F4B323] group-hover:text-white" />
-            <span className="hidden xl:inline text-xs font-semibold">Subsidy</span>
+            <div className="flex items-center gap-2.5">
+              <FileCheck className="w-4 h-4 text-white shrink-0" />
+              <div className="text-left">
+                <span className="block text-[9px] font-bold text-white/80 uppercase tracking-wider">Subsidy Guide</span>
+                <span className="block text-xs font-extrabold text-white leading-tight">₹78,000 Grant</span>
+              </div>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-white/80 group-hover:translate-x-0.5 group-hover:text-white transition-all" />
           </Link>
         </div>
 
@@ -90,9 +120,9 @@ export default function FloatingActions() {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="w-9 h-9 rounded-full bg-[#0B1722] text-white hover:bg-[#D9232E] shadow-md flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-full bg-[#0B1722] text-white hover:bg-[#16A34A] border border-white/20 shadow-md flex items-center justify-center transition-colors"
           >
-            <ArrowUp className="w-4 h-4" />
+            <ArrowUp className="w-3.5 h-3.5" />
           </button>
         )}
       </aside>
@@ -104,9 +134,9 @@ export default function FloatingActions() {
       >
         <a
           href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#D9232E] py-1"
+          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16A34A] py-1"
         >
-          <Phone className="w-4 h-4 text-[#D9232E]" />
+          <Phone className="w-4 h-4 text-[#16A34A]" />
           <span className="text-[10px] font-semibold">Call Now</span>
         </a>
 
@@ -114,9 +144,9 @@ export default function FloatingActions() {
           href={`https://wa.me/${COMPANY_INFO.whatsappNumber}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16835D] py-1"
+          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16A34A] py-1"
         >
-          <MessageCircle className="w-4 h-4 text-[#16835D]" />
+          <MessageCircle className="w-4 h-4 text-[#16A34A]" />
           <span className="text-[10px] font-semibold">WhatsApp</span>
         </a>
 
@@ -130,7 +160,7 @@ export default function FloatingActions() {
 
         <Link
           href="/quote"
-          className="flex flex-col items-center gap-0.5 text-white bg-[#D9232E] px-3 py-1 rounded-md shadow-sm"
+          className="flex flex-col items-center gap-0.5 text-white bg-[#16A34A] px-3 py-1 rounded-md shadow-sm"
         >
           <span className="text-[11px] font-bold">Get Quote</span>
         </Link>

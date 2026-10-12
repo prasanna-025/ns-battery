@@ -61,7 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`scroll-smooth ${displayFont.variable} ${sansFont.variable} ${monoFont.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-[#17212B] font-sans antialiased selection:bg-[#D9232E] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-white text-[#17212B] font-sans antialiased selection:bg-[#16A34A] selection:text-white">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
