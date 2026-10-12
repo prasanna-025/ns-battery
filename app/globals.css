@@ -87,10 +87,43 @@
 .vikram-btn-outline:hover {
   border-color: #16a34a;
   color: #16a34a;
-  background-color: rgba(217, 35, 46, 0.04);
+  background-color: rgba(22, 163, 74, 0.04);
 }
 
-/* Vikram Action Tabs Dock (Right Sidebar) */
+/* Global Interactive Option Micro-Interaction: Pop / Slight Increase ("Blow Up") on Click */
+button,
+[role="button"],
+nav a,
+header a,
+.corporate-btn,
+.corporate-btn-outline,
+input[type="submit"],
+input[type="button"],
+.interactive-option {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+button:hover,
+[role="button"]:hover,
+.corporate-btn:hover,
+.interactive-option:hover {
+  transform: scale(1.025);
+}
+
+/* Clicking any option will slightly increase / pop ("blow up") */
+button:active,
+[role="button"]:active,
+nav a:active,
+header a:active,
+.corporate-btn:active,
+.corporate-btn-outline:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.interactive-option:active {
+  transform: scale(1.07) !important;
+}
+
+/* Action Tabs Dock */
 .action-tabs-wrap {
   position: fixed;
   right: 0;
@@ -112,7 +145,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-left: 3px solid #cd2028;
+  border-left: 3px solid #16A34A;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.25s ease;
   box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.4);
@@ -120,10 +153,14 @@
 }
 
 .action-tab-item:hover {
-  background: #cd2028;
+  background: #16A34A;
   color: #ffffff;
-  transform: translateX(-6px);
+  transform: translateX(-6px) scale(1.04);
   border-left-color: #ffffff;
+}
+
+.action-tab-item:active {
+  transform: translateX(-8px) scale(1.08);
 }
 
 /* Studio Glass Panels */
@@ -133,18 +170,24 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .studio-card:hover {
-  border-color: rgba(205, 32, 40, 0.35);
+  border-color: rgba(22, 163, 74, 0.35);
+  transform: translateY(-2px) scale(1.015);
+}
+
+.studio-card:active {
+  transform: scale(1.04);
 }
 
 .studio-card-glow {
   background: rgba(14, 28, 40, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(205, 32, 40, 0.3);
-  box-shadow: 0 0 35px -5px rgba(205, 32, 40, 0.15);
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  box-shadow: 0 0 35px -5px rgba(22, 163, 74, 0.15);
 }
 
 /* Custom Range Slider Ergonomics */

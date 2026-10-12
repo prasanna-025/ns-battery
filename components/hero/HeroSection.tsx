@@ -53,7 +53,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 pt-3 w-full">
               <Link
                 href="/quote"
-                className="inline-flex items-center justify-center text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl text-white bg-[#15803d] hover:bg-[#166534] transition-colors shadow-sm"
+                className="inline-flex items-center justify-center text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl text-white bg-[#15803d] hover:bg-[#166534] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
               >
                 <span>Explore Solar Solutions</span>
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
               <Link
                 href="/calculator"
-                className="inline-flex items-center justify-center text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl text-[#0B1722] bg-white hover:bg-[#F5F7FA] border border-[#E1E7ED] transition-colors shadow-sm"
+                className="inline-flex items-center justify-center text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl text-[#0B1722] bg-white hover:bg-[#F5F7FA] border border-[#E1E7ED] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
               >
                 <span>Calculate Your Subsidy</span>
                 <Calculator className="ml-2 w-4 h-4" />
@@ -107,7 +107,7 @@ export default function HeroSection() {
 
         {/* Trust Indicator Bar */}
         <div className="mt-14 pt-8 bg-[#F5F7FA] border border-[#E1E7ED] rounded-xl shadow-sm p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 p-2 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[1.05] cursor-pointer">
             <div className="w-12 h-12 rounded-lg bg-emerald-100/70 flex items-center justify-center text-[#16a34a] shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
@@ -117,7 +117,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 p-2 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[1.05] cursor-pointer">
             <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center text-[#F4B323] shrink-0">
               <Wrench className="w-6 h-6" />
             </div>
@@ -127,7 +127,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 p-2 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[1.05] cursor-pointer">
             <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-[#10805a] shrink-0">
               <Headphones className="w-6 h-6" />
             </div>

@@ -87,11 +87,11 @@ export default function CategoryGrid() {
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl p-6 shadow-sm border border-[#E1E7ED] hover:shadow-md transition-shadow flex flex-col justify-between group"
+              className="bg-white rounded-xl p-6 shadow-sm border border-[#E1E7ED] hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] active:scale-[1.05] transition-all duration-300 flex flex-col justify-between group cursor-pointer"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${cat.iconBg}`}>
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${cat.iconBg} transition-transform duration-300 group-hover:scale-110`}>
                     <cat.icon className="w-6 h-6" />
                   </div>
                   <span className={`font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full font-semibold ${cat.tagStyle}`}>
@@ -114,7 +114,7 @@ export default function CategoryGrid() {
                 </span>
                 <Link
                   href={cat.href}
-                  className="inline-flex items-center text-[#15803d] font-semibold text-xs sm:text-sm hover:underline shrink-0"
+                  className="inline-flex items-center text-[#15803d] font-semibold text-xs sm:text-sm hover:underline hover:scale-105 active:scale-115 transition-all duration-200 shrink-0"
                 >
                   Explore <ChevronRight className="w-4 h-4 ml-0.5" />
                 </Link>

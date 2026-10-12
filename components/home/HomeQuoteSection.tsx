@@ -226,7 +226,7 @@ export default function HomeQuoteSection() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full py-3.5 px-6 rounded-lg bg-[#15803d] hover:bg-[#166534] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors active:scale-95 disabled:opacity-50"
+                    className="w-full py-3.5 px-6 rounded-lg bg-[#15803d] hover:bg-[#166534] hover:scale-[1.02] active:scale-[1.07] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-all duration-200 disabled:opacity-50"
                   >
                     {isLoading ? (
                       <>

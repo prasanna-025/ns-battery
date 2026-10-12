@@ -31,7 +31,7 @@ export default function FloatingActions() {
           {/* Action 1: Helpline with Light Green Border */}
           <a
             href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#16A34A] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#16A34A] border-y border-r border-white/10 text-white transition-all duration-200 shadow-md group hover:scale-105 hover:-translate-x-1 active:scale-110"
             title="Call Helpline"
           >
             <div className="flex items-center gap-2.5">
@@ -51,7 +51,7 @@ export default function FloatingActions() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#22C55E] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#22C55E] border-y border-r border-white/10 text-white transition-all duration-200 shadow-md group hover:scale-105 hover:-translate-x-1 active:scale-110"
             title="WhatsApp Live Chat"
           >
             <div className="flex items-center gap-2.5">
@@ -67,7 +67,7 @@ export default function FloatingActions() {
           {/* Action 3: Solar Calculator with Yellow/Amber Border */}
           <Link
             href="/calculator"
-            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#F4B323] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#F4B323] border-y border-r border-white/10 text-white transition-all duration-200 shadow-md group hover:scale-105 hover:-translate-x-1 active:scale-110"
             title="Solar Calculator"
           >
             <div className="flex items-center gap-2.5">
@@ -85,7 +85,7 @@ export default function FloatingActions() {
             href="https://maps.google.com/?q=21/20+AKB+Complex+GH+Road+Ramanathapuram+623501"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#38BDF8] border-y border-r border-white/10 text-white transition-all shadow-md group"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#0B1722]/95 hover:bg-[#122333] border-l-4 border-[#38BDF8] border-y border-r border-white/10 text-white transition-all duration-200 shadow-md group hover:scale-105 hover:-translate-x-1 active:scale-110"
             title="Store Locator (AKB Complex)"
           >
             <div className="flex items-center gap-2.5">
@@ -101,7 +101,7 @@ export default function FloatingActions() {
           {/* Action 5: Subsidy Guide Pill in Light Green */}
           <Link
             href="/solar#pm-surya-ghar"
-            className="flex items-center justify-between p-2.5 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white transition-all shadow-lg group mt-0.5"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white transition-all duration-200 shadow-lg group mt-0.5 hover:scale-105 hover:-translate-x-1 active:scale-110"
             title="PM Surya Ghar Subsidy Guide"
           >
             <div className="flex items-center gap-2.5">
@@ -120,7 +120,7 @@ export default function FloatingActions() {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="w-8 h-8 rounded-full bg-[#0B1722] text-white hover:bg-[#16A34A] border border-white/20 shadow-md flex items-center justify-center transition-colors"
+            className="w-8 h-8 rounded-full bg-[#0B1722] text-white hover:bg-[#16A34A] border border-white/20 shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-125"
           >
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
@@ -134,7 +134,7 @@ export default function FloatingActions() {
       >
         <a
           href={`tel:+91${COMPANY_INFO.phones[0].raw.slice(2)}`}
-          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16A34A] py-1"
+          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16A34A] py-1 transition-all duration-200 hover:scale-105 active:scale-110"
         >
           <Phone className="w-4 h-4 text-[#16A34A]" />
           <span className="text-[10px] font-semibold">Call Now</span>
@@ -144,7 +144,7 @@ export default function FloatingActions() {
           href={`https://wa.me/${COMPANY_INFO.whatsappNumber}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16A34A] py-1"
+          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#16A34A] py-1 transition-all duration-200 hover:scale-105 active:scale-110"
         >
           <MessageCircle className="w-4 h-4 text-[#16A34A]" />
           <span className="text-[10px] font-semibold">WhatsApp</span>
@@ -152,7 +152,7 @@ export default function FloatingActions() {
 
         <Link
           href="/calculator"
-          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#F4B323] py-1"
+          className="flex flex-col items-center gap-0.5 text-[#0B1722] hover:text-[#F4B323] py-1 transition-all duration-200 hover:scale-105 active:scale-110"
         >
           <Calculator className="w-4 h-4 text-[#F4B323]" />
           <span className="text-[10px] font-semibold">Calculator</span>
@@ -160,7 +160,7 @@ export default function FloatingActions() {
 
         <Link
           href="/quote"
-          className="flex flex-col items-center gap-0.5 text-white bg-[#16A34A] px-3 py-1 rounded-md shadow-sm"
+          className="flex flex-col items-center gap-0.5 text-white bg-[#16A34A] hover:bg-[#15803D] px-3 py-1 rounded-md shadow-sm transition-all duration-200 hover:scale-105 active:scale-110"
         >
           <span className="text-[11px] font-bold">Get Quote</span>
         </Link>

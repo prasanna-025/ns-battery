@@ -104,9 +104,9 @@ export default function SolarCalculator() {
                   key={preset}
                   type="button"
                   onClick={() => setMonthlyBill(preset)}
-                  className={`text-xs px-2.5 py-1 rounded border font-mono transition-colors ${
+                  className={`text-xs px-3 py-1.5 rounded-lg border font-mono transition-all duration-200 hover:scale-105 active:scale-115 ${
                     monthlyBill === preset
-                      ? 'bg-[#0B1722] text-white border-[#0B1722]'
+                      ? 'bg-[#0B1722] text-white border-[#0B1722] scale-105 shadow-sm font-bold'
                       : 'bg-white text-[#647384] border-[#E1E7ED] hover:border-[#CBD5E1]'
                   }`}
                 >
@@ -186,7 +186,7 @@ export default function SolarCalculator() {
           <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
             <Link
               href="/quote"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm text-center flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#15803d] hover:bg-[#166534] hover:scale-105 active:scale-110 text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-sm text-center flex items-center justify-center gap-2"
             >
               <span>Get Free Site Inspection</span>
               <ArrowRight className="w-4 h-4" />
@@ -194,7 +194,7 @@ export default function SolarCalculator() {
 
             <Link
               href="/solar#pm-surya-ghar"
-              className="w-full sm:w-auto px-5 py-3.5 rounded-lg bg-white hover:bg-slate-50 border border-[#E1E7ED] text-[#0B1722] text-xs font-bold uppercase tracking-wider transition-colors text-center"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-lg bg-white hover:bg-slate-50 border border-[#E1E7ED] hover:scale-105 active:scale-110 text-[#0B1722] text-xs font-bold uppercase tracking-wider transition-all duration-200 text-center"
             >
               Learn About Subsidy Rules
             </Link>

@@ -81,9 +81,9 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors py-2 flex items-center h-full text-sm font-medium ${
+                  className={`transition-all duration-200 py-2 flex items-center h-full text-sm font-medium hover:scale-105 active:scale-110 ${
                     isActive
-                      ? 'text-[#16a34a] font-semibold border-b-2 border-[#16a34a]'
+                      ? 'text-[#16a34a] font-semibold border-b-2 border-[#16a34a] scale-105'
                       : 'text-[#54606d] hover:text-[#0B1722]'
                   }`}
                 >
@@ -97,14 +97,14 @@ export default function Navbar() {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/calculator"
-              className="hidden sm:inline-flex items-center text-xs font-semibold px-4 py-2 rounded-xl text-[#0B1722] border border-[#0B1722] hover:bg-[#F5F7FA] transition-colors"
+              className="hidden sm:inline-flex items-center text-xs font-semibold px-4 py-2 rounded-xl text-[#0B1722] border border-[#0B1722] hover:bg-[#F5F7FA] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
             >
               Solar Calculator
             </Link>
 
             <Link
               href="/quote"
-              className="inline-flex items-center text-xs font-semibold px-4 py-2 rounded-xl text-white bg-[#15803d] hover:bg-[#166534] transition-colors shadow-sm"
+              className="inline-flex items-center text-xs font-semibold px-4 py-2 rounded-xl text-white bg-[#15803d] hover:bg-[#166534] hover:scale-105 active:scale-110 transition-all duration-200 shadow-sm"
             >
               Get a Quote
             </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="xl:hidden p-2 rounded-lg text-slate-700 hover:text-[#0B1722] hover:bg-slate-100"
+              className="xl:hidden p-2 rounded-lg text-slate-700 hover:text-[#0B1722] hover:bg-slate-100 hover:scale-105 active:scale-110 transition-all duration-200"
               aria-label="Toggle Menu"
             >
               {isOpen ? <X className="w-6 h-6 text-[#16a34a]" /> : <Menu className="w-6 h-6" />}
@@ -131,9 +131,9 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`px-3 py-2.5 rounded-lg text-sm font-medium flex items-center justify-between ${
+                    className={`px-3 py-2.5 rounded-lg text-sm font-medium flex items-center justify-between transition-all duration-200 hover:scale-[1.02] active:scale-105 ${
                       isActive
-                        ? 'text-[#16a34a] bg-emerald-50 font-semibold'
+                        ? 'text-[#16a34a] bg-emerald-50 font-semibold scale-[1.02]'
                         : 'text-slate-700 hover:text-[#0B1722] hover:bg-slate-50'
                     }`}
                   >
@@ -148,14 +148,14 @@ export default function Navbar() {
               <Link
                 href="/calculator"
                 onClick={() => setIsOpen(false)}
-                className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-[#0B1722] border border-[#0B1722] hover:bg-slate-50"
+                className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-[#0B1722] border border-[#0B1722] hover:bg-slate-50 hover:scale-[1.02] active:scale-105 transition-all duration-200"
               >
                 Solar Calculator
               </Link>
               <Link
                 href="/quote"
                 onClick={() => setIsOpen(false)}
-                className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-white bg-[#15803d] hover:bg-[#166534] shadow"
+                className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-semibold text-white bg-[#15803d] hover:bg-[#166534] shadow hover:scale-[1.02] active:scale-105 transition-all duration-200"
               >
                 Get a Quote
               </Link>
